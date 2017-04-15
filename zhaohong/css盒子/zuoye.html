@@ -1,0 +1,160 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="UTF-8">
+  <title>Document</title>
+  <style>
+  * {
+    margin:0;
+    padding:0;
+  }
+  #shortcut {
+    font-size:14px;
+    border-bottom:1px solid #ddd;
+    background-color: #e3e4e5;
+  }
+  #shortcut .a {
+    height:30px;
+    line-height: 30px;
+    color:#999;
+  }
+  .a {
+    margin:auto;
+    width:1190px;
+  }
+  .b {
+    float:right;
+  }
+  #shortcut li {
+    float:left;
+  }
+  li {
+    list-style: none;
+  }
+  a {
+    text-decoration: none;
+  }
+  .c:link {
+    color:red;
+  }
+  .c:visited {
+    color:blue;
+  }
+  .c:hover {
+    color:yellow;
+  }
+  .c:active {
+    color:green;
+  }
+  #shortcut .d {
+    overflow: hidden;
+    margin:11px 5px 0;
+    width:1px;
+    height:10px;
+    background-color: #ccc;
+  }
+  .e {
+    position: absolute;
+    width:66px;
+    height:66px;
+    border:1px solid #cfcfcf;
+  }
+  .f {
+    margin:4px auto;
+    width:60px;
+    height:60px;
+    background:#f6f6f6 url(./image/4.png) 50% no-repeat;
+  }
+  #header .a {
+    position: relative;
+    /*z-index: 11;*/
+    height:140px;
+  }
+  #logo .h {
+    position: absolute;
+    top: -30px;
+  }
+  /*.h {
+    width:100%;
+    height:100%;
+  }*/
+  #logo {
+    /*z-index: 2;*/
+    float:left;
+    left:0;
+    top:-31px;
+    width:190px;
+    height:170px;
+    box-shadow: 0 -12px 10px rgba(0,0,0,.2);
+    background-color: #fff;
+  }
+  .i {
+    overflow: hidden;
+    display: block;
+    width: 190px;
+    height:170px;
+    background-color: #fff;
+    background-image: url(./image/5.png);
+    background-repeat: no-repeat;
+    text-indent: -999px;
+  }
+  .j {
+    position: absolute;
+    top: 27px;
+    right: 400px;
+    float:right;
+    width:500px;
+    height:35px;
+    border:1px solid red;
+  }
+  .l {
+    position: absolute;
+    top:27px;
+    right:349px;
+    width:50px;
+    height:35px;
+    background-image: url(./image/6.png);
+  }
+  </style>
+</head>
+<body>
+<div id="shortcut">
+  <div class="a">
+  <ul class="b">
+    <li class="b"><a href="">你好，请登录&nbsp;&nbsp;</a></li>
+    <li><a href="" class="c">免费注册&nbsp;&nbsp;</a></li>
+    <li class="d"></li>
+    <li><a href="">&nbsp;&nbsp;我的订单&nbsp;&nbsp;</a></li>
+    <li class="d"></li>
+    <li><a href="">&nbsp;&nbsp;我的京东&nbsp;&nbsp;</a></li>
+    <li class="d"></li>
+    <li><a href="">&nbsp;&nbsp;京东会员&nbsp;&nbsp;</a></li>
+    <li class="d"></li>
+    <li><a href="">&nbsp;&nbsp;企业采购&nbsp;&nbsp;</a></li>
+    <li class="d"></li>
+    <li><a href="">&nbsp;&nbsp;客户服务&nbsp;&nbsp;</a></li>
+    <li class="d"></li>
+    <li><a href="">&nbsp;&nbsp;网站导航&nbsp;&nbsp;</a></li>
+    <li class="d"></li>
+    <li><a href="">&nbsp;&nbsp;手机京东&nbsp;&nbsp;</a>
+      <div class="e">
+        <div class="f"></div>
+      </div>
+    </li>
+  </ul>
+  </div>
+</div>
+<div id="header">
+  <div class="a">
+    <div id="logo" class="g">
+      <h1 class="h">
+        <a href="" class="i">京东</a>
+      </h1>
+    </div>
+    <input class="j">
+     <a href="https://www.jd.com" class="l"></a>
+  </input>
+  </div>
+</div>
+</body>
+</html>

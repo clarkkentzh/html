@@ -1,0 +1,37 @@
+<!DOCTYPE>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <title>优先级</title>
+    <style>
+    /*!important > style(行内样式) > id > class > 标签　> 继承 > 浏览器默认*/
+    p {
+      color: red ;　　　　　/*优先级１，标签大于继承*/　
+      font-size:50px;
+    }
+    div {
+      color: blue;       /*优先级１*/
+    }
+    div p {
+      color: yellow !important;    /*优先级２*/
+    }
+    .aa {
+      color: orange;   /*优先级10*/
+    }
+    p.aa {
+      color: green;　　/*优先级11*/
+    }
+    div p.aa{
+      color:purple;   /*优先级12*/
+    }
+    #bb {
+      color: pink;
+    }
+    </style>
+  </head>
+  <body>
+    <div>
+    <p class="aa">这是在测试优先级</p>
+  </div>
+  </body>
+</html>
