@@ -106,6 +106,7 @@ margin: 10px 20px 30px;
 border: 1px solid red;
 或者padding-top: 1px;
 ```
+* list-style属性是去掉列表样式.
 # 浮动概念
 ## 浮动的css定义格式
 ```html
