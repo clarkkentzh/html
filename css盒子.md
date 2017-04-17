@@ -199,7 +199,7 @@ zoom:1;
 -----|-----
 static | 否
 relative | 否
-absoulte | 是
+absolute | 是
 fixed | 是
 
 
