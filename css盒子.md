@@ -202,6 +202,22 @@ relative | 否
 absolute | 是
 fixed | 是
 
+# 其它属性
+```html
+display: block;    //设置为块元素
+display: inline-block;    //设置为行内块元素
+display: none;     //隐藏一个元素,并且不占据页面空间
+visibility: hidden;   //隐藏一个元素,但是仍然占据页面空间
+visibility: visible; (默认)显示
+```
+z-index: -1;      //用于设置元素的层级,可以是任意整数
 
+1.默认情况下设置定位的元素的层级比普通元素的层级要高,是大于0,但是小于1.
+
+2.z-index　只对设置过定位的元素有效.
+### 注意:
+浮动排列在一行的所有元素,默认情况下,元素的层级从左到右逐渐增大,从0开始无限接近于1.
+
+* [css属性](http://www.css88.com/book/css/)
 
 
