@@ -163,8 +163,8 @@ auto | 超出部分显示滚动条，否则不显示
 
 4.使用伪元素清除浮动(不理解先背下来会用)
 ```html
-.clearfix::after,
-.clearfix::before {
+.classname::after,
+.classname::before {
 content: "";
 height: 0;
 display: block;
@@ -172,7 +172,7 @@ visibility: hidden;
 line-height: 0;
 clear: both;
 }
-.clearfix {
+.classname {
 zoom:1;
 }
 ```
