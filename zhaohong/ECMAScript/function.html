@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Document</title>
+</head>
+<body>
+  <script>
+  /*
+  函数的声明提升：函数的定义可以放在代码的任意位置，在运行时，javascript引擎会将函数的声明提升到代码的顶部
+  */
+
+  var result = fun(10,20);
+  console.log("result =",result);
+
+  //函数声明(定义)
+  function fun(a,b) {
+    return a + b;
+  }
+
+  /*********************************************/
+
+  //变量声明提升：定义的变量在运行时，会被提升到代码的顶部
+  result = minus(30,20);
+  console.log("result =",result);
+                                    //会出现minus不是函数的提示错误
+  var minus = function(c,d){
+    return c - d;
+  }
+  //等价于：
+  /*
+  var minus;
+  result = minus(30,20);
+  console.log("result =",result);
+  minus = function(c,d){
+    return c - d;
+  }
+  */
+
+  </script>
+</body>
+</html>

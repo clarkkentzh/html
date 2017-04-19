@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Document</title>
+</head>
+<body>
+  <script>
+  var a = 10;
+  var b = 010;
+  var c = 0x10;
+  console.log(a,b,c);
+
+  var a = 2.1;
+  var b = 0.2;
+  var c = .21;   //不推荐使用
+  console.log(a,b,c);
+
+  var d = 3.5e7;
+  var e = 3.5e-7;
+  console.log(d,e);
+
+  console.log(0.1 + 0.2); //不等于0.3
+  console.log(a + b);　　　//不等于2.3  都有误差
+
+  c = 100 + undefined;
+  console.log(typeof c);  //number
+  console.log(c);        //NaN
+
+  a = 10;
+  b = 20;
+  console.log("a + b =",a + b);
+  console.log("a - b =",a - b);
+  console.log("a * b =",a * b);
+  console.log("a % b =",a % b);
+  //不同于其他语言的除法
+  console.log("a / b =",a / b);  //0.5而不是0
+  console.log("10 / 3 =",10 / 3);   //3.33333333333
+  console.log("20 / 10 =",20 / 10);  //2
+  </script>
+</body>
+</html>

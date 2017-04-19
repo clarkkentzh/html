@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Document</title>
+</head>
+<body>
+  <script>
+  var a = "hello";
+  a = a + "world";
+  console.log(a);
+
+  console.log("html" + "css");
+  console.log("html" + 123);    //字符串拼接，原则上只要有个是字符串，都会变成字符串
+  console.log("" + 123);    //也可以，字符串123
+
+
+  //其他类型转换成字符串
+  var b = 100;
+  console.log(b);
+  console.log(b.toString());  //变成字符串100
+  console.log(b.toString(2));   //转换成二进制数字符串01100100
+
+  var c = false;
+  console.log(c.toString());
+  console.log("" + false);     //同样都是字符串false
+
+  //特殊的
+  var d = null;
+  var e = undefined;
+  // console.log(d.toString());   //不能这样转换成字符串
+  // console.log(e.toString());   //不能这样转换成字符串
+  console.log(String(d));  //转换成字符串null
+  console.log(String(e));  //转换成字符串undefined
+
+  </script>
+</body>
+</html>

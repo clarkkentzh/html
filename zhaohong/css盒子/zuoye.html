@@ -2,159 +2,278 @@
 <html>
 <head>
   <meta charset="UTF-8">
-  <title>Document</title>
+  <title>京东</title>
   <style>
-  * {
+  blockquote,
+  body,
+  button,
+  dd,
+  dl,
+  dt,
+  fieldset,
+  form,
+  h1,
+  h2,
+  h3,
+  h4,
+  h5,
+  h6,
+  hr,
+  input,
+  legend,
+  li,
+  ol,
+  p,
+  pre,
+  td,
+  textarea,
+  th,
+  ul {
     margin:0;
-    padding:0;
+    padding:0
   }
-  #shortcut {
-    font-size:14px;
-    border-bottom:1px solid #ddd;
-    background-color: #e3e4e5;
-  }
-  #shortcut .a {
-    height:30px;
-    line-height: 30px;
-    color:#999;
-  }
-  .a {
-    margin:auto;
-    width:1190px;
-  }
-  .b {
-    float:right;
-  }
-  #shortcut li {
-    float:left;
-  }
-  li {
+  ul {
     list-style: none;
   }
   a {
     text-decoration: none;
   }
-  .c:link {
-    color:red;
+  .head .head1 .aa:hover {
+    color:#f10214;
   }
-  .c:visited {
-    color:blue;
+  body {
+    background: #f6f6f6;
   }
-  .c:hover {
-    color:green;
+  .head1::after,
+  .head1::before{
+    content: "";
+    height:0;
+    display: block;
+    visibility:hidden;
+    line-height: 0;
+    clear: both;
   }
-  .c:active {
-    color:purple;
+  .head1 {
+    zoom:1;
   }
-  #shortcut .d {
-    overflow: hidden;
-    margin:11px 5px 0;
-    width:1px;
-    height:10px;
-    background-color: #ccc;
-  }
-  .e {
-    position: absolute;
-    width:66px;
-    height:66px;
-    border:1px solid #cfcfcf;
-  }
-  .f {
-    margin:4px auto;
-    width:60px;
-    height:60px;
-    background:#f6f6f6 url(./image/4.png) 50% no-repeat;
-  }
-  #header .a {
+  .one {
+    width:100%;
+    height:30px;
+    background: #e3e4e5;
     position: relative;
-    /*z-index: 11;*/
+  }
+  .one .head {
+    width:1400px;
+    height:30px;
+    margin:auto;
+    position: relative;
+  }
+  .ding {
+    width:50px;
+    height:23px;
+    text-align: right;
+    font-size: 15px;
+    color:#999;
+    line-height: 23px;
+    background: url(./image/28.png) no-repeat;
+    position: absolute;
+    top:4px;
+    left:220px;
+  }
+  .head1 {
+    width:780px;
+    height:30px;
+    float:right;
+    position: relative;
+  }
+  .head a {
+    font-size: 15px;
+    color:#999;
+    float: left;
+    line-height: 30px;
+  }
+  img {
+    position: absolute;
+    top:30px;
+    right:15px;
+  }
+  #aa {
+    color:#f10215;
+  }
+  .two {
+    width:100%;
     height:140px;
   }
-  #logo .h {
-    position: absolute;
-    top: -30px;
+  .next {
+    width:1400px;
+    height:140px;
+    margin: auto;
+    position: relative;
+    border-top: 1px solid #e3e4e5;
   }
-  /*.h {
-    width:100%;
-    height:100%;
-  }*/
-  #logo {
-    /*z-index: 2;*/
-    float:left;
-    left:0;
-    top:-31px;
+  .next1 {
     width:190px;
     height:170px;
+    float:left;
+    background: #fff url(./image/5.png) no-repeat;
+    position: absolute;
+    top:-30px;
     box-shadow: 0 -12px 10px rgba(0,0,0,.2);
-    background-color: #fff;
   }
-  .i {
-    overflow: hidden;
-    display: block;
-    width: 190px;
-    height:170px;
-    background-color: #fff;
-    background-image: url(./image/5.png);
-    background-repeat: no-repeat;
-    text-indent: -999px;
-  }
-  .j {
-    position: absolute;
-    top: 27px;
-    right: 400px;
+  .next2 {
+    width:1210px;
+    height:60px;
     float:right;
-    width:500px;
-    height:35px;
-    border:1px solid red;
+    position: relative;
   }
-  .l {
+  .next2 input {
+    width:495px;
+    height:39px;
+    border:1px solid #f10215;
+    padding-left: 5px;
+    outline-style: none;
     position: absolute;
-    top:27px;
-    right:349px;
-    width:50px;
-    height:35px;
-    background-image: url(./image/6.png);
+    bottom: 0px;
+    right:500px;
+  }
+  .next2 .sou {
+    width:58px;
+    height:41px;
+    background: url(./image/6.png);
+    position: absolute;
+    top:19px;
+    right:442px;
+  }
+  .next2 .car {
+    width:190px;
+    height:39px;
+    background: #fff;
+    position:absolute;
+    border: 1px solid red;
+    bottom:0px;
+    right:210px;
+    text-align: center;
+    line-height: 39px;
+  }
+  .next2 a:visited {
+    color:#f10214;
+  }
+  .next2 a:hover {
+    color:#f10214;
+  }
+  .car img {
+    width:30px;
+    height: 27px;
+    position: absolute;
+    top:6px;
+    right:138px;
+  }
+  .yuan {
+    width:16px;
+    height: 16px;
+    line-height: 16px;
+    background: #f10214;
+    color:#fff;
+    border-radius: 8px;
+    position: absolute;
+    top:6px;
+    right:35px;
+  }
+  .next3 {
+    width:600px;
+    height:20px;
+    margin:70px auto;
+    font-size: 12px;
+  }
+  .next3 a:visited {
+    color:#999;
+  }
+  .next3 a:hover {
+    color:#f10214;
+  }
+  #sheng:visited {
+    color:#f10214;
+  }
+  .next4 {
+    width:790px;
+    height:40px;
+    margin: -63px auto;
+  }
+  .next4 a {
+    font-size: 16px;
+    line-height: 50px;
+    text-align: center;
+    color:#555;
+  }
+  .next4 .hh {
+    color:#999;
+  }
+  .next4 a:hover {
+    color:#f10214;
   }
   </style>
 </head>
 <body>
-<div id="shortcut">
-  <div class="a">
-  <ul class="b">
-    <li class="b"><a href="">你好，请登录&nbsp;&nbsp;</a></li>
-    <li><a href="" class="c">免费注册&nbsp;&nbsp;</a></li>
-    <li class="d"></li>
-    <li><a href="">&nbsp;&nbsp;我的订单&nbsp;&nbsp;</a></li>
-    <li class="d"></li>
-    <li><a href="">&nbsp;&nbsp;我的京东&nbsp;&nbsp;</a></li>
-    <li class="d"></li>
-    <li><a href="">&nbsp;&nbsp;京东会员&nbsp;&nbsp;</a></li>
-    <li class="d"></li>
-    <li><a href="">&nbsp;&nbsp;企业采购&nbsp;&nbsp;</a></li>
-    <li class="d"></li>
-    <li><a href="">&nbsp;&nbsp;客户服务&nbsp;&nbsp;</a></li>
-    <li class="d"></li>
-    <li><a href="">&nbsp;&nbsp;网站导航&nbsp;&nbsp;</a></li>
-    <li class="d"></li>
-    <li><a href="">&nbsp;&nbsp;手机京东&nbsp;&nbsp;</a>
-      <div class="e">
-        <div class="f"></div>
+  <div class="one">
+    <div class="head">
+      <div class="ding">北京</div>
+      <div class="head1">
+        <a href="#">你好，请登录&nbsp;</a>
+        <a href="#" id="aa">免费注册 &nbsp;</a>
+        <a href="#">|</a>
+        <a href="#" class="aa">&nbsp;我的订单&nbsp;</a>
+        <a href="#">|</a>
+        <a href="#" class="aa">&nbsp;我的京东&nbsp;</a>
+        <a href="#">|</a>
+        <a href="#" class="aa">&nbsp;京东会员&nbsp;</a>
+        <a href="#">|</a>
+        <a href="#" class="aa">&nbsp;企业采购&nbsp;</a>
+        <a href="#">|</a>
+        <a href="#" class="aa">&nbsp;客户服务&nbsp;</a>
+        <a href="#">|</a>
+        <a href="#" class="aa">&nbsp;网站导航&nbsp;</a>
+        <a href="#">|</a>
+        <a href="#" class="aa">&nbsp;手机京东&nbsp;</a>
+        <img src="./image/4.png">
       </div>
-    </li>
-  </ul>
-  </div>
-</div>
-<div id="header">
-  <div class="a">
-    <div id="logo" class="g">
-      <h1 class="h">
-        <a href="" class="i">京东</a>
-      </h1>
     </div>
-    <input class="j">
-     <a href="https://www.jd.com" class="l"></a>
-  </input>
   </div>
-</div>
+  <div class="two">
+    <div class="next">
+      <div class="next1"></div>
+      <div class="next2">
+        <input type="text">
+        <a href="#" class="sou"></a>
+        <a href="#" class="car">
+          <img src="./image/27.png">
+          我的购物车
+          <div class="yuan"><span>0</span></div>
+        </a>
+      </div>
+      <div class="next3">
+        <a href="#" id="sheng">最高省3000</a>
+        <a href="#">领免息劵</a>
+        <a href="#">满199减100</a>
+        <a href="#">京东内衣节</a>
+        <a href="#">家电秒杀</a>
+        <a href="#">小厨宝</a>
+        <a href="#">打底裤女秋</a>
+        <a href="#">粮油节</a>
+      </div>
+      <div class="next4">
+        <a href="#">&nbsp;秒杀&nbsp;</a>
+        <a href="#">&nbsp;优惠券&nbsp;</a>
+        <a href="#">&nbsp;闪购&nbsp;</a>
+        <a href="#">&nbsp;拍卖&nbsp;</a>
+        <a href="#" class="hh">|</a>
+        <a href="#">&nbsp;服装城&nbsp;</a>
+        <a href="#">&nbsp;京东超市&nbsp;</a>
+        <a href="#">&nbsp;生鲜&nbsp;</a>
+        <a href="#">&nbsp;全球购&nbsp;</a>
+        <a href="#" class="hh">|</a>
+        <a href="#">&nbsp;京东金融</a>
+      </div>
+    </div>
+  </div>
 </body>
 </html>
