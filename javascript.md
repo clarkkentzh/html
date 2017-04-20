@@ -251,7 +251,7 @@ if (a != null) {
   testThree(10,20);     //10 20 undefined
   testThree(10,20, 30,40);  //10 20 30 
  ```
-
+* [jQuery文档网址](http://www.css88.com/jqapi-1.9)
 
 
 
