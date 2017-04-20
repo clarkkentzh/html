@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>jQuery选择器</title>
+  <style>
+  a {
+    text-decoration: none;
+  }
+  </style>
+</head>
+<body>
+
+  <div class="f" id="fid">
+    <p>00000</p>
+    <div class="s">
+      <div>11111</div>
+    </div>
+    <p>22222</p>
+    <p>33333</p>
+    <h1>44444</h1>
+  </div>
+
+
+  <ul class="list">
+    <li>aaaa</li>
+    <li>bbbb</li>
+    <li>cccc</li>
+    <li>dddd</li>
+  </ul>
+
+  <a href="aaa">asdfsdfsd</a>
+  <a href="bbb">ddddddd</a>
+
+
+<div class="list-2">
+    <p>00000000000</p>
+	<span>1111</span>
+	<span>2222</span>
+	<span>3333</span>
+	<span>4444</span>
+</div>
+
+
+<input type="password" name="passwd">
+<input type="password" name="passwd">
+<input type="text" name="username">
+
+  <script src="../jquery/jquery-3.0.0.min.js"></script>
+  <script>
+
+
+  // 子类选择器,只能是儿子辈的，不能孙子辈
+  console.log($(".f > div"));
+  // 后代选择器，包括孙子，所有后代
+  console.log($(".f div"));
+  // 相邻的兄弟选择器，相邻的，同一辈的兄弟
+  console.log($(".s + p"));
+  console.log($(".s + h1"));  //不相邻，所以找不到
+
+  /************************位置选择****************************/
+  console.log($(".list li"));
+  console.log($(".list li:eq(3)"));　　　　　//eq()指位置，从0开始。
+  // $(".list li:eq(1)").css("color","purple");
+  $(".list li:odd").css("color","red");    //odd是指奇数位置
+  $(".list li:even").css("color","blue");  //even是偶数
+
+
+  /***********************属性选择器**************************************/
+  $("a[href=aaa]").css("color","green");
+  $("[href=bbb]").css("color","yellow");
+
+  /***********************子元素选择器******************************/
+  $(".list-2 span:first-child").css("color","blue");//因为第一个元素不是span，所以不行
+  $(".list-2 span:nth-child(2)").css("color","orange");
+
+  /**********************表单选择器**********************/
+  $(":password").val("123");
+
+
+  </script>
+</body>
+</html>

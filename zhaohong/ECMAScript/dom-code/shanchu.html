@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <title>Document</title>
+  <style>
+    * {
+      margin: 0;
+      padding: 0;
+    }
+
+    ul {
+      list-style: none;
+      text-align: center;
+    }
+  </style>
+</head>
+
+<body>
+  <ul class="list">
+    <li>11111</li>
+    <li>22222</li>
+    <li class="list-two">33333</li>
+    <li>44444</li>
+  </ul>
+
+  <script src="../jquery/jquery-3.0.0.min.js"></script>
+  <script>
+    /********************外部插入**************************/
+    //连续写好几个操作叫链式调用
+    $(".list li").eq(0).after("<li>aaaaa</li>"); //在元素后面插入参数内容
+    $(".list li").eq(3).before("<li>bbbbb</li>"); //在元素的前面插入参数内容
+
+
+    /***********************删除******************************/
+    //remove删除节点，包括本身标签都删除了
+    // $(".list li").eq(0).remove();
+    $(".list li").remove(".list-two")
+
+
+    //empty仅仅删除元素内容，标签本身不会辈删除
+    $(".list li").eq(0).empty();
+
+    $(".list li").css("background-color", "red").eq(1).empty().html("<a href='#'>超链接</a>");
+  </script>
+</body>
+
+</html>

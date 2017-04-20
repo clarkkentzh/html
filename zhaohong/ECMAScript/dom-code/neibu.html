@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <title>Document</title>
+  <style type="text/css">
+    * {
+      margin: 0;
+      padding: 0;
+    }
+
+    ul {
+      list-style: none;
+      text-align: center;
+    }
+
+    .stu {
+      width: 300px;
+      height: 300px;
+
+      margin: 0 auto;
+      border: 1px solid gray;
+
+      /*去掉表格单元格之间的间隙*/
+      border-collapse: collapse;
+      text-align: center;
+    }
+
+    .stu th,
+    .stu td {
+      border: 1px solid gray;
+    }
+  </style>
+</head>
+
+<body>
+  <ul class="list">
+    <li>11111</li>
+    <li>22222</li>
+    <li>33333</li>
+  </ul>
+
+  <table class="stu">
+    <caption>
+      <h1>学生信息表</h1></caption>
+    <tr>
+      <th>姓名</th>
+      <th>年龄</th>
+      <th>性别</th>
+    </tr>
+    <tr>
+      <td>赵四</td>
+      <td>50</td>
+      <td>男</td>
+    </tr>
+
+    <script src="../jquery/jquery-3.0.0.min.js"></script>
+    <script>
+      // 使用$("选择器")选中的元素都是jQuery对象，就是jquery类型
+      console.log($(".list li"));
+      $(".list").append("<li>44444</li>");
+      console.log($(".list li"));
+      //使用jquery创建一个新元素
+      var a = $("<li>55555</li>");
+      $(".list").append(a); //在元素内部的最后插入参数内容
+      console.log($(".list li"));
+      $(".list").prepend("<li>00000</li>"); //在元素内部的前面插入参数内容
+      $(".list li").append("<a href='#'>超链接</a>");
+      //append,appendTo方法不同，功能一样
+      $("<li>66666</li>").appendTo($(".list"));
+
+      //给表格追加一行数据
+      $(".stu").append("<tr><td>" + "赵五" + "</td><td>" + "50" + "</td><td>" + "男" + "</td></tr>");
+
+      //给表格追加多行数据
+      var stus = [
+        ["赵六", 51, "男"],
+        ["赵七", 52, "男"]
+      ];
+      for (var i = 0; i < stus.length; i++) {
+        $(".stu").append("<tr><td>" + stus[i][0] + "</td><td>" + stus[i][1] + "</td><td>" + stus[i][2] + "</td></tr>");
+      }
+    </script>
+</body>
+
+</html>

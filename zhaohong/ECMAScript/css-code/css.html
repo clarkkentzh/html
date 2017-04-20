@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <title>Document</title>
+  <style>
+    * {
+      margin: 0;
+      padding: 0;
+    }
+
+    .stu {
+      width: 500px;
+      height: 400px;
+      margin: auto;
+      border-collapse: collapse;
+      border: 1px solid gray;
+      text-align: center;
+    }
+
+    .stu th,
+    .stu td {
+      border: 1px solid gray;
+    }
+  </style>
+</head>
+
+<body>
+  <table class="stu">
+    <caption>
+      <h1>学生信息表</h1></caption>
+    <tr>
+      <th>姓名</th>
+      <th>年龄</th>
+      <th>性别</th>
+    </tr>
+    <tr>
+      <td>赵四</td>
+      <td>50</td>
+      <td>男</td>
+    </tr>
+    <tr>
+      <td>赵四</td>
+      <td>50</td>
+      <td>男</td>
+    </tr>
+    <tr>
+      <td>赵四</td>
+      <td>50</td>
+      <td>男</td>
+    </tr>
+  </table>
+
+  <script src="../jquery/jquery-3.0.0.min.js"></script>
+  <script>
+    /************************获取css的值 *******************/
+    console.log($(".stu").css("width"));
+    console.log($(".stu").css("height"));
+
+    console.log($(".stu").css(["width", "height"]));
+
+    /***************设置css的值********************/
+
+    $(".stu tr:even").css({
+      "background": "#f58200",
+      "color": "red"
+    });
+    $(".stu th,.stu td").css("border", "1px solid blue");
+  </script>
+</body>
+
+</html>

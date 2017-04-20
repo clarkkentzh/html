@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <title>Document</title>
+</head>
+
+<body>
+  <div class="f">
+    <div class="s">这是为了测试html</div>
+  </div>
+
+  <div class="f1">
+    skjgkdjhkdjhkhjhkjh
+    <ul>
+      <li>1111</li>
+      <li>2222</li>
+    </ul>
+    <p>gjjdkhjkdhjk</p>
+  </div>
+
+  <script src="../jquery/jquery-3.0.0.min.js"></script>
+  <script>
+    /****************html************************/
+    //html只是获得本身标签以内的内容(包括标签),都变成字符串表现出来
+    console.log($(".f").html()); //<div class="s">这是为了测试html</div>
+    console.log($(".s").html()); //这是为了测试html
+    //设置内容元素，覆盖之前的所有内容
+    $(".f").html("<ul><li>hahahaha</li></ul>");
+
+
+    /********************text**********************/
+    //只获取文本，包括空行，没有标签
+    console.log($(".f1").text());
+    //设置文本
+    $(".f1").text("<p>这是测试文本lll</p>");
+  </script>
+</body>
+
+</html>

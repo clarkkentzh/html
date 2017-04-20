@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Document</title>
+</head>
+<body>
+  <div class="f">类是f</div>
+  <div id="fid">id是fid</div>
+  <div>标签div</div>
+
+<!-- 引入jquery文件 -->
+  <script src="../jquery/jquery-3.0.0.min.js"></script>
+  <!-- 在jquery基础上操作页面 -->
+  <script>
+  /* $ == jQuery, 就是jQuery库提供的用于选择元素的接口*/
+  console.log(jQuery("div"));
+  console.log($("div"));
+
+  console.log($("#fid"));    //id选择器
+  console.log($(".f"));　　　　//类选择器
+  console.log($("*"));       //通配选择器
+
+  console.log($("#fid,.f"));   //并集选择器
+  </script>
+</body>
+</html>
