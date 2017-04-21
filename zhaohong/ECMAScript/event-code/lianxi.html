@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <title>Document</title>
+  <style>
+    * {
+      margin: 0;
+      padding: 0;
+    }
+
+    ul {
+      width: 500px;
+      margin: auto;
+      list-style: none;
+      text-align: center;
+    }
+
+    div {
+      width: 500px;
+      height: 200px;
+      background: lightblue;
+    }
+
+    .neirong {
+      display: none;
+    }
+  </style>
+</head>
+
+<body>
+
+  <ul class="list">
+    <li>
+      <h3 class="biaoti">第一标题部分</h3>
+      <div class="neirong">这是第一标题的内容部分</div>
+    </li>
+    <li>
+      <h3 class="biaoti">第二标题部分</h3>
+      <div class="neirong">这是第二标题的内容部分</div>
+    </li>
+    <li>
+      <h3 class="biaoti">第三标题部分</h3>
+      <div class="neirong">这是第三标题的内容部分</div>
+    </li>
+    <li>
+      <h3 class="biaoti">第四标题部分</h3>
+      <div class="neirong">这是第四标题的内容部分</div>
+    </li>
+  </ul>
+
+
+  <script src="../jquery/jquery-3.0.0.min.js"></script>
+  <script>
+    $(".list li").hover(function() {
+      $(this).children("div").removeClass("neirong");
+    }, function() {
+      $(this).children("div").addClass("neirong");
+    });
+  </script>
+</body>
+
+</html>
