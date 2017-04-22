@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <title>Document</title>
+  <style>
+    * {
+      margin: 0;
+      padding: 0;
+    }
+
+    .stu {
+      width: 500px;
+      margin: 0 auto;
+      border: 1px solid red;
+      border-collapse: collapse;
+      text-align: center;
+    }
+
+    .stu th,
+    .stu td {
+      border: 1px solid green;
+      height: 50px;
+    }
+  </style>
+</head>
+
+<body>
+  <div class="gn">
+    <button id="add">点击添加一行数据</button>
+    <button id="del">点击删除一行数据</button>
+  </div>
+
+  <table class="stu">
+    <caption>
+      <h1>学生信息</h1></caption>
+    <tr>
+      <th>姓名</th>
+      <th>年龄</th>
+      <th>性别</th>
+    </tr>
+  </table>
+
+
+  <script src="../jquery/jquery-3.0.0.min.js"></script>
+  <script type="text/javascript">
+    /*
+              操作事件的步骤：
+              1. 选中要添加事件的元素
+              2. 注册对应的事件(根据事件名称)
+             3. 在事件中注册的处理方法
+                */
+
+
+    $(".stu").click(function() {
+      $(this).find("caption").css("color", "red"); //在表内任何地方点击都有效果
+    });
+
+
+    $(".stu tr").click(function() {
+      //此处的$(this)指的是注册事件的元素
+      $(this).css("background", "#f3715c")　　 //一行被点击后背景颜色变化
+    });
+
+
+    var name = 1000;
+    var age = 18;
+
+    $("#add").click(function() {
+      $(".stu").append("<tr><td>" + name + "</td><td>" + age + "</td><td>" + "女" + "</td></tr>");
+
+      $(".stu tr:last").click(function() {
+        $(this).css("background", "#f3715c") //这三行是让增加的行被点击后也能有效果
+      });
+
+      name++;
+      age++;
+    });
+
+
+    $("#del").click(function() {
+      $(".stu tr:last").remove();
+    });
+  </script>
+</body>
+
+</html>

@@ -1,0 +1,1072 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+  <meta charset="UTF-8">
+  <title>360网站</title>
+  <style>
+    * {
+      margin: 0;
+      padding: 0;
+    }
+
+    a {
+      text-decoration: none;
+    }
+
+    ul {
+      list-style: none;
+    }
+
+    body {
+      background: #f1f2f6;
+    }
+
+    div {
+      display: block;
+    }
+
+    .gg {
+      width: 100%;
+      height: 130px;
+      background: #2ec7bb;
+      display: block;
+    }
+
+    .gg1 {
+      display: none;
+    }
+
+    .gg-img {
+      width: 1420px;
+      height: 130px;
+      margin: auto;
+      background: url(./image/35.png);
+    }
+
+    .gg p {
+      width: 100px;
+      height: 30px;
+      color: #777;
+      background: #ccc;
+      position: absolute;
+      top: 0px;
+      right: 0px;
+      text-align: center;
+      line-height: 30px;
+      font-size: 18px;
+    }
+
+    .head {
+      width: 100%px;
+      height: 27px;
+      background: #757575;
+    }
+
+    .head div {
+      width: 1240px;
+      height: 27px;
+      margin: auto;
+      color: #d3d3d3;
+      font-size: 15px;
+      line-height: 27px;
+    }
+
+    .head a:visited {
+      color: #fff;
+    }
+
+    .head a:hover {
+      color: #cccccc;
+    }
+
+    .head span {}
+
+    .head a,
+    .head span {
+      float: left;
+      line-height: 27px;
+    }
+
+    .title {
+      width: 100%;
+      height: 84px;
+      background: #fff;
+    }
+
+    .titlw-center {
+      width: 1240px;
+      height: 84px;
+      margin: auto;
+      background: url(./image/29.png) no-repeat;
+      position: relative;
+    }
+
+    .word {
+      width: 390px;
+      height: 84px;
+      display: inline-block;
+      /*margin: auto;*/
+      position: absolute;
+      left: 350px;
+      line-height: 84px;
+      font-size: 17px;
+      color: #6f6f6f;
+    }
+
+    .word a:visited {
+      color: #6f6f6f;
+    }
+
+    .word a:hover {
+      color: #2ec7bb;
+    }
+
+    #tuijian:visited {
+      color: #2ec7bb;
+    }
+
+    .input {
+      width: 386px;
+      height: 84px;
+      float: right;
+    }
+
+    .kuang {
+      width: 232px;
+      height: 31px;
+      margin-top: 26px;
+      border: none;
+      outline-style: none;
+      padding-left: 5px;
+      background: url(./image/30.png);
+    }
+
+    .tupian {
+      width: 32px;
+      height: 31px;
+      display: inline-block;
+      position: relative;
+      top: 10px;
+      right: 9px;
+      background: url("./image/31.png");
+    }
+
+    .input span a:visited {
+      color: #6f6f6f;
+    }
+
+    .input span a:hover {
+      color: #2ec7bb;
+    }
+
+    .input span .zhuce:visited {
+      color: #2ec7bb;
+    }
+
+    .next-tupian {
+      width: 100%;
+      height: 440px;
+      border-top: 1px solid #fff;
+    }
+
+    .next-center {
+      width: 1240px;
+      height: 440px;
+      margin: auto;
+    }
+
+    .dongtai {
+      width: 1240px;
+      height: 400px;
+      background: url(./image/32.png);
+      margin: 20px auto;
+      position: relative;
+    }
+
+    .dis {
+      position: relative;
+      top: 165px;
+      display: none;
+    }
+
+    .dis1 {
+      position: absolute;
+      top: 165px;
+      right: 0px;
+      display: none;
+    }
+
+    .dongtai .dis2 {
+      display: block;
+    }
+
+    .ul-center {
+      width: 75px;
+      height: 8px;
+      position: absolute;
+      bottom: 18px;
+      left: 576px;
+      float: left;
+    }
+
+    .ul-center li {
+      width: 8px;
+      height: 8px;
+      background: #757575;
+      float: left;
+      margin-left: 16px;
+      border-radius: 50%;
+    }
+
+    #lii {
+      background: #fff;
+      border: 1px solid #c9c9c9;
+    }
+
+    .list {
+      width: 1240px;
+      height: 3100px;
+      margin: auto;
+    }
+
+    .list-word {
+      width: 925px;
+      height: 3100px;
+      display: inline-block;
+      /*border: 1px solid red;*/
+      background: #fff;
+    }
+
+    .word-1 {
+      width: 835px;
+      height: 300px;
+      margin: auto;
+      border-bottom: 1px solid #ececec;
+    }
+
+    .renwu {
+      width: 274px;
+      height: 206px;
+      margin-top: 45px;
+      margin-right: 30px;
+      float: left;
+      background: url(./image/36.png) no-repeat;
+    }
+
+
+    .renwu-jieshao {
+      width: 525px;
+      height: 147px;
+      float: left;
+      margin-top: 50px;
+    }
+
+    .title-renwu {
+      width: 525px;
+      height: 47px;
+      font-size: 21px;
+    }
+
+    .title-renwu:visited {
+      color: #5c5c5c;
+    }
+
+    h3 .fensi:visited {
+      color: #7c7c7c;
+    }
+
+    .renwu-jieshao a:hover {
+      color: #2ec7bb;
+    }
+
+    .renwu-jieshao p {
+      width: 525px;
+      height: 64px;
+      color: #5c5c5c;
+      font-size: 16px;
+      margin-top: 30px;
+    }
+
+    .renwu-jieshao h3 {
+      width: 525px;
+      height: 21px;
+      color: #7c7c7c;
+      font-size: 12px;
+      margin-top: 30px;
+    }
+
+    .renwu-jieshao p .quanwen:visited {
+      color: #2ec7bb;
+    }
+
+    .jingling {
+      width: 18px;
+      height: 19px;
+      float: right;
+      background: url(./image/37.1.png);
+    }
+
+    .jingling1 {
+      width: 202px;
+      height: 34px;
+      border: 1px solid #d8d8d8;
+      position: relative;
+      top: 31px;
+      right: 147px;
+      background: url(./image/38.png);
+      display: none;
+    }
+
+    .jingling .jingling2 {
+      display: block;
+    }
+
+    #tangsang:visited {
+      color: #ff0000;
+    }
+
+    #tangsang:hover {
+      color: #ff0000;
+    }
+
+    .renwu1 {
+      width: 274px;
+      height: 206px;
+      margin-top: 45px;
+      margin-right: 30px;
+      float: left;
+      background: url(./image/39.png) no-repeat;
+    }
+
+
+    .renwu2 {
+      width: 274px;
+      height: 206px;
+      margin-top: 45px;
+      margin-right: 30px;
+      float: left;
+      background: url(./image/40.png) no-repeat;
+    }
+
+    .renwu3 {
+      width: 274px;
+      height: 206px;
+      margin-top: 45px;
+      margin-right: 30px;
+      float: left;
+      background: url(./image/41.png) no-repeat;
+    }
+
+    .renwu4 {
+      width: 274px;
+      height: 206px;
+      margin-top: 45px;
+      margin-right: 30px;
+      float: left;
+      background: url(./image/42.png) no-repeat;
+    }
+
+    .renwu5 {
+      width: 274px;
+      height: 206px;
+      margin-top: 45px;
+      margin-right: 30px;
+      float: left;
+      background: url(./image/43.png) no-repeat;
+    }
+
+    .renwu6 {
+      width: 274px;
+      height: 206px;
+      margin-top: 45px;
+      margin-right: 30px;
+      float: left;
+      background: url(./image/44.png) no-repeat;
+    }
+
+    .renwu7 {
+      width: 274px;
+      height: 206px;
+      margin-top: 45px;
+      margin-right: 30px;
+      float: left;
+      background: url(./image/45.png) no-repeat;
+    }
+
+    .renwu8 {
+      width: 274px;
+      height: 206px;
+      margin-top: 45px;
+      margin-right: 30px;
+      float: left;
+      background: url(./image/46.png) no-repeat;
+    }
+
+    .renwu9 {
+      width: 274px;
+      height: 206px;
+      margin-top: 45px;
+      margin-right: 30px;
+      float: left;
+      background: url(./image/47.png) no-repeat;
+    }
+
+    .page {
+      width: 925px;
+      height: 32px;
+      text-align: center;
+      margin: 30px auto;
+      line-height: 32px;
+      font-size: 16px;
+    }
+
+    .page a {
+      margin-left: 10px;
+    }
+
+    .page a:visited {
+      color: #6f6f6f;
+    }
+
+    .page a:hover {
+      color: #2ec7bb;
+    }
+
+    .two-kuai {
+      width: 300px;
+      height: 2150px;
+      float: right;
+      background: #fff;
+      /*margin-top: 0px;*/
+      /*display: inline-block;*/
+
+    }
+
+    .two1 {
+      width: 300px;
+      height: 82px;
+      margin-top: 15px;
+    }
+
+    .fatie {
+      width: 272px;
+      height: 82px;
+      margin-left: 14px;
+      line-height: 82px;
+      display: inline-block;
+      text-align: center;
+      font-size: 34px;
+      color: #fff;
+      background: #2ec7bb;
+    }
+
+    .two-kuai .fatie:visited {
+      color: #fff;
+    }
+
+    .two2 {
+      width: 133px;
+      height: 102px;
+      display: inline-block;
+      margin-top: 15px;
+      margin-left: 15px;
+      background: url(./image/48.png);
+    }
+
+    .two3 {
+      width: 126px;
+      height: 45px;
+      margin-top: 15px;
+      margin-right: 13px;
+      text-align: center;
+      line-height: 45px;
+      font-size: 20px;
+      float: right;
+      border: 2px solid #2ec7bb;
+    }
+
+    .two4 {
+      width: 126px;
+      height: 45px;
+      display: inline-block;
+      margin-top: -51px;
+      margin-right: 13px;
+      text-align: center;
+      line-height: 45px;
+      font-size: 20px;
+      float: right;
+      border: 2px solid #2ec7bb;
+    }
+
+    .two-kuai a:visited {
+      color: #2ec7bb;
+    }
+
+    .two5 {
+      width: 272px;
+      height: 170px;
+      margin: 30px auto;
+    }
+
+    .dier {
+      width: 272px;
+      height: 27px;
+      font-size: 18px;
+      font-weight: 400;
+      color: #3c3c3c;
+      border-bottom: 1px solid #ececec;
+    }
+
+    .xiaotu a {
+      width: 130px;
+      height: 28px;
+      margin-top: 15px;
+      float: left;
+      line-height: 28px;
+
+    }
+
+    .xiaotu1 {
+      width: 130px;
+      height: 28px;
+      background: url(./image/49.png) no-repeat;
+    }
+    .xiaotu2 {
+      width:130px;
+      height:28px;
+      background: url(./image/50.png) no-repeat;
+    }
+    .xiaotu3 {
+      width:130px;
+      height:28px;
+      background: url(./image/51.png) no-repeat;
+    }
+    .xiaotu4 {
+      width:130px;
+      height:28px;
+      background: url(./image/52.png) no-repeat;
+    }
+    .xiaotu5 {
+      width:130px;
+      height:28px;
+      background: url(./image/53.png) no-repeat;
+    }
+    .xiaotu6 {
+      width:130px;
+      height:28px;
+      background: url(./image/54.png) no-repeat;
+    }
+    .two6 {
+      width:272px;
+      height:239px;
+      margin:30px auto;
+
+    }
+    .flash {
+      width:272px;
+      height:195px;
+      margin: 15px auto;
+      display: inline-block;
+      background: url(./image/55.png)
+    }
+    .two7 {
+      width:272px;
+      height:200px;
+      margin:30px auto;
+
+    }
+    .laodong {
+      width:264px;
+      height:148px;
+      margin:10px 4px;
+      display: inline-block;
+      background: url(./image/56.png);
+    }
+    .two8 {
+      width:272px;
+      height:370px;
+      margin:30px auto;
+    
+    }
+    .laji li {
+      font-size: 15px;
+      margin-top: 10px;
+    }
+    .laji li a:visited {
+      color:#6f6f6f;
+    }
+    .laji li a:hover {
+      color:#2ec7bb;
+    }
+    .two9 {
+      width:272px;
+      height:230px;
+      margin:30px auto;
+
+    }
+    .two9 div {
+      width:40px;
+      height:27px;
+      font-size: 12px;
+      float:right;
+      margin-right: 5px;
+      display: inline-block;
+    }
+    .wending-word {
+      width:272px;
+      height:130px;
+      color:#6f6f6f;
+      font-weight: 800;
+      font-size: 15px;
+      margin-top: 20px;
+      display: block;
+    }
+    .gongce-word {
+      width:272px;
+      height:130px;
+      color:#6f6f6f;
+      font-size: 15px;
+      margin-top: 20px;
+      display: none;
+    }
+    .two9 .gongce-word1 {
+      display: block;
+    }
+    .two9 .wending-word1 {
+      display: none;
+    }
+    .xiazai {
+      width:100px;
+      height:30px;
+      text-align: center;
+      line-height: 30px;
+      font-size: 15px;
+      background: #2ec7bb;
+      margin-left: 20px;
+      display: inline-block;
+
+    }
+    .two9 .xiazai:visited,
+    .two9 .shuaji:visited{
+      color:#fff;
+    }
+    .shuaji {
+      width:100px;
+      height:30px;
+      text-align: center;
+      line-height: 30px;
+      background: #c9c9c9;
+      margin-right: 20px;
+      float:right;
+      display: inline-block;
+
+    }
+    .two10 {
+      width:270px;
+      height:230px;
+      margin:30px auto;
+
+    }
+    .yonghu li {
+      width:48px;
+      height:48px;
+      float:left;
+      border-radius: 50%;
+      margin-left: 30px;
+      margin-top: 30px;
+      position: relative;
+    }
+    .yonghu li a {
+      width:60px;
+      height:20px;
+      text-align: center;
+      font-size: 13px;
+      position: absolute;
+      bottom:-20px;
+      left:-6px;
+    }
+    .yonghu li a:visited {
+      color:#6f6f6f;
+    }
+    .yonghu li a:hover {
+      color:#2ec7bb;
+    }
+    .yincang1 {
+      width:292px;
+      height:116px;
+      background: url(./image/63.png);
+      position: relative;
+      top:52px;
+      right:0px;
+      z-index: 100;
+      display: none;
+    }
+    .suo1 .yincang11 {
+      display: block;
+    }
+    .yincang2 {
+      width:292px;
+      height:116px;
+      background: url(./image/64.png);
+      position: relative;
+      top:52px;
+      right:0px;
+      z-index: 100;
+      display: none;
+    }
+    .suo2 .yincang22 {
+      display: block;
+    }
+    .yincang3 {
+      width:292px;
+      height:116px;
+      background: url(./image/65.png);
+      position: relative;
+      top:52px;
+      right:0px;
+      z-index: 100;
+      display: none;
+    }
+    .suo3 .yincang33 {
+      display: block;
+    }
+    .yincang4 {
+      width:292px;
+      height:116px;
+      background: url(./image/66.png);
+      position: relative;
+      top:52px;
+      right:0px;
+      z-index: 100;
+      display: none;
+    }
+    .suo4 .yincang44 {
+      display: block;
+    }
+    .yincang5 {
+      width:292px;
+      height:116px;
+      background: url(./image/67.png);
+      position: relative;
+      top:52px;
+      right:0px;
+      z-index: 100;
+      display: none;
+    }
+    .suo5 .yincang55 {
+      display: block;
+    }
+    .yincang6 {
+      width:292px;
+      height:116px;
+      background: url(./image/68.png);
+      position: relative;
+      top:52px;
+      right:0px;
+      z-index: 100;
+      display: none;
+    }
+    .suo6 .yincang66 {
+      display: block;
+    }
+    .two11 {
+      width:272px;
+      height:270px;
+      margin:30px auto;
+
+    }
+    .erwei {
+      width:231px;
+      height:229px;
+      margin:10px auto;
+      background: url(./image/69.png);
+    }
+  </style>
+</head>
+
+<body>
+  <div class="gg">
+    <div class="gg-img"></div>
+    <p>关闭</p>
+  </div>
+  <div class="head">
+    <div>
+      <a href="#">360官网&nbsp;</a>
+      <span>|</span>
+      <a href="#">&nbsp;360商城&nbsp;</a>
+      <span>|</span>
+      <a href="#">&nbsp;360手机官网&nbsp;</a>
+      <span>|</span>
+      <a href="#">&nbsp;社区客户端&nbsp;</a>
+    </div>
+  </div>
+  <div class="title">
+    <div class="titlw-center">
+      <div class="word">
+        <a href="#" id="tuijian">推荐</a>
+        <a href="#">论坛</a>
+        <a href="#">版块</a>
+        <a href="#">同城</a>
+        <a href="#">好奇者试用</a>
+        <a href="#">精彩活动</a>
+        <a href="#">专题</a>
+      </div>
+      <div class="input">
+        <input class="kuang"></input>
+        <div class="tupian"></div>
+        <span><a href="#">登录</a>&nbsp;<a href="#" class="zhuce">注册</a></span>
+      </div>
+    </div>
+  </div>
+  <div class="next-tupian">
+    <div class="next-center">
+      <div class="dongtai">
+        <img src="./image/33.png" class="dis">
+        <img src="./image/34.png" class="dis1">
+        <ul class="ul-center">
+          <li id="lii"></li>
+          <li></li>
+          <li></li>
+        </ul>
+      </div>
+    </div>
+  </div>
+  <div class="list">
+    <ul class="list-word">
+      <li class="word-1">
+        <a href="http://bbs.360.cn/thread-14939522-1-1.html" class="renwu"></a>
+        <div class="renwu-jieshao">
+          <a href="http://bbs.360.cn/thread-14939522-1-1.html" class="title-renwu">老周做客《焦点访谈》，网络安全攻防战该怎么打</a>
+          <p>近期央视《焦点访谈》栏目再度聚焦网络信息安全，并对国家层面的网络安全进行了解读，360公司董事长周鸿祎也应邀在节目中发表了自己的看法。 <a href="http://bbs.360.cn/thread-14939522-1-1.html" class="quanwen">全文》</a></p>
+          <h3><a href="http://bbs.360.cn/forum-5168-1.html" class="fensi">粉丝杂谈</a>&nbsp;2017-04-20&nbsp;|&nbsp;鸿雁<a href="#" class="jingling"><div class="jingling1"></div></a></h3>
+        </div>
+      </li>
+      <li class="word-1">
+        <a href="http://bbs.360.cn/thread-14936632-1-1.html" class="renwu1"></a>
+        <div class="renwu-jieshao">
+          <a href="http://bbs.360.cn/thread-14936632-1-1.html" class="title-renwu">从中专肄业生到怪才黑客，这个95后中国小伙......</a>
+          <p>4月16日，Hack in the Box安全会议,在荷兰阿姆斯特丹落下了帷幕，来自中国360互联网安全创新中心的“黑客”军团,共带来了5项前沿议题的演讲，其中来自360独角兽团队的不满20岁小黑客曾颖涛，赢得专家们赞赏，这也是这个欧洲顶级安全会议,迎来的最年轻演讲者。<a href="http://bbs.360.cn/thread-14936632-1-1.html" class="quanwen">全文》</a></p>
+          <h3><a href="http://bbs.360.cn/forum-5168-1.html" class="fensi">粉丝杂谈</a>&nbsp;2017-04-20&nbsp;|&nbsp;鸿雁<a href="#" class="jingling"><div class="jingling1"></div></a></h3>
+        </div>
+      </li>
+      <li class="word-1">
+        <a href="http://bbs.360.cn/thread-14934388-1-1.html" class="renwu2"></a>
+        <div class="renwu-jieshao">
+          <a href="http://bbs.360.cn/thread-14934388-1-1.html" class="title-renwu">《速度与激动8》里吊炸天的黑科技真实现了!</a>
+          <p>只要一提起《速度与激情》，就会想起让人直呼“好爽”的飙车，紧凑刺激的剧情，夺人眼球的豪车美女。当然还有那些记忆深刻的——神出鬼没、突破想象的：黑科技<a href="http://bbs.360.cn/thread-14934388-1-1.html" class="quanwen">全文》</a></p>
+          <h3><a href="http://bbs.360.cn/forum-2540-1.html" class="fensi">360动态</a>&nbsp;2017-04-20&nbsp;|&nbsp;飞机飞行<a href="#" class="jingling"><div class="jingling1"></div></a></h3>
+        </div>
+      </li>
+      <li class="word-1">
+        <a href="http://bbs.360.cn/thread-14934202-1-1.html" class="renwu3"></a>
+        <div class="renwu-jieshao">
+          <a href="http://bbs.360.cn/thread-14934202-1-1.html" class="title-renwu" id="tangsang">唐僧和女儿国国王闷闷不乐，竟是因为 ... ...</a>
+          <p>#唐僧被抓记# 唐长老怎么经常愁眉苦脸？女儿国国王又为何总闷闷不乐 能让他们畅快淋漓的还得靠……戳进了你就知道~~360产品四格漫画10th 一起来看！（本期依旧有奖）<a href="http://bbs.360.cn/thread-14934202-1-1.html" class="quanwen">全文》</a></p>
+          <h3><a href="http://bbs.360.cn/forum-5168-1.html" class="fensi">粉丝杂谈</a>&nbsp;2017-04-20&nbsp;|&nbsp;王光明<a href="#" class="jingling"><div class="jingling1"></div></a></h3>
+        </div>
+      </li>
+      <li class="word-1">
+        <a href="http://bbs.360.cn/thread-14930286-1-1.html" class="renwu4"></a>
+        <div class="renwu-jieshao">
+          <a href="http://bbs.360.cn/thread-14930286-1-1.html" class="title-renwu">【有妹子】山东职业学院360校园俱乐部带你领跑校园新生活</a>
+          <p>360校园俱乐部走进山东职业学院，现场超级火爆，超多萌妹子！各种游戏环节乐翻天！赶快来一起看看吧！<a href="http://bbs.360.cn/thread-14930286-1-1.html" class="quanwen">全文》</a></p>
+          <h3><a href="http://bbs.360.cn/forum-5169-1.html" class="fensi">360校园</a>&nbsp;2017-04-20&nbsp;|&nbsp;田正凯<a href="#" class="jingling"><div class="jingling1"></div></a></h3>
+        </div>
+      </li>
+      <li class="word-1">
+        <a href="http://bbs.360.cn/thread-14928318-1-1.html" class="renwu5"></a>
+        <div class="renwu-jieshao">
+          <a href="http://bbs.360.cn/thread-14928318-1-1.html" class="title-renwu">只有高大上的食堂算神马？配备这些的公司才是好公司！</a>
+          <p>又到了一年招聘热季。 按照惯例，我们总是要展示一下公司的软硬实力， 福利以及伙伴们的战斗力。 之前发过了食堂篇，早饭中饭晚饭下午茶以及各种好吃的。<a href="http://bbs.360.cn/thread-14928318-1-1.html" class="quanwen">全文》</a></p>
+          <h3><a href="http://bbs.360.cn/forum-5168-1.html" class="fensi">粉丝杂谈</a>&nbsp;2017-04-20&nbsp;|&nbsp;鸿雁<a href="#" class="jingling"><div class="jingling1"></div></a></h3>
+        </div>
+      </li>
+      <li class="word-1">
+        <a href="http://bbs.360.cn/thread-14926938-1-1.html" class="renwu6"></a>
+        <div class="renwu-jieshao">
+          <a href="http://bbs.360.cn/thread-14926938-1-1.html" class="title-renwu">最美四月，360济南校园俱乐部带你领跑校园新生活</a>
+          <p>你是人间四月天，360带你领跑校园新生活， 下午6点整，学院的社团指导老师宣布活动开始并欢迎济南大学360校园俱乐部作为新社团加入了社团大家庭。不出意外的，因为我们的活动因为奖品丰厚，工作人员漂亮帅气。成功的吸引到了众多的围观，很多同学参与进来。<a href="http://bbs.360.cn/thread-14926938-1-1.html" class="quanwen">全文》</a></p>
+          <h3><a href="http://bbs.360.cn/forum-5169-1.html" class="fensi">360校园</a>&nbsp;2017-04-20&nbsp;|&nbsp;free卡尔萨斯<a href="#" class="jingling"><div class="jingling1"></div></a></h3>
+        </div>
+      </li>
+      <li class="word-1">
+        <a href="http://bbs.360.cn/thread-14926318-1-1.html" class="renwu7"></a>
+        <div class="renwu-jieshao">
+          <a href="http://bbs.360.cn/thread-14926318-1-1.html" class="title-renwu">白百何出轨、冒充达康书记…… 这届骗子还真是拼了！</a>
+          <p>不管你有没有一颗八卦的心，今天，不知道某白姓女星出轨的爆料，一定是你没手机没电脑还没朋友。 据说画面满满的都是尴尬，小鲜肉在泳池边“异军突起”，白姓女星“指点江山”。<a href="http://bbs.360.cn/thread-14926318-1-1.html" class="quanwen">全文》</a></p>
+          <h3><a href="http://bbs.360.cn/forum-5168-1.html" class="fensi">粉丝杂谈</a>&nbsp;2017-04-20&nbsp;|&nbsp;鸿雁<a href="#" class="jingling"><div class="jingling1"></div></a></h3>
+        </div>
+      </li>
+      <li class="word-1">
+        <a href="http://bbs.360.cn/thread-14925845-1-1.html" class="renwu8"></a>
+        <div class="renwu-jieshao">
+          <a href="http://bbs.360.cn/thread-14925845-1-1.html" class="title-renwu">周鸿祎为什么安排女同事和特种兵对打？</a>
+          <p>老周在创业黑马的“创业实验室”第一期在3月份正式结业，最后一次实验室课堂上，老周与学员们交流分享了领导力、团队、创业者、企业模型以及竞争等五个话题。老周认为，勇气是领导力的核心。之所以要谈勇气，是因为领导力最早是从军队里出来的。<a href="http://bbs.360.cn/thread-14925845-1-1.html" class="quanwen">全文》</a></p>
+          <h3><a href="http://bbs.360.cn/forum-2540-1.html" class="fensi">360动态</a>&nbsp;2017-04-20&nbsp;|&nbsp;王光明<a href="#" class="jingling"><div class="jingling1"></div></a></h3>
+        </div>
+      </li>
+      <li class="word-1">
+        <a href="http://bbs.360.cn/thread-14925487-1-1.html" class="renwu9"></a>
+        <div class="renwu-jieshao">
+          <a href="http://bbs.360.cn/thread-14925487-1-1.html" class="title-renwu">360儿童手表SE 2 Plus实物拍摄 表带看起来很好吃</a>
+          <p>360儿童手表SE 2 Plus即将于4月18日发售，手表节目的UI和高端的5S版本看起来类似，表带采用糖果色系，粉色版本命名为珊瑚粉，表带质地看起来也与布丁类似。蓝色版本命名为松石蓝。<a href="http://bbs.360.cn/thread-14925487-1-1.html" class="quanwen">全文》</a></p>
+          <h3><a href="http://bbs.360.cn/forum-5168-1.html" class="fensi">粉丝杂谈</a>&nbsp;2017-04-20&nbsp;|&nbsp;鸿雁<a href="#" class="jingling"><div class="jingling1"></div></a></h3>
+        </div>
+      </li>
+      <div class="page">
+        <a href="#">1</a>
+        <a href="#">2</a>
+        <a href="#">3</a>
+        <a href="#">4</a>
+        <a href="#">5</a>
+        <a href="#">6</a>
+        <a href="#">7</a>
+        <a href="#">8</a>
+        <a href="#">9</a>
+        <a href="#">10</a>
+        <a href="#">11</a>
+        <a href="#">12</a>
+        <a href="#">13</a>
+        <a href="#">14</a>
+        <a href="#">15</a>
+        <a href="#">16</a>
+        <a href="#">17</a>
+        <a href="#">18</a>
+        <a href="#">19</a>
+        <a href="#">20</a>
+      </div>
+    </ul>
+    <div class="two-kuai">
+      <div class="two1">
+        <a href="#" class="fatie">发帖</a>
+      </div>
+      <div class="two2"></div>
+      <a href="#" class="two3">签到</a>
+      <a href="#" class="two4">抽奖</a>
+      <div class="two5">
+        <h4 class="dier">版块推荐</h4>
+        <div class="xiaotu">
+            <a href="#" class="xiaotu1"></a>
+            <a href="#" class="xiaotu2"></a>
+            <a href="#" class="xiaotu3"></a>
+            <a href="#" class="xiaotu4"></a>
+            <a href="#" class="xiaotu5"></a>
+            <a href="#" class="xiaotu6"></a>
+          </ul>
+        </div>
+      </div>
+      <div class="two6">
+          <h4 class="dier">360手机N5发布会全程实录</h4>
+          <a href="#" class="flash"></a>
+      </div>
+      <div class="two7">
+          <h4 class="dier">最新活动</h4>
+          <a href="#" class="laodong"></a>
+      </div>
+      <div class="two8">
+          <h4 class="dier">热门推荐</h4>
+          <ul class="laji">
+            <li><a href="#">唐僧和女儿国国王闷闷不乐，竟是因为 ... .</a></li>
+            <li><a href="#">厉害了word 360！《速度与激动8》里吊炸天</a></li>
+            <li><a href="#">【有妹子】山东职业学院360校园俱乐部带你</a></li>
+            <li><a href="#">【360的名义】只有高大上的食堂算神马？配</a></li>
+            <li><a href="#">【有美女】最美四月，360济南校园俱乐部带</a></li>
+            <li><a href="#">白百何出轨、冒充达康书记…… 这届骗子还</a></li>
+            <li><a href="#">周鸿祎为什么安排女同事和特种兵对打？</a></li>
+            <li><a href="#">360儿童手表SE 2 Plus实物拍摄 表带看起来</a></li>
+        </ul>
+      </div>
+      <div class="two9">
+          <h4 class="dier">360 OS版本
+            <div><a class="gongce">公测版</a></div>
+            <div><a class="wending">稳定版</a></div>　　　
+          </h4>
+          <p class="wending-word">360手机N4S V050<br><br>更新时间：2017年2月7日<br><br>更新推荐：新增魔球功能，优化相机功耗占用，私密系统找回密码流程等</p>
+          <h1 class="gongce-word">旗舰版018<br><br>更新时间：2017年1月23日<br><br>更新推荐：蓝牙的待机功耗，锁屏防误触模式，财产系统的界面绘制等</h1>
+          <a href="#" class="xiazai">下载ROM</a>
+          <a href="#" class="shuaji">刷机教程</a>
+      </div>
+      <div class="two10">
+          <h4 class="dier">明星用户</h4>
+          <ul class="yonghu">
+            <li style="background:url(./image/57.jpg)" class="suo1">
+              <div class="yincang1"></div><a href="#">andytxg</a></li>
+            <li style="background:url(./image/58.jpg)" class="suo2"><div class="yincang2"></div><a href="#">ZZR</a></li>
+            <li style="background:url(./image/59.png)" class="suo3"><div class="yincang3"></div><a href="#">散闲游人</a></li>
+            <li style="background:url(./image/60.jpg)" class="suo4"><div class="yincang4"></div><a href="#">jandy</a></li>
+            <li style="background:url(./image/61.jpg)" class="suo5"><div class="yincang5"></div><a href="#">闻新者</a></li>
+            <li style="background:url(./image/62.jpg)" class="suo6"><div class="yincang6"></div><a href="#">不满格</a></li>
+          </ul>
+      </div>
+      <div class="two11">
+          <h4 class="dier">360社区客户端下载</h4>
+          <div class="erwei"></div>
+      </div>
+    </div>
+
+
+    <script src="../ECMAScript/jquery/jquery-3.0.0.min.js"></script>
+    <script>
+      $(".dongtai").hover(function() {
+        $(this).find("img").addClass("dis2");
+      }, function() {
+        $(this).find("img").removeClass("dis2");
+      });
+      $(".gg p").click(function() {
+        $(this).parent().addClass("gg1");
+      });
+      $(".jingling").hover(function() {
+        $(this).find("div").addClass("jingling2");
+        $(this).css("background", "url(./image/37.png)");
+      }, function() {
+        $(this).find("div").removeClass("jingling2");
+        $(this).css("background", "url(./image/37.1.png)");
+      });
+      $(".gongce").click(function(){
+        $(".two9 p").addClass("wending-word1");
+        $(".two9 h1").addClass("gongce-word1");
+        $(".gongce").css("color","#2ec7bb");
+        $(".wending").css("color","#6f6f6f");
+      });
+      $(".wending").click(function(){
+        $(".two9 p").removeClass("wending-word1");
+        $(".two9 h1").removeClass("gongce-word1");
+        $(".wending").css("color","#2ec7bb");
+        $(".gongce").css("color","#6f6f6f");
+      });
+      $(".suo1").hover(function(){
+        $(this).find("div").addClass("yincang11");
+      },function(){
+        $(this).find("div").removeClass("yincang11");
+      });
+      $(".suo2").hover(function(){
+        $(this).find("div").addClass("yincang22");
+      },function(){
+        $(this).find("div").removeClass("yincang22");
+      });
+      $(".suo3").hover(function(){
+        $(this).find("div").addClass("yincang33");
+      },function(){
+        $(this).find("div").removeClass("yincang33");
+      });
+      $(".suo4").hover(function(){
+        $(this).find("div").addClass("yincang44");
+      },function(){
+        $(this).find("div").removeClass("yincang44");
+      });
+      $(".suo5").hover(function(){
+        $(this).find("div").addClass("yincang55");
+      },function(){
+        $(this).find("div").removeClass("yincang55");
+      });
+      $(".suo6").hover(function(){
+        $(this).find("div").addClass("yincang66");
+      },function(){
+        $(this).find("div").removeClass("yincang66");
+      });
+    </script>
+</body>
+
+</html>
+>

@@ -1,0 +1,101 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <title>Document</title>
+  <style>
+    * {
+      margin: 0;
+      padding: 0;
+    }
+
+    .stu {
+      width: 500px;
+      margin: auto;
+      background: 1px solid blue;
+      border-collapse: collapse;
+      text-align: center;
+    }
+
+    .stu th,
+    .stu td {
+      border: 1px solid blue;
+      height: 50px;
+    }
+
+    .f {
+      width: 200px;
+      height: 200px;
+      border: 1px solid red;
+    }
+  </style>
+</head>
+
+<body>
+  <table class="stu">
+    <caption>
+      <h1>学生信息</h1></caption>
+    <tr>
+      <th>姓名</th>
+      <th>年龄</th>
+      <th>性别</th>
+    </tr>
+    <tr>
+      <th>1000</th>
+      <th>20</th>
+      <th>男</th>
+    </tr>
+    <tr>
+      <th>1000</th>
+      <th>20</th>
+      <th>男</th>
+    </tr>
+    <tr>
+      <th>1000</th>
+      <th>20</th>
+      <th>男</th>
+    </tr>
+    <tr>
+      <th>1000</th>
+      <th>20</th>
+      <th>男</th>
+    </tr>
+  </table>
+
+
+  <div class="f"></div>
+
+  <script src="../jquery/jquery-3.0.0.min.js"></script>
+  <script type="text/javascript">
+    //保存默认的颜色
+    var rawBackColor = $(".stu tr:eq(0)").css("backgroundColor");
+
+    $(".stu tr").hover(function() {
+      //鼠标进入
+      $(this).css("background", "#ed1941");
+
+    }, function() {
+      //鼠标离开
+
+      //恢复默认背景
+      $(this).css("background", rawBackColor);
+    });
+
+
+
+    $(".stu tr").mouseover(function() {
+      console.log("mouseover .....");
+    }).mouseout(function() {
+      console.log("mouseout  .....");
+    });
+
+
+
+    $(".f").contextmenu(function() {
+      alert("鼠标右键单击。。。");
+    });
+  </script>
+</body>
+
+</html>
