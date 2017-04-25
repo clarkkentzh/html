@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Document</title>
+</head>
+<body>
+
+
+  <form action="#" method="get">
+    <!-- value是默认的值,readonly是只读,maxlength是输入字符长度限制-->
+    <h3>用户名:<input type="text" name="username" value="赵宏" readonly></h3>
+    <h3>密码:<input type="password" name="passwd" maxlength="6"></h3>
+
+    <h3>
+      <!-- 单选name值必须一样 -->
+      性别: <input type="radio" value="0" name="gender">男
+           <input type="radio" value="1" name="gender">女
+    </h3>
+
+    <h3>
+      <!-- checked是默认的位置 -->
+      爱好: <input type="checkbox" name="read" checked>读书
+           <input type="checkbox" name="sport">运动
+           <input type="checkbox" name="listen">听歌
+    </h3>
+
+     <!-- multiple是多选设置 -->
+    <h3>隐藏区域:<input type="hidden" name="hidden"></h3>
+    <h3>文件区域:<input type="file" name="file" accept="image/*" multiple></h3>
+
+    <!-- <button>提交信息</button> -->
+    <!-- <input type="button" value="普通按钮"> -->
+    <!-- <input type="image" src="../../css盒子/image/12.png"> -->
+
+    <!-- disabled是设置不能点击 -->
+    <input disabled type="submit" value="提交按钮">
+    <input type="reset" value="重置按钮">
+
+  </form>
+</body>
+</html>

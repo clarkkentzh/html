@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Document</title>
+  <style>
+  * {
+    margin:0;
+    padding:0;
+  }
+  .dianji {
+    width:400px;
+    margin: 100px auto;
+  }
+  </style>
+</head>
+<body>
+  <div class="dianji">
+    <button id="btn">点击发送get请求</button>
+  </div>
+  <script src="js/jquery-3.0.0.min.js"></script>
+  <script type="text/javascript">
+
+    // 兼容低版本ie浏览器的代码,对于现代浏览器可以省略部分代码
+  function createXHR() {
+      if (typeof XMLHttpRequest != "undefined") {
+          return new XMLHttpRequest();
+      } else if (typeof ActiveXObject != "undefined") {
+          if (typeof arguments.callee.activeXString != "string") {
+              var versions = ["MSXML2.XMLHttp.6.0", "MSXML2.XMLHttp.3.0",
+                      "MSXML2.XMLHttp"
+                  ],
+                  i, len;
+              for (i = 0, len = versions.length; i < len; i++) {
+                  try {
+                      new ActiveXObject(versions[i]);
+                      arguments.callee.activeXString = versions[i];
+                      break;
+                  } catch (ex) {
+                      //跳过
+                  }
+              }
+          }
+          return new ActiveXObject(arguments.callee.activeXString);
+      } else {
+          throw new Error("No XHR object available.");
+      }
+  }
+  //拼接get方法传递的数据
+  function addURLParam(url, name, value) {
+      url += url.indexOf('?') == -1 ? '?' : '&';
+
+      //encodeURIComponent编码
+      url += encodeURIComponent(name) + "=" + encodeURIComponent(value);
+      return url;
+  }
+
+  var btn = document.querySelector("#btn");
+  btn.onclick = function(){
+    var url = addURLParam("http://127.0.0.1:8000/index","name","zhaohong");
+    url = addURLParam(url,"age",24);
+
+    var xhr = createXHR();
+
+    xhr.onreadystatechange = function(){
+      if(xhr.readyState == 4) {
+        console.log(xhr.response);
+      }
+    };
+
+    xhr.open("get",url,true);
+    xhr.send(null);
+  };
+
+  </script>
+</body>
+</html>

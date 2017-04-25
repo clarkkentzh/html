@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Document</title>
+  <style>
+  * {
+    margin:0;
+    padding:0;
+  }
+  #usermesg {
+    width:600px;
+    position: relative;
+    margin:50px auto;
+  }
+  .file-1 {
+    width:224px;
+    height:87px;
+    background: url(./images/1.png);
+    position: absolute;
+    top:0px;
+    left:0px;
+  }
+
+  </style>
+</head>
+<body>
+  <form id="usermesg" action="#">
+      <input type="file" name="file" id="file-name" multiple>
+      <div class="file-1"></div>
+  </form>
+  <script src="../jquery/jquery-3.0.0.min.js"></script>
+  <script>
+
+  $(".file-1").click(function(){
+    $("#file-name").click();
+  });
+
+
+
+  </script>
+</body>
+</html>
