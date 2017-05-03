@@ -8,57 +8,96 @@
     margin:0;
     padding:0;
   }
-  .f {
-    width:400px;
-    height:50px;
-    position: relative;
-    margin:50px auto;
+  * {
+    margin: 0;
+    padding: 0;
+  }
+
+  .clearfix::after,
+  .clearfix::before {
+    content: "";
+    display: block;
+    overflow: hidden;
+    height: 0;
+    line-height: 0;
+    visibility: hidden;
+    clear: both;
+  }
+
+  ul {
+    list-style:  none;
+  }
+
+  .nav {
+    padding: 50px;
+
+    perspective: 1000px;
+
+    /* 父元素中都设置一下，方便3d效果查看*/
     transform-style: preserve-3d;
   }
-  .f1 {
-    width:80px;
-    height:50px;
-    position: absolute;
-    top:0px;
-    left:0px;
-    background: gray;
-    text-align: center;
+
+
+  .nav li {
+    float: left;
+    width: 120px;
+    height: 50px;
     line-height: 50px;
-    font-size: 20px;
-    transition: all 1s ease-in;
-    transform:translateZ(25px) rotateX(0deg);
-    /*transform-origin: left bottom;*/
+    text-align: center;
+    position: relative;
+
+    /* 父元素中都设置一下，方便3d效果查看*/
+    transform-style: preserve-3d;
+    transition: all 0.5s linear;
   }
-  .f2 {
-    width:80px;
-    height:50px;
+
+  .nav li span {
     position: absolute;
-    top:0px;
-    left:0px;
+    width: 100%;
+    height: 100%;
+    top: 0;
+    left: 0;
+  }
+
+  .nav li span:nth-child(1){
+    background: pink;
+
+    /* translateZ()便于调整距离，用于构成立体*/
+    transform: translateZ(25px);
+  }
+
+
+  .nav li span:nth-child(2){
+    transform: rotateX(90deg) translateZ(25px);
     background: yellow;
-    text-align: center;
-    line-height: 50px;
-    font-size: 20px;
-    transition: all 1s ease-in;
-    transform: translateZ(25px) rotateX(-90deg);
-    /*transform-origin: left top;*/
   }
-  .f:hover .f1{
-    transform:translateZ(25px) rotateX(-90deg);
-  }
-  /*.f1:hover .f2 {
-    transform: rotateX(0deg);
-  }*/
-  .f:hover .f2 {
-    transform: translateZ(25px) rotateX(0deg);
-    /*z-index: 100;*/
+
+
+  .nav li:hover {
+    transform: rotateX(-90deg);
   }
   </style>
 </head>
 <body>
-  <div class="f">
-    <div class="f1">首页一</div>
-    <div class="f2">首页二</div>
-  </div>
+  <ul class="nav clearfix">
+    <li>
+      <span>导航1</span>
+      <span>导航1</span>
+    </li>
+    <li>
+      <span>导航2</span>
+      <span>导航2</span>
+    </li>
+
+    <li>
+      <span>导航3</span>
+      <span>导航3</span>
+    </li>
+    <li>
+      <span>导航4</span>
+      <span>导航4</span>
+    </li>
+
+  </ul>
 </body>
 </html>
