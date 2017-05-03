@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>汽车</title>
+  <style>
+  * {
+    margin:0;
+    padding:0;
+  }
+  .car {
+    width:200px;
+    height:80px;
+    margin-top: 500px;
+    margin-left: 200px;
+    background: url(./image1/car.jpg);
+    background-size: 200px 80px;
+
+
+    animation:car 2s forwards 1s;
+  }
+
+
+  @keyframes car {
+    0% {}
+    15% {
+      /*注意skew的值设置*/
+      transform: translate(0, -50%) skew(30deg);
+    }
+    90% {
+      transform: translate(900px, -50%) skew(-30deg);
+    }
+    100% {
+      transform: translate(900px, -50%) skew(0deg);
+    }
+  }
+  </style>
+</head>
+<body>
+  <div class="car"></div>
+</body>
+</html>

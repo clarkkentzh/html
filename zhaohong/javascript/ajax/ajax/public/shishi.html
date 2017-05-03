@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Document</title>
+</head>
+<body>
+  <form action="" method="get" id="forms">
+  <input type="text" name="username">
+  <input type="password" name="passwd">
+  <button id="btn">点击get请求</button>
+  </form>
+  <script src="js/jquery-3.0.0.min.js"></script>
+  <script>
+  $(function(){
+    $("#forms").submit(function(){
+
+      var names = $("input[name=username]").val();
+      var passwds = $("input[name=passwd]").val();
+      $.ajax({
+        url: "http://127.0.0.1:8000/index",
+        method:"get",
+        data:{
+          names,
+          passwds
+        }
+      });
+
+
+    });
+
+
+
+
+
+
+
+
+  });
+  </script>
+</body>
+</html>

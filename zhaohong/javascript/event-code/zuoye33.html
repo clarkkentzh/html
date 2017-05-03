@@ -1,0 +1,153 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Document</title>
+  <style>
+  * {
+    margin:o;
+    padding:0;
+  }
+  .one {
+    width:1226px;
+    height:460px;
+    margin:50px auto;
+    position: relative;
+    /*background: url(./image/0.jpg);*/
+  }
+  .dianji {
+    width:100px;
+    height:10px;
+    z-index: 90;
+    position: absolute;
+    bottom:50px;
+    right:100px;
+  }
+  .dianji button{
+    width:8px;
+    height:8px;
+    border:2px solid #fff;
+    border-radius: 10px;
+    float: left;
+    outline-style: none;
+    margin-left: 10px;
+  }
+  .dianji button:hover{
+    background: #ff6700;
+    cursor: pointer;
+  }
+  #tu0 {
+    /*display: block;*/
+    display: none;
+  }
+  #tu1 {
+    display: none;
+  }
+  #tu2 {
+    display: none;
+  }
+  #tu3 {
+    display: none;
+  }
+  #tu4 {
+    display: none;
+  }
+  </style>
+</head>
+<body>
+  <div class="one">
+    <div class="two">
+      <img src="./image/0.jpg" id="tu0" value="0">
+    </div>
+    <!-- <img src="./images/5.jpg" id="tu2"> -->
+    <!-- <img src="./images/6.jpg" id="tu3">
+    <img src="./images/7.jpg" id="tu4">
+    <img src="./images/8.jpg" id="tu5"> -->
+    <div class="dianji">
+      <button value="0" class="btn1" checked></button>
+      <button value="1" class="btn2"></button>
+      <button value="2" class="btn3"></button>
+      <button value="3" class="btn4"></button>
+      <button value="4" class="btn5"></button>
+    </div>
+
+  </div>
+  <script src="../jquery/jquery-3.0.0.min.js"></script>
+  <script>
+  $(function(){
+
+    // $("button").click(function(){
+    //   $(".one").css("background","url(./images/"+ $(this).val() + ".jpg)");
+    // });
+
+    for (var i = 0;i < 5;i++){
+      $("button").eq(i).focus(i,function(event){
+        $(".two").html("<img src='./image/" + event.data +".jpg' id='tu"+ event.data +"'>");
+        $(".two img").fadeIn(1000);
+      });
+      // .blur(function(){
+      //   $(".two img").fadeOut(500);
+      // });
+    }
+    $(".one").css("background","url(./image/0.jpg)");
+    $("button").click(function(){
+      console.log($(this).val);
+      $(".one").css("background","url(./image/" + $(this).val + ".jpg)");
+    });
+    // $(".btn1").focus(function(){
+    //   $(".two").html("<img src='./image/1.jpg' id='tu0'>");
+    //   $("#tu1").fadeIn(500);
+    // }).blur(function(){
+    //   $("#tu1").fadeOut(500);
+    // });
+    // $(".btn2").focus(function(){
+    //   $(".two").html("<img src='./image/2.jpg' id='tu1'>");
+    //   $("#tu2").fadeIn(500);
+    // }).blur(function(){
+    //   $("#tu2").fadeOut(200);
+    // });
+    // $(".btn3").focus(function(){
+    //   $(".two").html("<img src='./image/3.jpg' id='tu2'>");
+    //   $("#tu3").fadeIn(1000);
+    // }).blur(function(){
+    //   $("#tu3").fadeOut(200);
+    // });
+    // $(".btn4").focus(function(){
+    //   $(".two").html("<img src='./image/4.jpg' id='tu3'>");
+    //   $("#tu4").fadeIn(1000);
+    // }).blur(function(){
+    //   $("#tu4").fadeOut(200);
+    // });
+    // $(".btn5").focus(function(){
+    //   $(".two").html("<img src='./image/5.jpg' id='tu4'>");
+    //   $("#tu5").fadeIn(1000);
+    // }).blur(function(){
+    //   $("#tu5").fadeOut(200);
+    // });
+
+
+    $("button").eq(0).css("background","#ff6700");
+    $("button").click(function(){
+      var values = $(this).val();
+      console.log(values);
+      $(this).css("background","#ff6700");
+      $(this).siblings("button").css("background","#f5f5f5");
+    });
+
+
+
+
+
+    // $(".dianji button").focus(function(){
+    //   $(this).css("background","#ff6700");
+    // }).blur(function(){
+    //   $(this).css("background","#f5f5f5");
+    // });
+
+
+  });
+
+  </script>
+
+</body>
+</html>

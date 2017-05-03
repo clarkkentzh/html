@@ -1,0 +1,114 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>扑克</title>
+  <style>
+  * {
+    margin:0;
+    padding:0;
+  }
+  body {
+    background: blue;
+  }
+
+  img {
+    position: absolute;
+    top:200px;
+    left:500px;
+    transform: translate(0px,0px) scale(0.5,0.5) rotate(0deg);
+    transition: all 1s ease-in;
+  }
+  body:hover img:nth-child(1) {
+    transform: translate(54px,-116px) scale(0.5,0.5) rotate(300deg);
+  }
+  body:hover img:nth-child(2) {
+    transform: translate(-18px,-215px) scale(0.5,0.5) rotate(240deg);
+  }
+  body:hover img:nth-child(3) {
+    transform: translate(-134px,-208px) scale(0.5,0.5) rotate(180deg);
+  }
+  body:hover img:nth-child(4) {
+    transform: translate(-191px,-90px) scale(0.5,0.5) rotate(120deg);
+  }
+  body:hover img:nth-child(5) {
+    transform: translate(-122px,7px) scale(0.5,0.5) rotate(60deg);
+  }
+
+  /*.f1 {
+
+    transition: all 1s ease-in ;
+    position: absolute;
+    top:295px;
+    left:461px;
+    z-index: 90;
+    display: none;
+    transform: scale(0.5,0.5) rotate(60deg);
+  }
+  .f2 {
+
+    transition: all 1s ease-in 1;
+    position: absolute;
+    top:173px;
+    left:399px;
+    z-index: 80;
+    display: none;
+    transform: scale(0.5,0.5) rotate(120deg);
+  }
+  .f3 {
+
+    transition: all 1s ease-in 2;
+    position: absolute;
+    top:58px;
+    left:470px;
+    z-index: 70;
+    display: none;
+    transform: scale(0.5,0.5) rotate(180deg);
+  }
+  .f4 {
+    transform: scale(0.5,0.5);
+    transition: all 1s ease-in 3;
+    position: absolute;
+    top:62px;
+    left:607px;
+    z-index: 60;
+    display: none;
+    transform: scale(0.5,0.5) rotate(240deg);
+  }
+  .f5 {
+
+    transition: all 1s ease-in 4;
+    position: absolute;
+    top:180px;
+    left:673px;
+    z-index: 50;
+    display: none;
+    transform: scale(0.5,0.5) rotate(300deg);
+  }
+  img .f:hover  {
+
+    transform: scale(0.5,0.5) rotate(0deg);
+
+  }*/
+  </style>
+</head>
+<body>
+  <img src="./image/pk2.png" class="f">
+  <img src="./image/pk2.png" class="f1">
+  <img src="./image/pk2.png" class="f2">
+  <img src="./image/pk2.png" class="f3">
+  <img src="./image/pk2.png" class="f4">
+  <img src="./image/pk2.png" class="f5">
+</body>
+<script src="./js/jquery-3.0.0.min.js"></script>
+<script>
+  // $(function(){
+  //   $(".f").hover(function(){
+  //     $(this).siblings("img").show();
+  //   },function(){
+  //     $(this).siblings("img").hide();
+  //   });
+  // });
+
+</script>
+</html>

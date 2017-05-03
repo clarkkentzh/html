@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>学生信息表</title>
+  <style>
+  * {
+    margin:0;
+    padding:0;
+  }
+  .stu {
+    width:500px;
+    height:500px;
+    border:1px solid gray;
+    border-collapse: collapse;
+    margin:50px auto;
+    box-shadow: 0 0 5px 5px  green;
+  }
+  .stu th,
+  .stu td {
+    border:1px solid gray;
+    text-align: center;
+  }
+  </style>
+</head>
+<body>
+  <table class="stu">
+    <tr>
+      <th>学生</th>
+      <th>性别</th>
+      <th>年龄</th>
+    </tr>
+    <tr>
+      <td>张三</td>
+      <td>男</td>
+      <td>20</td>
+    </tr>
+    <tr>
+      <td>张三</td>
+      <td>男</td>
+      <td>20</td>
+    </tr>
+    <tr>
+      <td>张三</td>
+      <td>男</td>
+      <td>20</td>
+    </tr>
+    <tr>
+      <td>张三</td>
+      <td>男</td>
+      <td>20</td>
+    </tr>
+  </table>
+  <script src="./jquery/jquery-3.0.0.min.js"></script>
+  <script>
+  var BackColor = $(".stu tr:eq(0)").css("backgroundColor");
+  $(".stu tr").hover(function(){
+    $(this).css("background","yellow");
+  },function(){
+    $(this).css("background",BackColor);
+  })
+  // $(".stu").hover(function(){
+  //   $(this).css("box-shadow", '0 0 5px 3px　green');
+  // });
+
+  </script>
+
+
+</body>
+</html>

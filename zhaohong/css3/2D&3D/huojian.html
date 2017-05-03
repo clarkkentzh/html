@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>火箭</title>
+  <style>
+  * {
+    margin:0;
+    padding:0;
+  }
+  body {
+    background: blue;
+  }
+  .huo {
+    width:101px;
+    height:190px;
+    display: inline-block;
+    background: url(./image/rocket.png);
+    transform:translate(0px,1000px) rotate(45deg);
+    transition: all 0.5s ease-in;
+  }
+  body:hover .huo {
+    transform: translate(500px, 400px) rotate(45deg);
+  }
+  </style>
+</head>
+<body>
+  <div class="huo"></div>
+  <script src="./js/jquery-3.0.0.min.js"></script>
+  <script>
+  // $(function(){
+  //
+  //   $("body").hover(function(){
+  //     $(this).find(".huo").css("transform","translate(500px -400px)");
+  //     $(this).css("background","yellow");
+  //   },function(){
+  //     $(this).find(".huo").css("transform","translate(-500px 400px)");
+  //   });
+  // });
+
+  </script>
+</body>
+</html>

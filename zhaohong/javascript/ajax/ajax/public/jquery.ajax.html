@@ -1,0 +1,114 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Document</title>
+</head>
+<body>
+  <button id="btn-1">点击发送get请求</button>
+  <button id="btn-2">点击发送post请求</button>
+  <script src="js/jquery-3.0.0.min.js"></script>
+  <script>
+  // 保证代码在文档解析完成后执行.
+  $(function(){
+
+    /*********************get方法************************/
+     $("#btn-1").click(function(){
+      //  $.ajax({
+      //    url: "http://127.0.0.1:8000/index",
+      //    method:"get",
+      //    data: {
+      //      name:"zhaohong",
+      //      age:24
+      //    },
+      //    error:function(jqXHR,textStatus,errorThrown){
+      //      console.log(jqXHR);
+      //      console.log(textStatus);
+      //      console.log(errorThrown);
+      //    },
+      //    success:function(data,textStatus,jqXHR){
+      //      console.log(data);
+      //      console.log(textStatus);       //打印出来都是先出来成功，再是完成的内容
+      //      console.log(jqXHR);
+      //    },
+      //    complete: function(jqXHR,textStatus){
+      //      console.log(textStatus);
+      //    }
+      //  });
+
+      $.ajax({
+        url:"http://127.0.0.1:8000/index",
+        method:"get",
+        data:{
+          name:"zhaohong",
+          gender:"man"
+        }
+      }).done(function(data,textStatus,jqXHR){
+        console.log(data);
+      }).fail(function(jqXHR,textStatus,errorThrown){
+        console.log(textStatus);
+      });
+
+
+     });
+
+
+    /*******************post方法*******************************/
+    $("#btn-2").click(function(){
+      // $.ajax({
+      //   url:"http://127.0.0.1:8000/index",
+      //   method: "post",
+      //   data:{
+      //     name:"zhaohong",
+      //     age:24
+      //   },
+      //   error: function(jqXHR, textStatus, errorThrown) {
+      //       console.log(jqXHR);
+      //       console.log(textStatus);
+      //       console.log(errorThrown);
+      //   },
+      //   complete: function(jqXHR, textStatus) {
+      //       console.log("complete: " + textStatus);
+      //   },
+      //   success: function(data, textStatus, jqXHR) {
+      //       console.log("success: " + textStatus);
+      //       console.log(data);
+      //   }
+      // });
+
+      $.ajax({
+        url:"http://127.0.0.1:8000/index",
+        method:"post",
+        data:{
+          name:"lisi",
+          age: 90
+        }
+      }).then(function(data,textStatus,jqXHR){
+        console.log(data);
+      },function(jqXHR,textStatus,errorThrown){
+        console.log(textStatus);
+      });
+
+
+
+
+
+
+    });
+
+
+
+
+
+
+
+
+
+
+
+
+
+  });
+  </script>
+</body>
+</html>

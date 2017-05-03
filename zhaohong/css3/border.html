@@ -1,0 +1,311 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Document</title>
+  <style>
+  * {
+    margin:0;
+    padding:0;
+  }
+  h1 {
+    width:1000px;
+    height:500px;
+    margin:50px auto;
+  }
+  div {
+    width:100px;
+    height:100px;
+    display: inline-block;
+  }
+  .f {
+    margin:9px;
+    border: 1px solid red;
+    border-radius: 100px;
+  }
+  .bei {
+    width:120px;
+    height:120px;
+    font-size: 20px;
+    float: left;
+    margin-right:20px;
+    margin-bottom: 20px;
+    position: relative;
+    background: #fff;
+    box-shadow: 0px 0px 3px 5px gray;
+    transition: all 1s linear;
+  }
+  span {
+    width:120px;
+    height:120px;
+    position: absolute;
+    top:0px;
+    left:0px;
+    line-height: 120px;
+    text-align: center;
+    z-index: 100;
+    opacity: 0.6;
+    display: none;
+    color:#fff;
+  }
+  .f1 {
+    margin:9px;
+    border: 1px solid red;
+    border-radius: 50px 50px 0px 0px;
+  }
+  .f2 {
+    width:100px;
+    height:50px;
+    margin:35px 9px;
+    border: 1px solid red;
+    border-radius: 50px 50px 0px 0px;
+  }
+  .f3 {
+    margin:9px;
+    border: 1px solid red;
+    border-radius: 50px 0px 0px 0px;
+  }
+  .f4 {
+    width:50px;
+    height:50px;
+    margin:35px;
+    border: 1px solid red;
+    border-radius: 50px 0px 0px 0px;
+  }
+  .f5 {
+    width:100px;
+    height:50px;
+    margin:35px 9px;
+    border: 1px solid red;
+    border-radius: 100px/50px;
+  }
+  .f6 {
+    width:50px;
+    height:100px;
+    margin:9px 35px;
+    border: 1px solid red;
+    border-radius: 50px/100px;
+  }
+  .f7 {
+     width:100px;
+     height:25px;
+     margin:45px 9px;
+     border: 1px solid red;
+     border-radius: 100px 100px 0px 0px/50px 50px 0px 0px;
+  }
+  /*.t {
+    margin:9px;
+    border-radius: 100px;
+    background: red;
+  }*/
+  .t {
+    width:20px;
+    height:20px;
+    margin:10px;
+    border:40px solid red;
+    border-radius: 100px;
+    background: white;
+  }
+  .t2 {
+    margin:9px;
+    border-radius: 20px;
+    background: red;
+  }
+  .t3 {
+    width:20px;
+    height:20px;
+    margin:40px;
+    /*border-radius: 20px;*/
+    background: white;
+  }
+  .t4 {
+    margin:9px;
+    border-radius: 50px 0px 50px 0px;
+    background: red;
+  }
+  .t5 {
+    width:20px;
+    height:20px;
+    border-radius: 10px 0px 10px 0px;
+    margin:40px;
+    background: white;
+  }
+  .t6 {
+    margin:9px;
+    width:0px;
+    height:0px;
+    border-top:50px solid red;
+    border-right: 50px solid blue;
+    border-bottom: 50px solid yellow;
+    border-left: 50px solid green;
+  }
+  .t7 {
+
+    margin:9px;
+    width:0px;
+    height:0px;
+    border-top:50px solid red;
+    border-right: 50px solid white;
+    border-bottom: 50px solid yellow;
+    border-left: 50px solid green;
+  }
+  .t8 {
+
+    margin:9px;
+    width:0px;
+    height:0px;
+    border-radius: 50px;
+    border-top:50px solid red;
+    border-right: 50px solid white;
+    border-bottom: 50px solid red;
+    border-left: 50px solid red;
+  }
+  .t9 {
+    margin:9px;
+    width:100px;
+    height:0px;
+    border-radius: 50px;
+    border-top: 50px solid red;
+    border-bottom: 50px solid green;
+  }
+  .taiji {
+    width:100px;
+    height:0px;
+    margin:10px;
+    border-top: 50px solid red;
+    border-bottom: 50px solid green;
+    border-radius: 50px;
+  }
+  .taiji div {
+    width:50px;
+    height:50px;
+    border-radius: 50px;
+  }
+  .taiji1 {
+    position: absolute;
+    top:34px;
+    left:10px;
+    background: green;
+  }
+  .taiji2 {
+    position: absolute;
+    top:34px;
+    right:10px;
+    background: red;
+  }
+  .taiji1 .yanjing1 {
+    width:10px;
+    height:10px;
+    display: inline-block;
+    border-radius: 10px;
+    background: red;
+    margin:20px;
+  }
+  .taiji2 .yanjing2 {
+    width:10px;
+    height:10px;
+    display: inline-block;
+    border-radius: 10px;
+    background: green;
+    margin:20px;
+  }
+  .liaotian {
+    width:100px;
+    height:50px;
+    margin:35px 10px;
+    background: red;
+    border-radius: 10px;
+    position: relative;
+  }
+  .sanjiao {
+    width:0px;
+    height:0px;
+    border-top: 5px solid white;
+    border-right: 5px solid red;
+    border-bottom: 5px solid white;
+    border-left: 5px solid white;
+    position: relative;
+    left:-8px;
+  }
+  </style>
+</head>
+<body>
+<h1>
+  <div class="bei"><span>圆形</span><div class="f"></div></div>
+  <div class="bei"><span>圆形</span><div class="f1"></div></div>
+  <div class="bei"><span>圆形</span><div class="f2"></div></div>
+  <div class="bei"><span>圆形</span><div class="f3"></div></div>
+  <div class="bei"><span>圆形</span><div class="f4"></div></div>
+  <div class="bei"><span>圆形</span><div class="f5"></div></div>
+  <div class="bei"><span>圆形</span><div class="f6"></div></div>
+  <div class="bei"><span>圆形</span><div class="f7"></div></div>
+  <div class="bei"><span>圆形</span>
+    <div class="t">
+      <!-- <div class="t1"></div> -->
+    </div>
+  </div>
+  <div class="bei"><span>圆形</span>
+    <div class="t2">
+      <div class="t3"></div>
+    </div>
+  </div>
+  <div class="bei"><span>圆形</span>
+    <div class="t4">
+      <div class="t5"></div>
+    </div>
+  </div>
+  <div class="bei"><span>圆形</span>
+    <div class="t6"></div>
+  </div>
+  <div class="bei"><span>圆形</span>
+    <div class="t7"></div>
+  </div>
+  <div class="bei"><span>圆形</span>
+    <div class="t8"></div>
+  </div>
+  <div class="bei"><span>圆形</span>
+    <div class="t9"></div>
+  </div>
+  <div class="bei"><span>圆形</span>
+    <div class="taiji">
+      <div class="taiji1">
+        <div class="yanjing1"></div>
+      </div>
+      <div class="taiji2">
+        <div class="yanjing2"></div>
+      </div>
+    </div>
+  </div>
+  <div class="bei"><span>圆形</span>
+    <div class="liaotian">
+      <div class="sanjiao"></div>
+    </div>
+  </div>
+
+
+
+
+ <script src="./jquery/jquery-3.0.0.min.js"></script>
+<script>
+  $(function(){
+    var beijing = $(".bei").css("background");
+    $(".bei").hover(function(){
+      $(this).find("span").css("background","gray");
+      $(this).find("span").fadeIn(400);
+    },function(){
+      $(this).find("span").css('background',beijing);
+      $(this).find("span").fadeOut(400);
+    });
+
+
+
+
+
+
+  });
+
+</script>
+
+</h1>
+</body>
+</html>

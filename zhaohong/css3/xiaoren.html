@@ -1,0 +1,106 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Document</title>
+  <style>
+  * {
+    margin:0;
+    padding:0;
+  }
+  div {
+    display: inline-block;
+  }
+  .one {
+    width:1000px;
+    height:600px;
+    border:1px solid gray;
+    padding:1px;
+    margin:50px 300px;
+    background: gray;
+  }
+  .head {
+    width:240px;
+    height:100px;
+    margin-top:80px;
+    margin-left: 380px;
+    background: yellow;
+    position: relative;
+    border-radius: 100px 100px 0px 0px;
+  }
+  .yanjing1,.yanjing2 {
+    width:20px;
+    height:20px;
+    border-radius: 20px;
+    background: red;
+  }
+  .yanjing1 {
+    position: absolute;
+    left:60px;
+    top:40px;
+  }
+  .yanjing2 {
+    position: absolute;
+    right:60px;
+    top:40px;
+  }
+  .bodys {
+    width:240px;
+    height:200px;
+    border-radius: 0px 0px 48px 48px;
+    background: yellow;
+    margin-top:10px;
+    /*margin-left: px;*/
+  }
+  .hand-right {
+    width:48px;
+    height:160px;
+    background: red;
+    position: relative;
+    top:-41px;
+    border-radius: 48px;
+  }
+  .hand-left {
+    width:48px;
+    height:160px;
+    background: red;
+    position: relative;
+    top:-41px;
+    margin-left: 323px;
+    border-radius: 48px;
+  }
+  .foot-left {
+    width:48px;
+    height:80px;
+    background: red;
+    margin-left: 428px;
+    position: relative;
+    top:-4px;
+    border-radius: 0px 0px 48px 48px;
+  }
+  .foot-right {
+    width:48px;
+    height:80px;
+    background: red;
+    margin-left: 43px;
+    position: relative;
+    top:-4px;
+    border-radius: 0px 0px 48px 48px;
+  }
+  </style>
+</head>
+<body>
+  <div class="one">
+    <div class="head">
+      <div class="yanjing1"></div>
+      <div class="yanjing2"></div>
+    </div>
+    <br>
+    <div class="hand-left"></div>
+    <div class="bodys"></div>
+    <div class="hand-right"></div>
+    <div class="foot-left"></div>
+    <div class="foot-right"></div>
+  </div>
+</body>
+</html>

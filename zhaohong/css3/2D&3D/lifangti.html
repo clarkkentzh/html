@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>立方体</title>
+  <style>
+  * {
+    margin:0;
+    padding:0;
+  }
+  body {
+    background: lightblue;
+  }
+  .f {
+    width:200px;
+    height:200px;
+    margin:200px auto;
+    position: relative;
+    transform-style: preserve-3d;
+    transition: all 1s ease-in;
+    transform: translate(0px,0px) rotateX(-30deg) rotateY(-60deg);
+  }
+  .f > div {
+    width:200px;
+    height:200px;
+    position: absolute;
+    top:0px;
+    left:0px;
+    text-align: center;
+    line-height: 200px;
+    font-size: 50px;
+    opacity: 0.5;
+  }
+  .f div:nth-child(1){
+    background: blue;
+    transform: translateZ(100px);
+  }
+  .f div:nth-child(2){
+    background: red;
+    transform: translateZ(-100px);
+  }
+  .f div:nth-child(3){
+    background: yellow;
+    transform: rotateY(-90deg) translateZ(100px);
+  }
+  .f div:nth-child(4){
+    background: purple;
+    transform: rotateY(90deg) translateZ(100px);
+  }
+  .f div:nth-child(5){
+    background: pink;
+    transform: rotateX(90deg) translateZ(100px);
+  }
+  .f div:nth-child(6){
+    background: green;
+    transform: rotateX(-90deg) translateZ(100px);
+  }
+  .f:hover {
+    transform: translate(-250px,200px) rotateX(80deg) rotateY(50deg);
+  }
+  </style>
+</head>
+<body>
+  <div class="f">
+    <div>font</div>
+    <div>back</div>
+    <div>left</div>
+    <div>right</div>
+    <div>top</div>
+    <div>bottom</div>
+  </div>
+</body>
+</html>

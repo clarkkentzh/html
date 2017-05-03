@@ -1,0 +1,386 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>京东</title>
+  <style>
+  * {
+    margin:0;
+    padding:0;
+  }
+  body {
+    background: #fff;
+  }
+  a {
+    text-decoration: none;
+  }
+  .head {
+    width:100%;
+    height:80px;
+  }
+  .head-center {
+    width:990px;
+    height:80px;
+    margin:auto;
+    position: relative;
+  }
+  .logo {
+    width:300px;
+    height:60px;
+    float: left;
+    margin-top: 10px;
+    position: relative;
+  }
+  .logo-tu {
+    width:160px;
+    height:50px;
+    display: inline-block;
+    background: url(./image/jd.png) 0px 0px;
+  }
+  .logo span {
+    font-size: 30px;
+    color:#666;
+    text-align: center;
+    display: inline-block;
+    position: absolute;
+    top:10px;
+    right:0px;
+  }
+  .logo-last {
+    display: inline-block;
+    color:#999;
+    font-size: 15px;
+    position: absolute;
+    top:52px;
+    right:0px;
+  }
+  .logo-last-tu {
+    width:18px;
+    height:14px;
+    display: inline-block;
+    background: url(./image/1.png);
+  }
+  .logo-last:hover {
+    color:#e4393c;
+    text-decoration: underline;
+  }
+  .center {
+    width:100%;
+    height:475px;
+    background:#e93854;
+  }
+  .center-center {
+    width:990px;
+    height:475px;
+    margin:auto;
+    background: url(./image/2.jpg);
+  }
+  .center-right {
+    width:346px;
+    height:362px;
+    float:right;
+    background: #fff;
+    margin-top:40px;
+    border:1px solid red;
+  }
+  .saoma {
+    width:173px;
+    font-size: 18px;
+    height:54px;
+    display: inline-block;
+    text-align: center;
+    border-bottom: 1px solid #f4f4f4;
+  }
+  .saoma a {
+    width:172px;
+    display: inline-block;
+    margin-top: 18px;
+    border-right: 1px solid #f4f4f4;
+  }
+  .saoma a:visited {
+    color:#666;
+  }
+  .saoma a:hover {
+    color:#e4393c;
+  }
+  .zhanghu {
+    width:172px;
+    height:54px;
+    float: right;
+    text-align: center;
+    border-bottom: 1px solid #f4f4f4;
+  }
+  .zhanghu a {
+    width:172px;
+    display: inline-block;
+    margin-top: 18px;
+  }
+  .zhanghu a:visited{
+    color:#e4393c;
+  }
+  .form-div {
+    width:306px;
+    height:194px;
+    display: inline-block;
+    margin-top: 33px;
+    margin-left: 20px;
+    margin-bottom: 25px;
+
+  }
+  .userdiv {
+    width:306px;
+    height:38px;
+    position: relative;
+    border:1px solid #bdbdbd;
+    margin-bottom: 20px;
+  }
+  .jingling {
+    width:39px;
+    height:38px;
+    display: inline-block;
+    background: url(./image/3.png);
+  }
+  .userdiv input {
+    width:254px;
+    font-size: 14px;
+    float: right;
+    border: none;
+    outline-style: none;
+    padding:10px 0 10px 10px;
+  }
+  .jingling1 {
+    width:39px;
+    height:38px;
+    display: inline-block;
+    background: url(./image/3.png) 72px 0px;
+  }
+  .wangji {
+    font-size: 14px;
+    float: right;
+    margin-bottom: 20px;
+  }
+  .wangji:visited {
+    color:#666;
+  }
+  .wangji:hover {
+    color:#e4393c;
+    text-decoration: underline;
+  }
+  .denglu {
+    width:304px;
+    height:31px;
+    border:1px solid #e85356;
+    font-size: 20px;
+    text-align: center;
+    line-height: 31px;
+    background: #e4393c;
+    color:#fff;
+    outline-style: none;
+    display: inline-block;
+  }
+  .last {
+    width:306px;
+    height:50px;
+    padding-left: 20px;
+    padding-right: 20px;
+    border-top: 1px solid #bdbdbd;
+  }
+  .last-center {
+    width:306px;
+    height:20px;
+    color:#bdbdbd;
+    line-height: 20px;
+    margin-top: 15px;
+  }
+  .qq-a div {
+    width:19px;
+    height:18px;
+    display: inline-block;
+    position: relative;
+    top:3px;
+    background: url(./image/4.png) 0px 0px ;
+  }
+  .weixin div {
+    width:19px;
+    height:18px;
+    display: inline-block;
+    background: url(./image/4.png) 20px 0px;
+    position: relative;
+    top:3px;
+  }
+  .qq-a:visited,
+  .weixin:visited {
+    color:#666;
+  }
+  .qq-a:hover,
+  .weixin:hover {
+    color:#e4393c;
+    text-decoration: underline;
+  }
+  .last-right {
+    float:right;
+  }
+  .last-right div {
+    width:16px;
+    height:16px;
+    display: inline-block;
+    position: relative;
+    top:3px;
+    background: url(./image/3.png) -104px -75px;
+  }
+  .last-right:visited {
+    color:#e4393c;
+  }
+  .last-right:hover {
+    text-decoration: underline;
+  }
+  .bottom {
+    width:990px;
+    height:90px;
+    font-size: 12px;
+    color:#666;
+    text-align: center;
+    margin:20px auto;
+  }
+  .bottom a:visited {
+    color:#666;
+  }
+  .bottom a:hover {
+    color:#e4393c;
+    text-decoration: underline;
+  }
+  #error-1 {
+    color: red;
+    font-size: 16px;
+    display: none;
+    position: absolute;
+    top:-21px;
+    left:0px;
+  }
+  .jinggao {
+    width:16px;
+    height:16px;
+    display: inline-block;
+    background: url(./image/3.png) -104px -48px;
+  }
+  </style>
+</head>
+<body>
+  <div class="head">
+    <div class="head-center">
+      <div class="logo">
+        <a href="#" class="logo-tu"></a>
+        <span>欢迎登录</span>
+      </div>
+      <a href="#" class="logo-last">
+        <div class="logo-last-tu"></div>
+        登录页面，调查问卷
+      </a>
+    </div>
+  </div>
+  <div class="center">
+    <div class="center-center">
+      <div class="center-right">
+        <div class="saoma"><a href="#">扫码登录</a></div>
+        <div class="zhanghu"><a href="#">账户登录</a></div>
+        <div class="form-div">
+          <form action="#" id="formti" method="get">
+            <div class="userdiv">
+              <div class="jingling"></div>
+              <input type="text" name="username" placeholder="邮箱/用户名/已验证手机"><span id="error-1"><div class="jinggao"></div>用户名不能为空</span>
+            </div>
+            <div class="userdiv">
+              <div class="jingling1"></div>
+              <input type="password" name="passwd" placeholder="密码">
+            </div>
+            <a href="#" class="wangji">忘记密码</a>
+            <button  class="denglu">登录</button>
+          </form>
+        </div>
+        <div class="last">
+          <div class="last-center">
+            <a href="#" class="qq-a"><div></div> QQ </a>|
+            <a href="#" class="weixin"><div></div> 微信 </a>
+            <a href="#" class="last-right"><div></div> 立即注册</a>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+  <div class="bottom">
+    <a href="#">关于我们 </a>|
+    <a href="#"> 联系我们 </a>|
+    <a href="#"> 人才招聘 </a>|
+    <a href="#"> 商家入驻 </a>|
+    <a href="#"> 广告服务 </a>|
+    <a href="#"> 手机京东 </a>|
+    <a href="#"> 友情链接 </a>|
+    <a href="#"> 销售联盟 </a>|
+    <a href="#"> 京东社区 </a>|
+    <a href="#"> 京东公益 </a>|
+    <a href="#"> English Site</a>
+    <br><br>
+    <span>Copyright © 2004-2017  京东JD.com 版权所有</span>
+
+  </div>
+<script src="./js/jquery-3.0.0.min.js"></script>
+<script>
+function createXHR() {
+    if (typeof XMLHttpRequest != "undefined") {
+        return new XMLHttpRequest();
+    } else if (typeof ActiveXObject != "undefined") {
+        if (typeof arguments.callee.activeXString != "string") {
+            var versions = ["MSXML2.XMLHttp.6.0", "MSXML2.XMLHttp.3.0",
+                    "MSXML2.XMLHttp"
+                ],
+                i, len;
+            for (i = 0, len = versions.length; i < len; i++) {
+                try {
+                    new ActiveXObject(versions[i]);
+                    arguments.callee.activeXString = versions[i];
+                    break;
+                } catch (ex) {
+                    //跳过
+                }
+            }
+        }
+        return new ActiveXObject(arguments.callee.activeXString);
+    } else {
+        throw new Error("No XHR object available.");
+    }
+}
+//拼接get方法传递的数据
+function addURLParam(url, name, value) {
+    url += url.indexOf('?') == -1 ? '?' : '&';
+
+    //encodeURIComponent编码
+    url += encodeURIComponent(name) + "=" + encodeURIComponent(value);
+    return url;
+}
+
+$("#formti").submit(function(){
+
+  var names = $("#formti input[name=username]").val();
+  var passwords = $("#formti input[name=passwd]").val();
+  var url = addURLParam("http://127.0.0.1:8000/index",names,passwords);
+
+  var xhr = createXHR();
+
+  xhr.onreadystatechange = function(){
+    if(xhr.readyState == 4) {
+      console.log(xhr.response);
+    }
+  };
+
+  xhr.open("get",url,true);
+  xhr.send(null);
+
+     if (names == ""){
+     	 $("#error-1").show();
+     return false;
+   　}　
+});
+</script>
+
+</body>
+</html>
