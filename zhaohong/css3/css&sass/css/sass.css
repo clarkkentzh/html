@@ -1,0 +1,25 @@
+@import url(../css/test1.css);
+h2 {
+  background: yellow; }
+
+h1 {
+  font-size: 50px;
+  color: purple; }
+
+.class-one {
+  border-top: 1px solid red; }
+
+.class-top {
+  color: blue; }
+
+.class-two {
+  font-size: 12px;
+  color: green; }
+
+.class-three {
+  font-size: 15px; }
+
+.class-four {
+  font-size: 40px; }
+
+/*# sourceMappingURL=sass.css.map */

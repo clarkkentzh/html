@@ -1,0 +1,7 @@
+{
+"version": 3,
+"mappings": "AAMA,UAAW;EACV,SAAS,EAAE,IAAc;EACzB,KAAK,EAAE,KAAiB;;AAGzB,UAAW;EACV,KAAK,EAAE,KAAiB",
+"sources": ["../scss/sass8.scss"],
+"names": [],
+"file": "sass8.css"
+}

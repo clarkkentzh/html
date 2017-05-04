@@ -1,0 +1,43 @@
+
+@import "./sass2.scss";
+@import "../css/test1.css";
+$size:50px;
+$color:purple;
+
+h1 {
+  font-size: $size;
+  color:$color;
+}
+
+
+$borderDir:top;
+
+.class-one {
+  // border-$borderDir:1px solid red;
+  border-#{$borderDir}:1px solid red;
+}
+.class-#{$borderDir} {
+  color:blue;
+}
+
+
+//list
+$px:12px 50px 30px 90px;
+$colors:red yellow pink green;
+$pxs:30px 50px,15px 32px;
+
+
+.class-two {
+  font-size: nth($px,1);
+  color:nth($colors,4);
+}
+.class-three {
+  font-size:nth(nth($pxs,2),1);
+}
+
+
+//map
+$heading:(h4:32px,h5:40px,h6:20px);
+.class-four {
+  font-size: map-get($heading,h5);
+}

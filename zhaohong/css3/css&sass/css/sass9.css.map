@@ -1,0 +1,7 @@
+{
+"version": 3,
+"mappings": "AAGA,UAAW;EAET,SAAS,EAAE,IAAI;EACf,KAAK,EAAE,MAAM;EAcb,MAAM,EAAE,KAAK",
+"sources": ["../scss/sass9.scss"],
+"names": [],
+"file": "sass9.css"
+}
