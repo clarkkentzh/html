@@ -81,7 +81,7 @@
     // });
 
     for (var i = 0;i < 5;i++){
-      $("button").eq(i).focus(i,function(event){
+      $(".dianji").eq(i).focus(i,function(event){
         $(".two").html("<img src='./image/" + event.data +".jpg' id='tu"+ event.data +"'>");
         $(".two img").fadeIn(1000);
       });
