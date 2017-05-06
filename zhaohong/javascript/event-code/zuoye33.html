@@ -37,8 +37,8 @@
     cursor: pointer;
   }
   #tu0 {
-    /*display: block;*/
-    display: none;
+
+    display: block;
   }
   #tu1 {
     display: none;
@@ -57,14 +57,14 @@
 <body>
   <div class="one">
     <div class="two">
-      <img src="./image/0.jpg" id="tu0" value="0">
+      <img src="./image/0.jpg" id="tu0">
     </div>
     <!-- <img src="./images/5.jpg" id="tu2"> -->
     <!-- <img src="./images/6.jpg" id="tu3">
     <img src="./images/7.jpg" id="tu4">
     <img src="./images/8.jpg" id="tu5"> -->
     <div class="dianji">
-      <button value="0" class="btn1" checked></button>
+      <button value="0" class="btn1" checked="checked"></button>
       <button value="1" class="btn2"></button>
       <button value="2" class="btn3"></button>
       <button value="3" class="btn4"></button>
@@ -79,21 +79,22 @@
     // $("button").click(function(){
     //   $(".one").css("background","url(./images/"+ $(this).val() + ".jpg)");
     // });
+        console.log($(".two").html());
 
     for (var i = 0;i < 5;i++){
-      $(".dianji").eq(i).focus(i,function(event){
+      $(".dianji button").eq(i).focus(i,function(event){
         $(".two").html("<img src='./image/" + event.data +".jpg' id='tu"+ event.data +"'>");
-        $(".two img").fadeIn(1000);
+        $(".two img").fadeIn(500);
+      }).blur(function(){
+        $(".two img").fadeOut(1000);
       });
-      // .blur(function(){
-      //   $(".two img").fadeOut(500);
-      // });
     }
-    $(".one").css("background","url(./image/0.jpg)");
-    $("button").click(function(){
-      console.log($(this).val);
-      $(".one").css("background","url(./image/" + $(this).val + ".jpg)");
-    });
+
+    // $(".one").css("background","url(./image/0.jpg)");
+    // $("button").click(function(){
+    //   console.log($(this).val());
+    //   $(".one").css("background","url(./image/" + $(this).val() + ".jpg)");
+    // });
     // $(".btn1").focus(function(){
     //   $(".two").html("<img src='./image/1.jpg' id='tu0'>");
     //   $("#tu1").fadeIn(500);
@@ -127,9 +128,9 @@
 
 
     $("button").eq(0).css("background","#ff6700");
-    $("button").click(function(){
-      var values = $(this).val();
-      console.log(values);
+    $("button").focus(function(){
+      // var values = $(this).val();
+      // console.log(values);
       $(this).css("background","#ff6700");
       $(this).siblings("button").css("background","#f5f5f5");
     });
