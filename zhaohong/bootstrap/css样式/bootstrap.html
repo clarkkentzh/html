@@ -1,0 +1,160 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0,maximum-scale=1, user-scalable=no">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+
+  <link rel="stylesheet" type="text/css" href="./bootstrap/css/bootstrap.min.css">
+  <script src="./js/jquery-3.0.0.js"></script>
+  <script src="./bootstrap/js/bootstrap.min.js"></script>
+  <title>bootstrap入门</title>
+
+  <!--  针对ie浏览器设置的,html5shiv, respond 用于让低版本的ie浏览器支持html5的新元素和媒体查询-->
+  <!--[if lt IE 9]>
+  <script src="./js/html5shiv.min.js"></script>
+  <script src="./js/1.4.2/respond.min.js"></script>
+  <![endif]-->
+
+
+  <style type="text/css">
+
+  body {
+    height: 2000px;
+  }
+
+  .container-fluid .row > div {
+    border: 1px solid red;
+    height: 50px;
+  }
+  </style>
+
+
+</head>
+<body>
+  <div class="container-fluid">
+
+    <div class="row">
+      <div class="col-md-1">.col-md-1</div>
+      <div class="col-md-1">.col-md-1</div>
+      <div class="col-md-1">.col-md-1</div>
+      <div class="col-md-1">.col-md-1</div>
+      <div class="col-md-1">.col-md-1</div>
+      <div class="col-md-1">.col-md-1</div>
+      <div class="col-md-1">.col-md-1</div>
+      <div class="col-md-1">.col-md-1</div>
+      <div class="col-md-1">.col-md-1</div>
+      <div class="col-md-1">.col-md-1</div>
+      <div class="col-md-1">.col-md-1</div>
+      <div class="col-md-1">.col-md-1</div>
+    </div>
+
+    <div class="row">
+      <div class="col-md-8">.col-md-8</div>
+      <div class="col-md-4">.col-md-4</div>
+    </div>
+
+    <div class="row">
+      <div class="col-md-4">.col-md-4</div>
+      <div class="col-md-4">.col-md-4</div>
+      <div class="col-md-4">.col-md-4</div>
+    </div>
+
+    <div class="row">
+      <div class="col-md-6">.col-md-6</div>
+      <div class="col-md-6">.col-md-6</div>
+      <div class="col-md-6">.col-md-6</div>
+    </div>
+
+
+    <div class="row">
+      <div class="col-md-6 col-sm-4 col-xs-12">中等屏幕66小44最小１２</div>
+      <div class="col-md-6 col-sm-4 col-xs-12">中等屏幕66小44最小１２</div>
+    </div>
+
+    <div class="row">
+      <div class="col-md-6 col-lg-8">中等66超大88</div>
+      <div class="col-md-6 col-lg-8">中等66超大88</div>
+    </div>
+
+
+    <div class="row">
+      <div class="col-xs-6">最小66  变大也是一样的</div>
+      <div class="col-xs-6">最小66  变大也是一样的</div>
+    </div>
+
+
+
+    <!-- 偏移 offset意思就是向右平移相应的列数-->
+    <div class="row">
+      <!-- 移动的加本省超过１２则从自身扣除，移动12元素消失,大于12无效果 -->
+      <div class="col-md-4 col-md-offset-10">.col-md-4</div>
+      <!-- 如果移动的加有内容的超过12则自动跳到下一行 -->
+      <div class="col-md-4 col-md-offset-5">右移了5列 5+4+4>12 所以跳到下一行</div>
+    </div>
+    <div class="row">
+      <div class="col-md-3 col-md-offset-4">.col-md-3 .col-md-offset-3</div>
+      <div class="col-md-3 col-md-offset-3">.col-md-3 .col-md-offset-3</div>
+    </div>
+    <div class="row">
+      <div class="col-md-6 col-md-offset-3">.col-md-6 .col-md-offset-3</div>
+    </div>
+
+
+    <!-- 嵌套 -->
+    <div class="row">
+      <div class="col-md-6">
+        <div class="row">
+          <div class="col-md-6 col-sm-6 col-xs-6">111</div>
+          <div class="col-md-6 col-sm-6 col-xs-6">1111111</div>
+        </div>
+      </div>
+      <div class="col-md-6">2222222</div>
+    </div>
+
+
+    <!-- 显示，隐藏 -->
+
+    <div class="row">
+      <div class="col-md-6 col-sm-4 col-xs-12">111</div>
+      <div class="col-md-6 col-sm-4 col-xs-12">222</div>
+
+      <!--  hidden隐藏 -->
+      <div class="hidden-md col-sm-4 col-xs-12">被隐藏的</div>
+      <!-- <div class="visible-xs-12 visible-sm-4  hidden-md col-sm-4 col-xs-12">333</div> -->
+    </div>
+
+
+    <div class="show">show</div>
+    <div class="hidden">hidden</div>
+  </div>
+
+
+  <!--　mark 标签高亮显示 -->
+  <mark>极速快感开奖号</mark>
+
+  <!-- .lead类让段落突出显示 -->
+  <p class="lead">
+    Vivamus sagittis lacus vel augue laoreet rutrum faucibus dolor auctor. Duis mollis。
+  </p>
+
+  <!-- 文本对齐方式 -->
+  <p class="text-left">Left aligned text.</p>
+  <p class="text-center">Center aligned text.</p>
+  <p class="text-right">Right aligned text.</p>
+  <p class="text-justify">Justified text.</p>
+  <p class="text-nowrap">No wrap text.</p>
+
+
+  <!-- 代码块，适合写代码，背景阴影 -->
+  <pre>
+    skdjkdjhkkdhjkdjhkjdkhjdkhjkfdhjk
+    dkjhkdjhkjfdkjkfjhkfjhkjfhk
+    kdjhk kjdkh kj      fjhkfjk   kjfk
+    var a = 10;
+    console.log(a);
+  </pre>
+
+
+</body>
+</html>

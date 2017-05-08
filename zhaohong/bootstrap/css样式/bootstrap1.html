@@ -1,0 +1,139 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0,maximum-scale=1, user-scalable=no">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+
+    <link rel="stylesheet" type="text/css" href="./bootstrap/css/bootstrap.min.css">
+  <title>Document</title>
+
+  <!--  针对ie浏览器设置的,html5shiv, respond 用于让低版本的ie浏览器支持html5的新元素和媒体查询-->
+  <!--[if lt IE 9]>
+  <script src="./js/html5shiv.min.js"></script>
+  <script src="./js/1.4.2/respond.min.js"></script>
+  <![endif]-->
+
+  <style type="text/css">
+
+   body {
+    height: 2000px;
+   }
+
+  .mytable {
+      width: 1000px;
+  }
+
+
+  .myimage .row > div {
+    padding-top: 15px;
+    padding-bottom: 15px;
+  }
+  </style>
+</head>
+<body>
+  <!-- .table-responsive类需要包裹表格，为表格创建响应式，在小于768屏幕时增加水平滚动条，但是表格必须设置宽度 -->
+  <div class="table-responsive">
+
+    <!-- .table-striped 为表格设置一条类似斑马线的阴影,基于:nth-child选择器  -->
+    <!-- .table-bordered 边框 -->
+    <!-- .table-hover 设置每行鼠标放在上面事件效果　.text-center　设置文本居中 -->
+      <table class="table table-striped table-bordered table-hover text-center mytable">
+          <tr>
+              <th>name</th>
+              <th>age</th>
+              <th>score</th>
+              <th>score</th>
+          </tr>
+          <tr>
+              <td>lisi</td>
+              <td>20</td>
+              <td>120</td>
+              <td>120</td>
+          </tr>
+          <!-- 行或者单元格内设置的因素颜色，背景颜色 -->
+          <tr class="danger">
+              <td>lisi</td>
+              <td>20</td>
+              <td>120</td>
+              <td>120</td>
+          </tr>
+          <tr>
+              <td>lisi</td>
+              <td>20</td>
+              <td>120</td>
+              <td>120</td>
+          </tr>
+          <tr>
+              <td>lisi</td>
+              <td>20</td>
+              <td>120</td>
+              <td>120</td>
+          </tr>
+      </table>
+  </div>
+
+  <div class="container">
+      <div class="row">
+          <div class="col-md-10 col-sm-12  col-xs-12">
+            <!-- form元素可以添加.form-inline这个类，称为内联表单,设置左对齐，只适用在屏幕大于768时 -->
+              <form class="form-inline">
+                  <div class="form-group">
+    <!-- label标签的for和input的id是对应的，那么点击label就可以操作input了 -->
+                      <label for="exampleInputEmail1">Email address</label>
+                      <input type="email" class="form-control" id="exampleInputEmail1" placeholder="Email">
+                  </div>
+                  <div class="form-group">
+                      <label for="exampleInputPassword1">Password</label>
+                      <input type="password" class="form-control" id="exampleInputPassword1" placeholder="Password">
+                  </div>
+                  <div class="form-group">
+                      <label for="exampleInputFile">File input</label>
+                      <input type="file" id="exampleInputFile">
+                      <p class="help-block">Example block-level help text here.</p>
+                  </div>
+                  <div class="checkbox">
+                      <label>
+                          <input type="checkbox"> Check me out
+                      </label>
+                  </div>
+                  <select class="form-control">
+                      <option>1</option>
+                      <option>2</option>
+                      <option>3</option>
+                      <option>4</option>
+                      <option>5</option>
+                  </select>
+                  <button type="submit" class="btn btn-default">Submit</button>
+              </form>
+          </div>
+      </div>
+  </div>
+
+   <!-- 添加了btn和btn-danger这些类都变成了按钮类型 -->
+   <a href="" class="btn btn-danger">jinagao</a>
+   <input type="text" value="aaa" class="btn btn-success">
+    <button type="button" class="btn btn-warning">（警告）Warning</button>
+
+    <div class="container myimage">
+    	<div class="row">
+    		<div class="col-md-3 col-sm-3 col-xs-6">
+<!-- .img-responsive类让图片可以支持响应式 -->
+    			<img class="img-responsive" src="./images/1.jpg">
+    		</div>
+    		<div class="col-md-3 col-sm-3 col-xs-6">
+    			<img class="img-responsive" src="./images/2.jpg">
+    		</div>
+    		<div class="col-md-3 col-sm-3 col-xs-6">
+    			<img class="img-responsive" src="./images/3.jpg">
+    		</div>
+
+    		<div class="col-md-3 col-sm-3 col-xs-6">
+    			<img class="img-responsive" src="./images/4.jpg">
+    		</div>
+
+    	</div>
+    </div>
+
+</body>
+</html>
