@@ -1,0 +1,375 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0,maximum-scale=1, user-scalable=no">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <link rel="stylesheet" type="text/css" href="./bootstrap/css/bootstrap.min.css">
+
+  <!-- 字体图标 -->
+  <link rel="stylesheet" type="text/css" href="fontawesome/css/font-awesome.min.css">
+
+  <!--  按照顺序进行引用，必须先引用jquery -->
+  <script src="./js/jquery-3.0.0.js" ></script>
+  <script src="./bootstrap/js/bootstrap.min.js" ></script>
+  <script src="./js/unslider.min.js"></script>
+
+
+  <!--  针对ie浏览器设置的,html5shiv, respond 用于让第版本的ie浏览器支持html5的新元素和媒体查询-->
+  <!--[if lt IE 9]>
+  <script src="./js/html5shiv.min.js"></script>
+  <script src="./js/1.4.2/respond.min.js"></script>
+  <![endif]-->
+  <title>菜鸟驿站</title>
+
+  <style>
+  body {
+    height:2000px;
+  }
+  .nav-border-color {
+    border:0px;
+    background: #fefefe;
+  }
+  .mylogo {
+    padding:0;
+  }
+  .mylogo img {
+    margin-top: -10px;
+  }
+  .mytupian {
+    margin-top: 50px;
+  }
+  .mycenter {
+    width:100%;
+    height:480px;
+  }
+  .thumbnail {
+    border:0px;
+  }
+  .cainiao {
+    margin:auto;
+    width:222px;
+    height:37px;
+    background: url(./images/4.png) 0px 0px;
+  }
+
+  .baoguo > div {
+
+    margin-left: 10px;
+    background: #f9f9f9;
+    position: relative;
+    width:280px;
+    height:200px;
+  }
+  .baoguo h1,.baoguo h2,{
+    margin:0;
+    padding:0;
+  }
+  .baoguo h1 {
+    width:110px;
+    height:110px;
+    position: absolute;
+    left:30px;
+    bottom:0px;
+  }
+  .baoguo h2 {
+    width:46px;
+    height:42px;
+    position:absolute;
+    top:0px;
+    right:30px;
+  }
+  .des {
+    width:100px;
+    height:100px;
+    position: absolute;
+    right:10px;
+    bottom:0px;
+  }
+  .tupian1-1 {
+    background:url(./images/4.png) 0px -72px;
+  }
+  .tupian1-2 {
+    background: url(./images/5.png) 0px 0px;
+  }
+  .tupian2-1 {
+    background:url(./images/4.png) -120px -72px;
+  }
+  .tupian2-2 {
+    background: url(./images/5.png) -46px 0px;
+  }
+  .tupian3-1 {
+    background:url(./images/4.png) -240px -72px;
+  }
+  .tupian3-2 {
+    background: url(./images/5.png) -94px 0px;
+  }
+  .tupian4-1 {
+    background:url(./images/4.png) -360px -72px;
+  }
+  .tupian4-2 {
+    background: url(./images/5.png) -142px 0px;
+  }
+  .myhezuo {
+    margin-top: 100px;
+    background: #f9f9f9;
+    margin-bottom: 0px;
+  }
+  .hezuo {
+    width:136px;
+    height:37px;
+    margin:auto;
+    background: url(./images/4.png) 447px 0px;
+  }
+  .aiai {
+    background: url(./images/5.jpg) center bottom no-repeat #f9f9f9;
+  }
+  .youshi {
+    padding-top: 70px;
+    padding-bottom: 50px;
+    /*background: #f9f9f9 ;*/
+
+  }
+  .zengjia {
+    height:350px;
+    padding-right: 84px;
+    /*border:1px solid #e5e5e5;*/
+    /*padding:0px;*/
+  }
+  .jingling1 {
+    display: block;
+    height:153px;
+    background: url(./images/4.png) 0px -361px no-repeat;
+  }
+  .jingling2 {
+    display: block;
+    height:153px;
+    background: url(./images/4.png) 0px -194px no-repeat;
+  }
+  .jingling3 {
+    display: block;
+    height:153px;
+    background: url(./images/4.png) 0px -529px no-repeat;
+  }
+  .cheng {
+    height:200px;
+    background: #fff;
+    border:1px solid #e5e5e5;
+  }
+  .cheng p {
+    font-size: 18px;
+    color: #666;
+  }
+  ul, ol { padding: 0;}
+  #forms {
+    width: 1226px;
+    height:460px;
+    margin:50px auto;
+    position: relative;
+    overflow: auto;
+    text-align: center;
+    list-style: none;
+  }
+  #forms ul li {
+    float: left;
+  }
+  #forms .dots {
+    position: absolute;
+    left: 0;
+    right: 0;
+    bottom: 20px;
+  }
+  #forms .dots li
+  {
+    display: inline-block;
+    width: 10px;
+    height: 10px;
+    margin: 0 4px;
+    text-indent: -999em;
+    border: 2px solid #fff;
+    border-radius: 6px;
+    cursor: pointer;
+    opacity: .4;
+    -webkit-transition: background .5s opacity .5s;
+    -moz-transition: background .5s opacity .5s;
+    transition: background .5s opacity .5s;
+  }
+  #forms .dots li.active
+  {
+    background: orange;
+    opacity: 1;
+  }
+
+
+  #forms .arrow {
+    position: absolute;
+    top: 200px;
+  }
+  #forms #al {
+    left: 15px;
+  }
+  #forms #ar {
+    right: 15px;
+  }
+  .cainiao1 {
+    margin:auto;
+    margin-top: 100px;
+    width:136px;
+    height:37px;
+    background: url(./images/4.png) -536px 0px;
+  }
+  </style>
+</head>
+<body>
+  <nav class="navbar navbar-default  nav-border-color navbar-fixed-top">
+    <div class="container">
+      <!-- Brand and toggle get grouped for better mobile display -->
+      <div class="navbar-header">
+        <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#bs-navbar-collapse-1" aria-expanded="false">
+          <span class="sr-only">Toggle navigation</span>
+          <span class="icon-bar"></span>
+          <span class="icon-bar"></span>
+          <span class="icon-bar"></span>
+        </button>
+        <a class="navbar-brand mylogo" href="#"><img src="./images/2.png"></a>
+      </div>
+
+      <!-- Collect the nav links, forms, and other content for toggling -->
+      <div class="collapse navbar-collapse" id="bs-navbar-collapse-1">
+        <ul class="nav navbar-nav navbar-right">
+          <li><a href="#">首页</a></li>
+          <li><a href="#">入驻标准</a></li>
+          <li><a href="#">资讯中心</a></li>
+          <li><a href="#">常见问题</a></li>
+          <li><a href="#">合作伙伴</a></li>
+          <li class="denglu"><a href="#"><i class="fa fa-user-circle-o" ></i>登录4001787878</a></li>
+        </ul>
+      </div><!-- /.navbar-collapse -->
+    </div><!-- /.container-fluid -->
+  </nav>
+  <div class="container-fluid mytupian">
+    <div class="row">
+      <a href="#" class="mycenter1 thumbnail"><img src="./images/3.png"></a>
+    </div>
+  </div>
+  <div class="container text-center">
+    <div class="row col-xs-8 col-xs-offset-2">
+      <h1 class="cainiao"></h1>
+      <br>
+      <h4>菜鸟驿站是由阿里巴巴旗下菜鸟网络牵头，建立面向社区和校园的物流服务平台，为用户
+        提供包裹代收、代寄等服务，致力于为消费者提供多元化的最后一公里服务。</h4>
+      </div>
+    </div>
+
+    <div class="container">
+      <div class="row baoguo">
+        <div class="col-md-3 col-sm-6 col-xs-12 bao1">
+          <h1 class="tupian1-1"></h1>
+          <h2 class="tupian1-2"></h2>
+          <div class="text-center des">
+            <h4>网购代收</h4>
+            <h4>线下自提</h4>
+            <h4>安全保管</h4>
+          </div>
+        </div>
+        <div class="col-md-3 col-sm-6 col-xs-12 bao2">
+          <h1 class="tupian2-1"></h1>
+          <h2 class="tupian2-2"></h2>
+          <div class="text-center des">
+            <h4>网购代收</h4>
+            <h4>线下自提</h4>
+            <h4>安全保管</h4>
+          </div>
+        </div>
+        <div class="col-md-3 col-sm-6 col-xs-12 bao3">
+          <h1 class="tupian3-1"></h1>
+          <h2 class="tupian3-2"></h2>
+          <div class="text-center des">
+            <h4>网购代收</h4>
+            <h4>线下自提</h4>
+            <h4>安全保管</h4>
+          </div>
+        </div>
+        <div class="col-md-3 col-sm-6 col-xs-12 bao4">
+          <h1 class="tupian4-1"></h1>
+          <h2 class="tupian4-2"></h2>
+          <div class="text-center des">
+            <h4>网购代收</h4>
+            <h4>线下自提</h4>
+            <h4>安全保管</h4>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="myhezuo jumbotron text-center">
+      <div class="hezuo"></div>
+    </div>
+    <div class="aiai">
+      <div class="container youshi">
+        <div class="row">
+          <div class="zengjia col-md-4">
+            <div class="jingling1"></div>
+            <div class="cheng">
+              <p><img src="./images/6.png"> 通过菜鸟驿站代收、代寄包裹等服务，获得物流收益。</p>
+            </div>
+          </div>
+          <div class="zengjia col-md-4">
+            <div class="jingling2"></div>
+            <div class="cheng">
+              <p><img src="./images/7.png"> 通过稳定的包裹量给店铺带来客流量，将客流量转为店铺营业额。</p>
+              <p><img src="./images/7.png"> 享受阿里巴巴线上资源落地的优先权，为店铺带来更多增值收益。</p>
+            </div>
+
+          </div>
+          <div class="zengjia col-md-4">
+            <div class="jingling3"></div>
+            <div class="cheng">
+              <p><img src="./images/8.png"> 提供专业操作系统，免费发送短信。</p>
+              <p><img src="./images/8.png"> 完善的业务技能、运营技巧等系列培训。</p>
+              <p><img src="./images/8.png"> 不定期宣传，提升店铺影响力。</p>
+            </div>
+
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="container text-center">
+      <div class="row col-xs-8 col-xs-offset-2">
+        <h1 class="cainiao1"></h1>
+        <br>
+        <h4>不论你是个人、学生、企业，都有机会加入菜鸟驿站</h4>
+        <br>
+      </div>
+      <!-- <div class="container">
+        <div class="row">
+          <a href="#" class="thumbnail"> -->
+            <div class="banner" id="forms">
+              <ul>
+                <li><img src="./images/6.jpg" alt="" width="1226" height="460" ></li>
+                <li><img src="./images/9.png" alt="" width="1226" height="460" ></li>
+                <li><img src="./images/10.png" alt="" width="1226" height="460" ></li>
+              </ul>
+              <a class="unslider-arrow04 prev"><img class="arrow" id="al" src="./images/33.png" alt="prev" width="20" height="35"></a>
+              <a  class="unslider-arrow04 next"><img class="arrow" id="ar" src="./images/34.png" alt="next" width="20" height="37"></a>
+            </div>
+          <!-- </a> -->
+        <!-- </div>
+      </div> -->
+      <script>
+      $(function(e) {
+        var unslider04 = $('#forms').unslider({
+          dots: true
+        }), data04 = unslider04.data('unslider');
+
+        $('.unslider-arrow04').click(function() {
+          var fn = this.className.split(' ')[1];
+          data04[fn]();
+        });
+      });
+      </script>
+
+
+
+
+    </body>
+    </html>
