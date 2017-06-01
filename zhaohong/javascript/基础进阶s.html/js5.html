@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="utf-8">
+    <title></title>
+</head>
+
+
+<input id="other" type="text" value="">
+<input id="msg" type="text" value="">
+<button id="btn">点击检测</button>
+
+<body>
+    <script type="text/javascript">
+        var a;
+        if (!a) {
+            console.log(a);//undefined
+        }
+
+        // var str = "" + 123 + 1;           //1231
+        // var str = 123 + 1 + "" + 23 + 2;  //124232
+        var str = 123 + 1 + 23 + 2 + "";     //149
+        console.log(str);
+
+
+    //逻辑与 &&, 和其他编程语言比如C语言是不太一样的, 得到的是一个计算的结果。
+        console.log("a && b = ", 10 && 0); //0
+        console.log("a && b = ", 0 && 10); //0
+        console.log("a && b = ", 10 && 20); //20   //都是真，结果是最终的结果
+        console.log("a && b = ", 20 && 10); //10
+
+    //逻辑与的短路特性:只要有一个表达式的值为假，那么后续的操作都不在执行
+        var a = 0;
+        console.log("10 && (a = a + 1) ", 10 && (a = a + 1)); //1
+        console.log("a = ", a); //1
+
+
+        console.log("false &&(a = a + 1) ", false && (a = a + 1)); //false
+        console.log("a = ", a); //1    a本身就是１
+
+        var b = 0;
+        console.log("10 && (a = a + 1) && 0 && (b = b + 1) ", 10 && (a = a + 1) && 0 && (b = b + 1)); // 0
+        console.log("a = ", a); //2
+        console.log("b = ", b); //0,这是因为0后面的&& (b = b + 1)没有执行
+
+
+    //逻辑或的短路特性：只有遇到为真的，那么后边的代码就不在执行
+        console.log("10 || 20 = ", 10 || 20); //10
+        console.log("0 || 20 = ", 0 || 20); //20
+
+        function fun(arg) {
+            arg = arg || 20;
+            console.log(arg);
+        }
+        fun();
+
+
+
+    //获得DOM节点
+        var other = document.querySelector("#other");
+        var msg = document.querySelector("#msg");
+        var btn = document.querySelector("#btn");
+
+    //添加单击事件
+        btn.onclick = function() {
+
+            //input DOM节点的.value属性就是输入框的内容
+            var inputOne = other.value;
+            var inputTwo = msg.value;
+
+            //如果输入框都有内容，那么继续执行
+            if (inputOne && inputTwo) {
+                alert("输入框非空!");
+            }
+        }
+
+
+    </script>
+
+</body>
+
+</html>

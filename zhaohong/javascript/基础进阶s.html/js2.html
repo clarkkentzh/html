@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <title>Document</title>
+</head>
+
+<body>
+    <script type="text/javascript">
+    /**********这个属于label标签，做个标记，break直接跳出标记的循环，否则break只跳出一层循环*************/
+   outer:for (var i = 0; i < 10; i++) {
+        console.log("i = ", i);
+        for (var j = 0; j < 5; j++) {
+            if (j == 3) {
+                break outer;
+            }
+        }
+    }
+
+    console.log("after outer ....");
+
+    for (var i = 0; i < 10; i++) {
+        switch (i) {
+            case 2:
+                console.log("i = 2");
+                break;    //switch中的break比较特殊，只跳出switch不跳出循环
+            case 3:
+                console.log("i = 3");
+                break;
+        }
+
+        console.log("for i = ", i);
+    }
+    </script>
+</body>
+
+</html>

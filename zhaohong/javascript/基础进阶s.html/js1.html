@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>Document</title>
+  <script src="../jquery/jquery-3.0.0.min.js"></script>
+</head>
+<body>
+
+ <input id="text" type="text" name="">
+ <button id="btn">点击使用Number进行转换</button>
+ <button id="btn1">点击使用parseInt进行转换</button>
+ <button id="btn2">点击使用parseFloat转换</button>
+ <h1 id="show">等待转换</h1>
+
+  <script>
+  console.log(Number(""));//0
+  console.log(Number("1234"));//1234
+  console.log(Number("0101"));//101    是按十进制转换
+  console.log(Number("0x10"));//16     按十六进制转换
+  console.log(Number(true));//1
+  console.log(Number(false));//0
+  console.log(Number(12.34));//12.34
+
+  console.log("******************************");
+
+  console.log(parseInt(""));//NaN
+  console.log(parseInt("1234abc"));//1234
+  console.log(parseInt("abc"));//NaN
+  console.log(parseInt("10.123"));//10
+  console.log(parseInt("0x12"));//18
+  console.log(parseInt("070"));//70, 并没有解析为８进制
+
+  console.log("******************************");
+
+  console.log(parseInt("10",2));//2
+  console.log(parseInt("10",8));//8
+  console.log(parseInt("10",10));//10
+  console.log(parseInt("10",16));//16
+
+
+  console.log("******************************");
+
+  console.log(parseFloat("10.34.21"));//10.34
+  console.log(parseFloat("10.34.abc"));//10.34
+  console.log(parseFloat("0x10.231"));//0
+  console.log(parseFloat("abc"));//NaN
+
+  $("#btn").click(function(){
+       var str = $("#text").val();    //获取输入框的值
+       $("#show").text(Number(str));
+  });
+
+  $("#btn1").click(function(){
+       var str = $("#text").val();
+       $("#show").text(parseInt(str));
+  });
+
+  $("#btn2").click(function(){
+       var str = $("#text").val();
+       $("#show").text(parseFloat(str));
+  });
+
+  </script>
+</body>
+</html>

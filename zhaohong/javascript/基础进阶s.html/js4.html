@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+  <meta charset="utf-8">
+  <title></title>
+</head>
+
+<body>
+
+  <script type="text/javascript">
+  function test(a,b,c) {
+    //arguments实际传入的参数，只能在函数里面
+    console.log(arguments.length); //实际参数的个数
+    console.log(arguments[0]);
+    console.log(a,b);
+  }
+  test(1, 2, 3, 4, 5);
+  console.log(test.length); //函数形式参数的个数
+
+
+
+
+  /*防止变量的声明提升导致的副作用，需要先赋值再访问*/
+  var value = 10;
+  function fun(){
+    console.log(value);
+    var value = 20;    //这一步只会把var value提升到函数fun的最顶部，相当于重新定义变量，没有赋值
+  }
+  fun();
+  /*******类似*******/
+  // var value = 10;
+  // function fun(){
+  //   var value;
+  //   console.log(value);
+  //   value = 20;
+  // }
+  // fun();
+  </script>
+
+</body>
+
+</html>
