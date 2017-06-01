@@ -18,9 +18,18 @@
 
 
 
-  console.log(new Array("hello","world"));
-  console.log(new Array(1,2,3));
-  // 	console.log(new Array(-1));//error
+  var z = new Array();//创建空数组
+  var h = new Array(10);//创建长度为10的数组
+  var o = new Array(1,2,3);//创建一个已经包含三个元素的数组
+  console.log(z,h,o);
+
+
+  var arr = ["hello"];
+  console.log(arr[0]);
+  arr[999] = "world"; //稀疏数组
+  arr[0] = "HELLO";
+  console.log(arr);
+
 
   a[0] = "helloworld";
   console.log(a);

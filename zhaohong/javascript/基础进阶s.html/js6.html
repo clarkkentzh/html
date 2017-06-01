@@ -11,7 +11,7 @@
     <script type="text/javascript">
         //相等，先转换，后比较
         console.log("10" == 10); //true
-
+        console.log("10" != 10); //false
 
         //不转换，直接比较
         console.log("10" === 10); //false
@@ -25,6 +25,14 @@
         console.log(12 == NaN); //false
 
 
+        /*不支持这种连续比较的用法，只能分开用&&这些操作连接*/
+        var s = 20;
+        // if((10 < s < 30)){
+        //   console.log("10 < s < 30");
+        // }
+        if ((10 < s) && (s < 30)){
+          console.log("10 < s < 30");
+        }
 
 
         var a = 11,
