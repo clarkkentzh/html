@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <title>event方法</title>
+    <style>
+    * {
+      margin: 0;
+      padding: 0;
+    }
+
+    #f {
+      width: 500px;
+      height: 300px;
+      background: yellow;
+    }
+
+    #s {
+      width: 300px;
+      height: 200px;
+      background: blue;
+    }
+    </style>
+  </head>
+  <body>
+
+    <a id="link" href="https://www.baidu.com">百度</a>
+
+    <div id="f">
+      <div id="s"></div>
+    </div>
+
+    <script type="text/javascript">
+
+    var link = document.getElementById("link");
+    var f = document.getElementById("f");
+    var s = document.getElementById("s");
+
+    link.onclick = function (event) {
+      event.preventDefault();//阻止默认行为
+    };
+
+
+    f.onclick = function (event) {
+      console.log("--------f--------");
+    };
+
+    s.onclick = function (event) {
+      console.log("--------s--------");
+      event.stopPropagation();//阻止事件的传递
+    };
+
+
+    /*
+    1. 查资料，掌握ie浏览器中的event对象常见属性和方法！！！！！！
+    2. 预习 DOM节点的操作
+    3. DOM 和 jQuery对象的互转？
+    4. 实现一个函数：将数组转换成字符串之后，判断该字符串是否是回文？
+       回文："123abccba321"就是回文
+    5. 实现函数：将10进制转换为二进制，并输出转换的结果
+    6. 实现函数：判断一个字符串中的括号是否匹配？
+       比如： var str = "(((hello)) hehe";
+              str = "{{{heheh}} hehe";
+              str = "[[[heheh]] hehe";
+    */
+
+
+
+    </script>
+
+  </body>
+</html>

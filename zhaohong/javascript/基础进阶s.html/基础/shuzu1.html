@@ -7,6 +7,7 @@
 <body>
   <script type="text/javascript">
 
+//数组都是对象，都有属性和方法
   var a = [];
   var b = {};
   console.log(typeof a);//object类型
@@ -25,10 +26,10 @@
 
 
   var arr = ["hello"];
-  console.log(arr[0]);
+  console.log(arr[0]);//hello
   arr[999] = "world"; //稀疏数组
-  arr[0] = "HELLO";
-  console.log(arr);
+  arr[0] = "HELLO";  //覆盖了hello
+  console.log(arr);//["HELLO",undefined x 998,"world"]
 
 
   a[0] = "helloworld";

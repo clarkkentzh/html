@@ -22,14 +22,15 @@
         console.log(a.join()); //"1,2,3,,4,5"
         console.log(a.join('')); //"12345"
         var ret = a.join("+"); //"1+2+3++4+5";
-        console.log(ret); //eval()进行运算时，字符串必须符合运算规则
-
+        console.log(ret);
+    //eval()执行js代码,进行运算时，字符串必须符合运算规则
+        // console.log(eval(ret));//缺少一个元素，所以不符合运算规则，出错
 
 
     //reverse,影响数组本身  颠倒数组元素顺序
         var b = [1, 2, 3, 4, 5, 6];
         b.reverse();
-        console.log(b);
+        console.log(b);//6,5,4,3,2,1  改变了数组本身
 
     //sort  给数组元素排序，按字母顺序
         var c = ["hello", "world", "china"];
@@ -37,12 +38,14 @@
         console.log(c);
 
         c = [3, 4, 10, 20];
-        c.sort(function(a, b) {
-            return a - b;
+        console.log(c.sort());//按照数值编码排序，大小可能不对
+
+        c.sort(function(m, n) {
+            return m - n;
         });
         console.log(c);
 
-
+  //concat数组拼接
         console.log(a.concat(b, c, "end")); //数组拼接
 
 

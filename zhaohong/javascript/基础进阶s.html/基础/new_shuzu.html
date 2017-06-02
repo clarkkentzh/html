@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>ECMA5</title>
+</head>
+<body>
+
+
+  <script type="text/javascript">
+    var a = [1,2,3,4,5];
+    console.log(a);
+
+    function test (){
+      console.log(arguments);    //arguments是个伪数组
+    }
+    test(1,2,3);
+
+
+    console.log("---------forEach 遍历方法 -------");
+    var sum = 0;
+    a.forEach(function(elem,index,arr){     //元素，索引，数组
+      // console.log("elem = ", elem);
+      // console.log("index = ", index);
+      // console.log("arr = ", arr);
+      sum += elem;
+    });
+    console.log(a);
+    console.log("sum = ", sum);
+
+
+
+    console.log("---------map 创建一个新数组方法 -------");
+    var ret = a.map(function (elem,index,arr) {
+      return elem + 1;//必须要返回，返回值是新数组中的元素
+    });
+    console.log(ret);//[2,3,4,5,6]
+
+
+
+    console.log("--------- filter 过滤数组方法 -------");
+    //返回偶数
+    ret = a.filter(function(e,i,a){
+      return  (e % 2 === 0) ? true : false;
+    });
+    console.log(ret);
+
+    var b = [1,2,,,,,,4,54,,,,,,6];
+    ret = b.filter(function(e,i,a){
+      return  (e === undefined) ? false : true;
+    });
+    console.log(ret);
+
+
+
+    console.log("--------- reduce 累计操作 -------");
+    a = [10,11,12,13,14,15];
+    ret = a.reduce(function(acc,cur,index,arr){
+      console.log("acc = ", acc);
+      // console.log("cur = ", cur);
+      // console.log("index = ", index);
+      return acc + cur;//必须有返回值，因为返回值是下一次的acc,acc初始为0,若没有返回值，则下一次acc是undefined
+    }, 0);
+    console.log(ret);//求和
+
+
+    console.log("-------indexOf 查找方法 -------");
+    a = [1,2,10,10,10,11]
+    console.log(a.indexOf(10));//2
+    console.log(a.indexOf(10,4));//4
+    //第一个参数是要查找的元素,第二个是查找位置
+
+
+
+
+  </script>
+</body>
+</html>

@@ -7,12 +7,14 @@
 <body>
 
 	<script type="text/javascript">
+
+  console.log("------push,pop 栈的操作方式: 先进后出--------");
 	var a = [];
 	var ret = a.push(1,2,3); //使用push方法在数组末尾添加一个或者多个元素
 	console.log(ret);
 	console.log(a);
 
-	
+
 	a.push("helloworld");
 	console.log(a);
 
@@ -32,7 +34,7 @@
 	console.log(a);
 
 
-	console.log("----b-----");
+	console.log("----队列方式-----");
 	var b = [1,2,3,4];
 	console.log(b.shift());　　　//删除开头一个元素，索引也就是位置会变化
 	console.log(b);

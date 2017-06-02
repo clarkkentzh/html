@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <title>event事件对象属性</title>
+    <style media="screen">
+      * {
+        margin: 0;
+        padding: 0;
+      }
+
+      body {
+        height: 2000px;
+      }
+
+      #f {
+        width: 500px;
+        height: 300px;
+        background: yellow;
+      }
+
+      #s {
+        width: 300px;
+        height: 200px;
+        background: blue;
+      }
+    </style>
+  </head>
+  <body>
+
+    <div id="f">
+      <div id="s"></div>
+    </div>
+
+    <script type="text/javascript">
+    var f = document.getElementById("f");
+    var s = document.getElementById("s");
+
+    f.onclick = function (event) {
+      console.log("--------f--------");
+      console.log(this);//注册该事件的元素
+      console.log(event.currentTarget);// this === event.currentTarget
+      console.log(event.target);// 真正触发事件的元素（事件的起源）
+
+    };
+
+    s.onclick = function (event) {
+      console.log("--------s--------");
+      console.log(this);//s
+      console.log(event.currentTarget);//s
+      console.log(event.target);
+
+    };
+
+    document.onclick = function(event) {
+      console.log(event.pageY);//鼠标在整个页面的Y坐标
+    };
+
+    document.onkeydown = function(event){
+      console.log(event.key);    //键盘按键
+    };
+
+    document.onmousedown = function(event){
+      console.log(event.button);  //鼠标左键0，滚轮1,右键２
+    };
+
+
+    document.addEventListener("touchend", function(event){
+      console.log(event.changedTouches[0].clientX);  //触摸点的x坐标
+    },false)
+
+
+
+    </script>
+
+  </body>
+</html>

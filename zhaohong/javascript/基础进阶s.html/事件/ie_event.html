@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <title>ie低版本(ie8以下)</title>
+  </head>
+  <body>
+
+    <button id="btn">按钮</button>
+
+    <script>
+
+  //第四种ie 低版本的事件处理方法
+    var btn = document.getElementById("btn");
+
+    function handler() {
+      console.log("btn click...");
+    }
+
+    function handler2() {
+      console.log("btn click 2...");
+    }
+
+    btn.attachEvent("onclick", handler);
+    btn.attachEvent("onclick", handler2);    //添加事件
+
+    btn.detachEvent("onclick", handler2);    //移除事件
+
+    //属于冒泡传递
+    document.attachEvent("onclick", function () {
+      console.log("doc click...");
+    });
+
+    </script>
+
+  </body>
+</html>

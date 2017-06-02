@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>事件</title>
+</head>
+<body>
+
+　<!-- 这是第一种事件处理方法 -->
+  <button onclick="alert('click---');">点击</button>
+
+
+  <button id="btn">按钮</button>
+  <button id="btn2">按钮2</button>
+
+
+  <script src="./jquery-3.0.0.min.js"></script>
+  <script>
+
+  //btn是DOM对象
+  var btn = document.getElementById("btn");
+  var btn2 = document.getElementById("btn2");
+
+  //btnjq是jQuery对象
+  // var btnjq = $("#btn");
+  // console.log(btn);
+  // console.log(btnjq);
+
+
+
+ //第二种DOM0事件处理方法
+  btn.onclick = function(){
+    console.log("btn click------");
+    btn.onclick = null;    //事件触发一次后再移除事件处理程序
+  }
+  // btn.onclick = function(){
+  //   console.log("btn click2-----");
+  // }
+  //无法添加多个事件处理程序，后面的程序会覆盖前面的
+
+
+
+ //第三种DOM2事件处理方法
+ //事件添加
+  btn2.addEventListener("click",function(){
+    console.log("btn2 click-----");
+  },false);    //也可以给函数单独定义起个名字
+
+  btn2.addEventListener("click",function(){
+    console.log("btn2 click2-----");
+  },false);    //这是添加的第二个事件处理程序
+
+
+  // function dianji(){
+  //   console.log("btn2 click-----");
+  // }
+  // btn2.addEventListener("click",dianji,false);  //事件添加
+  // btn2.removeEventListener("click",dianji,false);//事件移除
+
+ //DOM2与DOM0的不同是DOM2可以对同一个事件添加多个处理程序
+  </script>
+</body>
+</html>
