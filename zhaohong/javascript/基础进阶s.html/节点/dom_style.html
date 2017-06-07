@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>通过DOM对象设置css样式</title>
+  <style>
+  .list-1 li {
+    float:left;
+  }
+  </style>
+</head>
+<body>
+  <div id="f">父节点
+    <div id="s">子节点</div>
+  </div>
+  <ul id="list">
+    <li>1</li>
+    <li>2</li>
+    <li>3</li>
+  </ul>
+  <ul id="list1">
+    <li>4</li>
+    <li>5</li>
+    <li>6</li>
+  </ul>
+
+  <script>
+  var f = document.getElementById("f");
+
+  /*
+  f.setAttribute("style","color:red");
+  f.setAttribute("style","background-color:yellow");
+  */     //这两个属性设置冲突，后面的总体覆盖了前面的
+
+
+　//cssText是总体属性设置，后续所有针对cssText的设置都会覆盖之前的设置，所以cssText只能尽量一次性设置，后面有其他属性设置只能单个设置，并且必须放在cssText后面,否则会被cssText覆盖
+  f.style.cssText = "border:1px solid red";
+  f.style.color = "blue";
+  f.style.backgroundColor = "green"; //这里的所有的css名称都用驼峰法
+
+  var list = document.getElementById("list");
+  var lis = list.children;
+  lis[0].style.float = "left";
+  lis[1].style.float = "left";
+  lis[2].style.float = "left";
+
+  document.getElementById("list1").setAttribute("class","list-1");
+  //给list1添加了一个类，类的属性用css设置好了
+
+
+ //删除节点
+  var s = document.getElementById("s");
+  // f.removeChild(s);//删除了id为s 的节点
+  var dels = s.parentNode.removeChild(s);//等同于f.removeChild(s)
+  console.log(dels);//dels获取到了删除的节点
+
+
+　//克隆节点
+  var newNode = list.cloneNode(true);//true时深复制,包括子节点都复制了
+  console.log(newNode);
+  var newNodes = list.cloneNode(false);  //false时浅复制,只克隆节点本身
+  console.log(newNodes);
+
+  
+
+  </script>
+</body>
+</html>

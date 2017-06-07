@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <title>自定义构造函数</title>
+  </head>
+  <body>
+    <script type="text/javascript">
+      function Zhaohong(name,age){
+        console.log(this);
+        this.name = name;
+        this.age = age;
+        this.getName = function(){
+          return this.name;
+        }
+        this.newName = function(newName){
+          this.name = newName;
+        }
+      }
+      //直接调用Person的结果！！！！
+      var one = Zhaohong('zhaohong',24);
+      console.log(one);//undefined
+      //在浏览器端的js中，所有的全局变量都是window的属性
+      console.log(window.name,window.age);
+      console.log(name,age);
+
+      var two = new Zhaohong("lisi",50);
+      var three = new Zhaohong("lisi",50);
+      console.log(two === three);//false,只是内容相同,对象不同
+      two.newName("zhangshaohan");
+      console.log(two);
+
+    </script>
+  </body>
+</html>

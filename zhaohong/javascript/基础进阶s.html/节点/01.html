@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <title></title>
+  </head>
+  <body>
+    <ul class="list">
+
+    </ul>
+
+
+  <script type="text/javascript">
+
+     var a = 10, b = [1,2,3,4,5];
+     var h1 = document.createElement("h1");
+     var list = document.getElementsByClassName("list")[0];
+     h1.innerHTML = "等待变换．．．．";
+     document.body.appendChild(h1);
+
+
+     for (var i = 0, len = b.length; i < len; i++) {
+       var li = document.createElement("li");
+       li.innerHTML = i + 1;
+       list.appendChild(li);
+       (function(i){
+          list.children[i].onmouseover = function(){
+            h1.innerHTML = i + 1 ;
+          }
+       })(i);
+      }
+
+
+  </script>
+  </body>
+</html>

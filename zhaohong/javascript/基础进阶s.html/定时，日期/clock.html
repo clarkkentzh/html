@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <title>钟表</title>
+    <style>
+    * {
+      margin:0px;
+      padding:0px;
+    }
+    #clock {
+      width:600px;
+      height:600px;
+      margin:50px auto;
+      background: url(./images/clock.jpg);
+      position: relative;
+    }
+    #clock div {
+      width:30px;
+      height:600px;
+      border:1px solid red;
+      position: absolute;
+      top:0px;
+      left:285px;
+    }
+    .hours {
+      background: url(./images/hour.png);
+    }
+    .minutes {
+      background: url(./images/minute.png);
+    }
+    .seconds {
+      background: url(./images/second.png);
+    }
+    </style>
+  </head>
+  <body>
+    <div id="clock">
+      <div class="hours"></div>
+      <div class="minutes"></div>
+      <div class="seconds"></div>
+    </div>
+    <script>
+    var clock = document.getElementById('clock');
+    var hours = clock.children[0];
+    var minutes = clock.children[1];
+    var seconds = clock.children[2];
+
+    setInterval(function(){
+
+      var d = new Date();
+      var mills = d.getMilliseconds();
+
+      var s = d.getSeconds() + mills / 1000;
+      var m = d.getMinutes() + s / 60;
+      var h = d.getHours() + m / 60;
+
+      hours.style.transform = "rotate(" + h * 30 + "deg)";
+      minutes.style.transform = "rotate(" + m * 6 + "deg)";
+      seconds.style.transform = "rotate(" + s * 6 + "deg)";
+
+    },1000);
+
+    </script>
+  </body>
+</html>

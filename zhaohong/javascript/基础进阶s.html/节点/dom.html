@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>Document</title>
+</head>
+<body>
+  <div id="f">div1</div>
+  <div>div2</div>
+  <div>div3</div>
+
+  <div class="s">
+    <p class="s">div4加p</p>
+  </div>
+
+  <script>
+  var f = document.getElementById("f");
+  console.log(f.nodeType);//1  ,输出节点类型
+  console.log(document.nodeType);//9
+
+  var divs = document.getElementsByTagName("div");
+  console.log(divs);//所有的div标签以数组的形式显示出来
+  console.log(divs[0]);//索引为0的div
+
+　var divss = document.getElementsByClassName("s");
+  console.log(divss);//也是以数组形式显示出类为s的标签
+  </script>
+</body>
+</html>

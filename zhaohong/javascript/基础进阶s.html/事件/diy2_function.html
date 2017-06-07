@@ -1,0 +1,94 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>实现函数</title>
+</head>
+<body>
+
+
+  <script>
+    //判断是否是回文
+    function huiwen(si) {
+      var sk = si.join("");   //以空连接元素，变成字符串,不影响原数组
+      var sl = si.reverse().join("");  //颠倒数组顺序，再以空连接，影响原数组顺序
+
+      return sl === sk ? true : false;
+    }
+    console.log(huiwen([1,2,3,4,5,3,2,1])); //false
+    console.log(huiwen([1,2,3,4,4,3,2,1])); //true
+
+
+
+
+
+
+    //10进制转换成二进制
+    //无循环
+    function zhuanhuan(num) {
+      if(num > 0) {
+        if(num % 2 == 1) {
+          return zhuanhuan(parseInt(num / 2)) + "1";//函数内部调用,递归函数
+        }
+        else if (num % 2 == 0) {
+          return zhuanhuan((num / 2)) + "0";
+        }
+      }
+      else {
+        return "0";    //结束条件
+      }
+    }
+    console.log(Number(zhuanhuan(100)));//01100100
+
+    //while循环
+    function zhuanhuan1(num) {
+      var n1 = [];
+      var s;
+      while(1) {
+        s = num % 2;
+        n1.unshift(s);
+        num = parseInt(num / 2);
+        if (num == 0){
+          break;
+        }
+      }
+      return n1.join("");
+    }
+    console.log(Number(zhuanhuan1(100)));//1100100
+
+
+
+
+
+
+
+    //判断字符串中的括号是否匹配
+    function kuohao(bracket,arr){     //bracket是要比较的数组
+      var count = 0;
+      for (var i = 0,len = arr.length;i < len;i++){
+        if (arr[i] == bracket[0]) {
+          count++;
+        }
+        else if (arr[i] == bracket[1]) {
+          if (count > 0) {
+            count--;
+          }
+          else {
+            return false;
+          }
+        }
+      }
+      return count === 0 ? true : false;
+    }
+    console.log(kuohao(['(',')'],['(','(','1',')',')',')']));//false
+    console.log(kuohao(['{','}'],['{','{','a','}']));//false
+
+
+
+
+
+  </script>
+</body>
+</html>

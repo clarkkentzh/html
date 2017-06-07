@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <title>闭包</title>
+  </head>
+  <body>
+    <script>
+    //闭包的创建,闭包就是指有权访问另一个函数作用域中的变量的函数,是函数
+    function fun(){
+      var a = 10;
+      return function(){      //闭包必须返回函数
+        console.log(a);
+      }
+    }
+    //ret 就是闭包
+    var ret = fun();
+    // console.log(typeof ret);//undefined
+    ret();
+
+
+    //闭包的优点1:减少全局变量定义，实现私有化(有助于保护变量不被其他操作修改)
+    function fun1(){
+      var count = 0;
+      function fun2(){
+        console.log("函数调用次数",++count);
+      }
+      return fun2;
+    }
+    var ret1 = fun1();
+    ret1();//1
+    ret1();//2
+    ret1();//3  count是局部变量,不会被其他操作改变，只能被闭包改变
+
+
+    //优点２：可以根据参数，动态生成一些东西!!!
+    function fun3(arg1){
+      return function(arg2){
+        console.log(arg1 + ":" + arg2);
+      }
+    }
+    var ret2 = fun3("hello");
+    ret2();//hello:undefined
+    ret2("world");//hello:world
+
+    var ret2s = fun3("say");
+    ret2s();//say:undefined
+    ret2s("world");//say:world
+
+
+
+    //每一个闭包函数都用于自己的变量，相互之间没有变量
+    function fun4(){
+      var counts = 0;
+      return function(){
+        console.log(++counts);
+      }
+    }
+    var one = fun4();
+    var two = fun4();
+
+    one();//1
+    one();//2
+    one();//3
+
+    two();//1    互相之间没有影响
+    </script>
+  </body>
+</html>

@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>节点关系</title>
+</head>
+<body>
+
+  <div id="f">
+    <p>111111</p>
+    <div id="s"></div>
+    <p>222222</p>
+    <p>333333</p>
+    这是文本
+  </div>
+
+
+
+  <script>
+  //节点访问，父节点，兄弟节点，子节点
+  var f = document.getElementById("f");
+  var s = document.getElementById("s");
+
+  console.log(s.parentNode === f);//true,f是s的父节点
+  console.log(document.parentNode);//null,整个文档的父节点是空
+
+ //兄弟节点
+  console.log("*****s的兄弟节点*******");
+  console.log(s.nextSibling);//nextSibling包含换行，文本
+  console.log(s.nextElementSibling);//<p>222222<2>,这个不包含，只有标签，下一个兄弟节点
+  console.log(s.previousElementSibling);//<p>111111</p>,上一个兄弟节点
+
+
+ //子节点
+  console.log("*****f的子节点*******");
+  console.log(f.firstChild);//这个同样包含文本那些
+  console.log(f.firstElementChild);//<p>111111</p>
+  console.log(f.lastElementChild);//<p>333333</p>
+
+  //所有子节点
+  console.log(f.childNodes);//包含文本的所有子节点
+　console.log(f.children);//不包含文本的所有子节点
+  console.log(f.children[2]);//<p>222222</p>,因为是数组形式，所以可以选择元素
+
+  
+  </script>
+
+
+
+
+</body>
+</html>

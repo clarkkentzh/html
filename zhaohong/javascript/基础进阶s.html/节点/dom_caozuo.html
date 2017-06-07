@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>Document</title>
+</head>
+<body>
+
+  <div id="f">获得属性</div>
+  <div id="f1" class="test">通过dom获取属性</div>
+
+  <script>
+  var f = document.getElementById("f");
+
+  //设置属性
+  f.setAttribute("class","fs");
+  f.setAttribute("style","color:red;background-color:yellow");
+
+  //获取属性
+  console.log(f.getAttribute("id"));//f
+  console.log(f.getAttribute("class"));//fs
+  console.log(f.getAttribute("style"));//color:red;background-color:yellow
+
+  //删除属性
+  f.removeAttribute("class");
+  f.removeAttribute("style");
+  console.log(f.getAttribute("class"));//null,属性已删除，为空
+
+
+  //通过属性操作，操作自定义的属性
+  f.setAttribute('empty', 'true');
+  f.setAttribute('empty', 'false'); //覆盖了上面true的属性
+
+  //通过DOM对象操作属性
+  console.log(f1.id);//f1,属性
+  console.log(f1.getAttribute("id"));//f1,特性
+
+  console.log(f1.class);//undefined, 属性
+  console.log(f1.className);//test,属性
+  console.log(f1.getAttribute("class"));//test,特性
+
+  console.log(f1.setAttribute("style","color:blue"));//undefined
+  console.log(f1.style);
+  </script>
+
+
+
+
+</body>
+
+</html>

@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <title>Math</title>
+  </head>
+  <body>
+  <script>
+
+  //内置对象Math
+  var nums = [20,2,3,4,5,60];
+   //取最值
+  console.log(Math.min(1,2,3,4,5));
+  console.log(Math.min(nums));//NaN,不能传递数组
+  console.log(Math.min(...nums));//2,ES6新特性
+  console.log(Math.max(1,2,3,4,5));//5
+
+  //使用apply(arg1,Array)方法，让Math.min Math.max可以传递数组
+  console.log(Math.min.apply(null,nums));//2
+
+
+
+  //取整
+  //round标准的四舍五入
+  console.log(Math.round(12.4));//12
+  console.log(Math.round(12.5));//13
+
+  //floor向下舍，小数位全舍，取小的值
+  console.log(Math.floor(17.4));//17
+  console.log(Math.floor(17.7));//17
+
+  //ceil向上舍，小数位都进位，取大的值
+  console.log(Math.ceil(25.1));//26
+  console.log(Math.ceil(25.9));//26
+
+
+  //随机数
+  for (var i = 0;i < 50;i++){
+    console.log(Math.random());//真随机，大于等于 0 小于 1 的一个随机数
+  }
+  //[15,37]
+  for(var i = 0;i < 50;i++){
+    console.log(Math.floor(Math.random()*(37 - 15 + 1) + 15));//从15开始到37包括37和15
+  }
+
+
+    console.log(Math.sqrt(5));//5的平方根
+    console.log(Math.abs(-5));//5的绝对值
+    console.log(Math.pow(2,10));//2的10次幂
+    console.log(Math.sin(Math.PI/6));//Math.PI是π，π/6就是30°，30°的正弦值
+
+  </script>
+  </body>
+</html>

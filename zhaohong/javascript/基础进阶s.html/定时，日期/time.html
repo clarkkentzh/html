@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+  <meta charset="utf-8">
+  <title>倒计时</title>
+  <style>
+  * {
+    margin: 0px;
+    padding: 0px;
+  }
+
+  #f {
+    width: 1000px;
+    height: 50px;
+    font-size: 40px;
+    color: green;
+    background-color: orange;
+    line-height: 50px;
+    text-align: center;
+    margin: 200px auto;
+  }
+  </style>
+</head>
+
+<body>
+  <div id="f">距离2017年6月20日东京购物节倒计时<span>0天0时0分0秒</span></div>
+  <script>
+  var f = document.getElementById("f");
+  var s = f.children[0];
+
+  var end = new Date("2017-6-7 11:50:0");
+  var start;
+  var time = setInterval(function() {
+    start = new Date();
+    var t = parseInt((end.getTime() - start.getTime()) / 1000);
+
+    if (t === 0) {
+      clearInterval(time);
+    }
+
+    var days = parseInt(t / 3600 / 24);
+    var hours = parseInt((t / 3600) % 24);
+    var minutes = parseInt((t / 60) % 60);
+    var seconds = parseInt(t % 60);
+
+    s.innerHTML = days + "天" + hours + "时" + minutes + "分" + seconds + "秒";
+
+  });
+  </script>
+</body>
+
+</html>

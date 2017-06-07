@@ -1,0 +1,154 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>服装鞋帽</title>
+  <style>
+  * {
+    margin: 0;
+    padding:0;
+  }
+  #all {
+    width:800px;
+    height:300px;
+    margin:50px auto;
+  }
+  p {
+    display:inline;
+  }
+  #kuang {
+    width:308px;
+    height:20px;
+    float:right;
+    background-color: #fff;
+    position: relative;
+    z-index: 50;
+    font-size: 15px;
+    list-style: none;
+  }
+  #kuang li {
+    width:61px;
+    float:left;
+    border:1px solid black;
+    border-bottom-color: red;
+    margin-left: -1px;
+    position:relative;
+    text-align: center;
+  }
+  #kuang li:nth-child(1) {
+    z-index: 50;
+    border-color: red red #fff red;
+  }
+  .fuzhuang {
+    width:798px;
+    height:250px;
+    position: relative;
+    background-color:#fff;
+    border:1px solid red;
+    margin-top: -2px;
+  }
+  .text {
+    background-color: #fff;
+    position:absolute;
+    top:0px;
+    left:0px;
+    z-index: -1;
+  }
+  .text:nth-child(1) {
+    z-index: 50;
+  }
+  </style>
+</head>
+<body>
+  <div id="all">
+    <div>
+      <p>服装鞋帽</p>
+      <ul id="kuang">
+        <li>服装</li>
+        <li>服装1</li>
+        <li>服装2</li>
+        <li>服装3</li>
+        <li>服装4</li>
+      </ul>
+    </div>
+
+    <div id="f" class="fuzhuang">
+      <div class="text">服装</div>
+      <div class="text">服装1</div>
+      <div class="text">服装2</div>
+      <div class="text">服装3</div>
+      <div class="text">服装4</div>
+    </div>
+  </div>
+  <script>
+  var kuang = document.getElementById("kuang");
+  var f = document.getElementById("f");
+
+
+  for (var i = 0,len = kuang.children.length;i < len;i++){
+    (function(i){
+      kuang.children[i].onmouseover = function(){
+      f.children[i].style.cssText = "z-index:50";
+      kuang.children[0].style.cssText = "border-color: black;border-bottom-color:red";
+      kuang.children[i].style.cssText = "border-color: red;border-bottom:#fff;z-index:60";
+      }
+      kuang.children[i].onmouseout = function(){
+        kuang.children[i].style.cssText = "border-color: black;border-bottom-color:red";
+        f.children[i].style.cssText = "z-index:-1";
+      }
+    })(i);
+  }
+
+
+
+
+  // kuang.children[0].onmouseover = function(){
+  //   f.children[0].style.cssText = "z-index:50";
+  //   kuang.children[0].style.cssText = "border-color: red;border-bottom:#fff;z-index:60";
+  // }
+  // kuang.children[0].onmouseout = function(){
+  //   kuang.children[0].style.cssText = "border-color: black;border-bottom-color:red";
+  //   f.children[0].style.cssText = "z-index:-1";
+  // }
+  // kuang.children[1].onmouseover = function(){
+  //   f.children[1].style.cssText = "z-index:50";
+  //   kuang.children[0].style.cssText = "border-color: black;border-bottom-color:red";
+  //   kuang.children[1].style.cssText = "border-color: red;border-bottom:#fff;z-index:60";
+  // }
+  // kuang.children[1].onmouseout = function(){
+  //   f.children[1].style.cssText = "z-index:-1";
+  //   kuang.children[1].style.cssText = "border-color: black;border-bottom-color:red";
+  // }
+  // kuang.children[2].onmouseover = function(){
+  //   f.children[2].style.cssText = "z-index:50";
+  //   kuang.children[0].style.cssText = "border-color: black;border-bottom-color:red";
+  //   kuang.children[2].style.cssText = "border-color: red;border-bottom:#fff;z-index:60";
+  // }
+  // kuang.children[2].onmouseout = function(){
+  //   f.children[2].style.cssText = "z-index:-1";
+  //   kuang.children[2].style.cssText = "border-color: black;border-bottom-color:red";
+  // }
+  // kuang.children[3].onmouseover = function(){
+  //   f.children[3].style.cssText = "z-index:50";
+  //   kuang.children[0].style.cssText = "border-color: black;border-bottom-color:red";
+  //   kuang.children[3].style.cssText = "border-color: red;border-bottom:#fff;z-index:60";
+  // }
+  // kuang.children[3].onmouseout = function(){
+  //   f.children[3].style.cssText = "z-index:-1";
+  //   kuang.children[3].style.cssText = "border-color: black;border-bottom-color:red";
+  // }
+  // kuang.children[4].onmouseover = function(){
+  //   f.children[4].style.cssText = "z-index:50";
+  //   kuang.children[0].style.cssText = "border-color: black;border-bottom-color:red";
+  //   kuang.children[4].style.cssText = "border-color: red;border-bottom:#fff;z-index:60";
+  // }
+  // kuang.children[4].onmouseout = function(){
+  //   f.children[4].style.cssText = "z-index:-1";
+  //   kuang.children[4].style.cssText = "border-color: black;border-bottom-color:red";
+  // }
+
+  </script>
+</body>
+</html>

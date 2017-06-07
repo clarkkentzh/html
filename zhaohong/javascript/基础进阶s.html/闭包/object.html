@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <title>面向对象</title>
+  </head>
+  <body>
+    <script type="text/javascript">
+    /*
+    面向对象：所有的操作都是以对象为中心，对象用于属性和方法。属性和方法都属于对象的附属。
+    特定：封装，继承，多态
+    */
+
+    //创建对象，使用已有的构造函数
+    var one = new Object();
+    var two = new Date();
+    console.log(typeof one);
+    console.log(typeof two);
+
+   //使用字面量创建对象,写法一
+    var three = {};//创建空对象
+    three.name = "zhaohong";
+    three.age = "350";
+
+    console.log(three.name);//zhaohong
+    console.log(three.age);//350
+
+    three.getName = function(){
+      console.log(this.name);//zhaohong
+      console.log(this === three);//true
+    }//getName()是方法,名字自定义
+    three.getName();//调用方法
+
+    //写法二
+    var four = {
+      name : "lisi",
+      age : "21",
+      getNames : function(){
+        console.log(this.name);
+      }
+    };
+
+    console.log(four.name);//使用"."方式访问属性时，不能加引号
+    console.log(four["age"]);//使用[]访问属性时，带上引号
+
+    four.getNames();
+
+
+    //已有的构造函数
+    var num = new Number(10);
+    var str = new String("hello");
+    var b = new Boolean(true);
+    console.log(num,str,b);
+
+
+
+    //只要是对象，就可以添加自定义的属性和方法,***普通变量不可以添加属性、方法,对象 
+    var a = 10;
+    a.index = 0;
+    console.log(a.index);//undefined
+
+    </script>
+  </body>
+</html>

@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <title>设置日期</title>
+  </head>
+  <body>
+  <script>
+
+  var start = new Date();
+  console.log(start);
+  console.log(start.getTime());//从1970年１月１号到当前的毫秒数
+
+  var end = new Date("2017-6-20 0:0:0:0");
+  console.log(end.getTime());//从1970.1.1到2017.6.20午夜零点的毫秒数
+
+
+
+  //setXXXX设置时间
+  start.setFullYear(2016);
+  console.log(start);//2016年的今天
+
+  start.setMonth(6);//0~11,2016年的７月
+  console.log(start.toDateString());//显示的格式
+
+  </script>
+  </body>
+</html>

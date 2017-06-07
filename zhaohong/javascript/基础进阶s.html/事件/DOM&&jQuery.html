@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>DOM和jQuery对象互换</title>
+</head>
+<body>
+
+  <button id="btn">按钮</button>
+  <button id="btn1">按钮1</button>
+
+  <script src="./jquery-3.0.0.min.js"></script>
+  <script>
+  //DOM对象
+     var btn = document.getElementById("btn");
+  //jQuery对象
+     var btn1 = $("#btn1");
+
+     console.log("DOM对象",btn);
+     console.log("jQuery对象",btn1);
+
+
+     console.log("**********DOM,jQuery互换***************");
+
+  //DOM转jQuery
+    //  var btns = $(document.getElementById("btn"));
+     var btns = $(btn);
+
+
+  //jQuery转DOM
+     var btns1 = $("#btn1").get(0);
+    //  var btns1 = $("#btn1").eq(0)[0];
+    //  var btns1 = $("#btn1")[0];
+
+
+     console.log("DOM转jQuery",btns);
+     console.log("jQuery转DOM",btns1);
+
+
+  </script>
+
+
+
+</body>
+</html>

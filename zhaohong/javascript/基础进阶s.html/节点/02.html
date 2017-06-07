@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <title></title>
+  </head>
+  <body>
+    <h1>等到转换．．．．</h1>
+    <ul class="list">
+       <li>1</li>
+       <li>2</li>
+       <li>3</li>
+       <li>4</li>
+       <li>5</li>
+       <li>6</li>
+    </ul>
+
+  <script src="./jquery/jquery-3.0.0.min.js"></script>
+  <script type="text/javascript">
+
+    for (var i = 0; i < 6; i++) {
+      $(".list li").eq(i).mouseover(i,function(event){
+        $("h1").text(event.data + 1);
+      })
+    }
+
+
+
+  </script>
+  </body>
+</html>

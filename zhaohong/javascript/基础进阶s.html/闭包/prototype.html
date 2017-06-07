@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <title>原型模式</title>
+  </head>
+  <body>
+    <script type="text/javascript">
+    // console.log(Person.prototype);
+    //每个函数都有prototype属性，是个对象
+    //将对象共有的属性、方法都添加到prototype上
+
+      function Zhaohong(){
+      }
+      Zhaohong.prototype.name = "zhaohong";
+      Zhaohong.prototype.age = "24";
+      Zhaohong.prototype.setName = function (newName) {
+      this.name = newName;
+    };       //把共同的属性都统一用prototype设置
+
+      var one = new Zhaohong();
+      var two = new Zhaohong();
+      console.log(one);
+      console.log(two);
+      console.log(one.name);//zhaohong
+      console.log(two.name);//zhaohong
+      one.setName("lisi");
+      two.setName("liwu");
+      console.log(one.name);//lisi
+      console.log(two.name);//liwu
+      //后面的属性可以覆盖原型属性
+
+
+
+    /*
+    闭包？闭包的优缺点？
+    面向对象？
+    apply, call方法的作用和区别？？
+    */
+    </script>
+  </body>
+</html>

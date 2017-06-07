@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <title>发送消息</title>
+    <style>
+    * {
+      margin:0px;
+      padding:0px;
+    }
+    h3 {
+      width:200px;
+      height:50px;
+      line-height: 50px;
+      border-bottom: 1px dashed green;
+      font-size: 20px;
+    }
+    a {
+      width:40px;
+      height:22px;
+      color:red;
+      cursor: pointer;
+      float:right;
+    }
+    p {
+      display: inline;
+    }
+    </style>
+  </head>
+  <body>
+    <div class="f">
+      <h1 class="ifm">发送消息</h1>
+      <input type="text" name="texts" id="text">
+      <button id="btn">发布</button>
+    </div>
+
+
+
+    <script src="./jquery-3.0.0.js" charset="utf-8"></script>
+    <script type="text/javascript">
+//jquery
+    $(function(){
+        $("#btn").click(function(){
+          var te = $("#text").val();
+          $("#text").val("");
+          $(".f").after("<h3><p>" + te + "</p><a >删除</a></h3>");
+          $("a").click(function(){
+            $(this).parent().remove();
+          });
+        });
+    });
+
+//js
+    // var btn = document.getElementById('btn');
+    // btn.onclick = function(){
+    //   var te = document.getElementById("text").value;
+    //   var inp = document.getElementById("text");
+    //   var h3 = document.createElement("h3");
+    //   var p = document.createElement("p");
+    //   var a = document.createElement("a");
+    //   inp.value = null;//清空输入框
+    //   p.innerHTML = te;
+    //   a.innerHTML = "删除";
+    //   h3.appendChild(p);
+    //   h3.appendChild(a);
+    //   document.body.appendChild(h3);
+    //   var rem = document.getElementsByTagName("a");
+    //   for(var i = 0,len = rem.length;i < len;i++){
+    //     rem[i].onclick = function(){
+    //       this.parentNode.parentNode.removeChild(this.parentNode);
+    //     }
+    //   }
+    // }
+
+
+
+
+    </script>
+  </body>
+</html>

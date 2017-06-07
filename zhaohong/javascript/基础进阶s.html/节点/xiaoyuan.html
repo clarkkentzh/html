@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>自动生成圆点</title>
+</head>
+<body>
+
+  <script>
+  var f = document.createElement("div");
+  var yuan = document.createElement("ul");
+  var li1 = document.createElement("li");
+  var li2 = document.createElement("li");
+  var li3 = document.createElement("li");
+  var li4 = document.createElement("li");
+  var li5 = document.createElement("li");
+  var f1 = document.createElement("div");
+
+  yuan.appendChild(li1);
+  yuan.appendChild(li2);
+  yuan.appendChild(li3);
+  yuan.appendChild(li4);
+  yuan.appendChild(li5);
+
+  f.appendChild(yuan);
+  f.appendChild(f1);
+
+  document.body.appendChild(f);
+
+  f.style.cssText = "position:relative";
+  f1.style.cssText = "position:absolute;right:470px;bottom:30px";
+
+  yuan.style.cssText = "list-style:none;width:500px;height:300px;margin:100px auto;border:1px solid red";
+
+
+
+  for (var i = 0,len = yuan.children.length;i < len;i++){
+    var dian = document.createElement("a");
+    f1.appendChild(dian);
+    dian.innerHTML = i + 1;
+    dian.style.cssText = "display:block;border-radius:50%;width:20px;height:20px;background-color:red;border:1px solid blue;text-align:center;line-height:20px;float:left;margin-left:10px;color:#fff;text-decoration:none";
+    dian.setAttribute("href","#");
+  }
+  for (var s = 0,lens = f1.children.length;s < lens;s++){
+    (function(s){
+      f1.children[s].onmouseover = function(){
+        f1.children[s].style.backgroundColor = "orange";
+        f1.children[s].style.color = "green";
+      }
+      f1.children[s].onmouseout = function(){
+        f1.children[s].style.backgroundColor = "red";
+        f1.children[s].style.color = "#fff";
+      }
+    })(s);
+  }
+
+  </script>
+
+</body>
+</html>

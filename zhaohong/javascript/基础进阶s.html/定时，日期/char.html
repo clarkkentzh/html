@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <title>字符串常用方法</title>
+  </head>
+  <body>
+　　<script>
+   var s = "abcde";
+
+   console.log(s.charAt(0));//a
+   console.log(s[0]);//a, 字符串可以类似数组获取相应位置的字符
+
+   console.log(s.charCodeAt(0));//97, 获取相应位置字符的编码
+
+
+   var str1 = 'The morning is upon us.';
+   var str2 = str1.slice(4, -2);//从第四个字符开始到倒数第二个字符
+   console.log(str2); // morning is upon u
+
+
+   var s = "hello world google";
+   var a = s.split(" ");//根据字符串里面的空格进行分割字符形成数组
+   console.log(a);
+   var s1 = "hello world google";
+   var a1 = s1.split(" ",2);//数组里只有两个元素
+   console.log(a1);
+
+   </script>
+  </body>
+</html>
