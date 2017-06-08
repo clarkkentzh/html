@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <title>构造函数继承</title>
+  </head>
+  <body>
+    <script type="text/javascript">
+      function Father(name,age){
+        this.name = name;
+        this.age = age;
+        this.colors = ["red","green","blue"];
+      }
+      Father.prototype.getName = function(){
+        return this.name;
+      }
+
+      function Son(name,age,score){
+        Father.call(this,name,age);//调用Father构造函数，this指one
+        this.score = score;//添加新的属性
+      }
+
+    //  借用构造函数，让每个对象都拥有自己的属性，相互之间没有任何关系
+    //  但是原型上的属性和方法，是没法拥有的。
+
+      var one = new Son("zhaohong",24,100);
+      console.log(one);
+      console.log(one.name);
+      console.log(one.age);
+      console.log(one.score);
+
+
+      //修改一个对象的属性不会影响其他对象的属性
+
+      one.colors.push("yellow");
+      var two = new Son("zh",50,100);
+      console.log(two);
+
+
+
+
+  //call方法
+      var value = 0;
+      var obj = {
+        value: 100
+      };
+
+      function fun(){
+        console.log(this);
+        console.log(this.value);
+      }
+
+      fun();//0,调用的时候this指的是window
+      fun.call(obj);//100,相当于将fun内部的额this变为obj
+
+
+    </script>
+  </body>
+</html>

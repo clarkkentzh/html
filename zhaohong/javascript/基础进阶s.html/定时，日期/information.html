@@ -39,38 +39,38 @@
     <script src="./jquery-3.0.0.js" charset="utf-8"></script>
     <script type="text/javascript">
 //jquery
-    $(function(){
-        $("#btn").click(function(){
-          var te = $("#text").val();
-          $("#text").val("");
-          $(".f").after("<h3><p>" + te + "</p><a >删除</a></h3>");
-          $("a").click(function(){
-            $(this).parent().remove();
-          });
-        });
-    });
+    // $(function(){
+    //     $("#btn").click(function(){
+    //       var te = $("#text").val();
+    //       $("#text").val("");
+    //       $(".f").after("<h3><p>" + te + "</p><a >删除</a></h3>");
+    //       $("a").click(function(){
+    //         $(this).parent().remove();
+    //       });
+    //     });
+    // });
 
 //js
-    // var btn = document.getElementById('btn');
-    // btn.onclick = function(){
-    //   var te = document.getElementById("text").value;
-    //   var inp = document.getElementById("text");
-    //   var h3 = document.createElement("h3");
-    //   var p = document.createElement("p");
-    //   var a = document.createElement("a");
-    //   inp.value = null;//清空输入框
-    //   p.innerHTML = te;
-    //   a.innerHTML = "删除";
-    //   h3.appendChild(p);
-    //   h3.appendChild(a);
-    //   document.body.appendChild(h3);
-    //   var rem = document.getElementsByTagName("a");
-    //   for(var i = 0,len = rem.length;i < len;i++){
-    //     rem[i].onclick = function(){
-    //       this.parentNode.parentNode.removeChild(this.parentNode);
-    //     }
-    //   }
-    // }
+    var btn = document.getElementById('btn');
+    btn.onclick = function(){
+      var te = document.getElementById("text").value;
+      var inp = document.getElementById("text");
+      var h3 = document.createElement("h3");
+      var p = document.createElement("p");
+      var a = document.createElement("a");
+      inp.value = null;//清空输入框
+      p.innerHTML = te;
+      a.innerHTML = "删除";
+      h3.appendChild(p);
+      h3.appendChild(a);
+      document.body.appendChild(h3);
+      var rem = document.getElementsByTagName("a");
+      for(var i = 0,len = rem.length;i < len;i++){
+        rem[i].onclick = function(){
+          this.parentNode.parentNode.removeChild(this.parentNode);
+        }
+      }
+    }
 
 
 

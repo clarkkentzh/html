@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <title>原生链继承的问题</title>
+  </head>
+  <body>
+    <script type="text/javascript">
+     /*
+     解决：通过原型继承属性时，任何对象都可以修改继承来的属性，导致其他的对象都会
+     受到影响
+     */
+      function Father(){
+        this.colors = ["red","green","blue"];
+      }
+      function Son(){
+      }
+      Son.prototype = new Father();
+      var one = new Son();
+      console.log(one);
+      console.log(one.colors);
+      // one.colors.push("black");//修改了原型上的属性,会影响其他对象属性
+      one.colors = ["red","green","blue","black"];//这个实际上是添加了自己的colors属性,不会影响其他对象属性
+      console.log(one.colors);
+      
+
+      var two = new Son();
+      console.log(two);
+      console.log(two.colors);
+    </script>
+  </body>
+</html>

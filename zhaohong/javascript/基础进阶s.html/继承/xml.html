@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <title>xml的解析</title>
+  </head>
+  <body>
+    <script src="./jquery-3.0.0.min.js" charset="utf-8"></script>
+    <script type="text/javascript">
+
+
+    //使用jQuery.parseXML解析
+      var xmls = "<rss version='2.0'><name>zhaohong</name><age>24</age><score>233</score></rss>";
+
+      var doc = $.parseXML(xmls);
+      console.log($(doc).find("name").eq(0).html());
+      console.log($(doc).find("age").eq(0).html());
+      console.log($(doc).find("score").eq(0).html());
+
+    //使用DOMParser解析
+      var xmls2 = "<student><name>zhaohong</name><age>24</age><score>233</score></student>";
+      var parser = new DOMParser(xmls2);
+      doc = parser.parseFromString(xmls2,"application/xml");
+      console.log(doc);
+
+      
+          /*
+          1. xml的解析方式？？？
+          2. xml VS json ？？？
+          */
+
+
+
+    </script>
+  </body>
+</html>

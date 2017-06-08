@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <title>原生链继承</title>
+  </head>
+  <body>
+    <script type="text/javascript">
+
+
+      function Father(name,age){
+        this.name = name;
+        this.age = age;
+      }
+      Father.prototype.getName = function(){
+        return this.name;
+      }
+
+      function Son(name){
+        this.name = name;
+        this.score = "24";
+      }
+
+      /*继承了Father的属性和方法*/
+      Son.prototype = new Father("zhao",50);
+      console.log(Son.prototype);
+
+      //指定Son的构造器，因为被之前的继承给覆盖了。
+      Son.prototype.constructor = Son;
+
+      //创建自己的方法
+      Son.prototype.getScore = function(){
+        return this.score;
+      }
+
+
+      //自己原型上的方法会覆盖继承过来的同名方法
+      Son.prototype.getName = function(){
+        return "son'name:" + this.name;
+      }
+
+      var one = new Son("zhaohong");//相当于创建自己的属性,会覆盖继承的属性
+      console.log(one);
+      console.log(one.getName());
+      console.log(one.constructor);//输出该对象的构造函数！！！！
+
+    </script>
+  </body>
+</html>
