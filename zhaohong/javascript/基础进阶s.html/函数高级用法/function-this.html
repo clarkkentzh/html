@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <title>this</title>
+  </head>
+  <body>
+
+    <button id = "btn">点击</button>
+    <script type="text/javascript">
+
+      var value = 0;
+
+      var obj = {
+        value:100,
+        handler:function(){
+          console.log(this.value);
+        }
+      };
+
+      var btn = document.getElementById("btn");
+      btn.value = 10;
+
+
+  //下面的obj.handler指的是将obj对象的handler方法单独的拿出来使用，this指的是btn
+      btn.addEventListener("click",obj.handler,false);//10
+      /*等价于*/
+      btn.addEventListener("click",function(){
+        console.log(this.value);
+      },false);//10
+      
+
+   //这个是在点击事件里面里面调用obj的方法，this指的是obj;
+      btn.addEventListener('click',function(){
+        obj.handler();
+      },false);//100
+
+
+    </script>
+  </body>
+</html>

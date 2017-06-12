@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <title>replace方法</title>
+  </head>
+  <body>
+    <script type="text/javascript">
+    //replace第一个参数是匹配的字符串，第二个是要替换的字符串
+      var str = "helloworldhelloworld";
+      var newStr = str.replace("hello","HELLO");
+      console.log(newStr);
+      newStr = str.replace(/hello/g,"HELLO");
+      console.log(newStr);
+
+      console.log("**********************");
+
+      /*
+      如何将background-color变成backgroundColor
+      */
+    // replace的第二个参数可以是一个函数,参数有四个，match是匹配的子串，第二个参数可以是一系列捕获的子串
+      function fun(arg1){
+        var strs;
+        strs = arg1.replace(/-([a-z])/g,function(m,p1){
+          return p1.toUpperCase();
+        });
+        console.log(strs);
+      }
+      fun("background-color");
+      fun("border-left-width");
+
+
+      /*
+      将backgroundColor变成background-color
+      */
+      function fun1(arg2){
+        var strs;
+        strs = arg2.replace(/[A-Z]/g,function(m){
+          return "-" + m.toLowerCase();
+        })
+        console.log(strs);
+      }
+      fun1("backgroundColor");
+      fun1("borderLeftWidth");
+    </script>
+  </body>
+</html>

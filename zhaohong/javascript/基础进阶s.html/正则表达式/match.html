@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <title>match方法</title>
+  </head>
+  <body>
+    <script type="text/javascript">
+
+    //match返回值是一个数组，并且标出了匹配字符串的开始位置
+      var ret = "1231helloworldhello".match(/hello/);
+      console.log(ret);//index=4是起始位置,匹配一个hello
+
+    //添加了标志为g返回的数组元素则不同
+      ret = "1231helloworldhello".match(/hello/g);
+      console.log(ret);//匹配了两个hello
+
+
+    //()叫捕获，捕获的作用可以直接提取符合条件的某一分部
+      ret = "helloworld123worldhello".match(/(hello)(world)(123)/);
+      console.log(ret);//数组先是匹配的整体字符串,然后是捕获的单个字符串
+
+  // * + ? 组合使用，进行最短匹配
+      ret = "helloworld123worldhello".match(/(hello)/);
+      console.log(ret);
+      ret = "helloworld123worldhello".match(/(hello)+?/);
+      console.log(ret);
+
+      ret = "helloworld123worldhello".match(/(hello)*?/);
+      console.log(ret);
+
+  // search测试匹配的字符串位置，就一个hello,失败返回-1
+      ret = "helloworld123worldhello".search(/hello/);
+      console.log(ret);//0
+
+    </script>
+  </body>
+</html>

@@ -8,7 +8,7 @@
     <script type="text/javascript">
     // console.log(Person.prototype);
     //每个函数都有prototype属性，是个对象
-    //将对象共有的属性、方法都添加到prototype上,减少内存的占用
+    //将对象共有的属性、方法都添加到prototype上,减少代码的长度和内存的占用
 
       function Zhaohong(){
       }
@@ -16,7 +16,7 @@
       Zhaohong.prototype.age = "24";
       Zhaohong.prototype.setName = function (newName) {
       this.name = newName;
-    };       //把共同的属性都统一用prototype设置
+      };       //把共同的属性都统一用prototype设置
 
       var one = new Zhaohong();
       var two = new Zhaohong();//两个对象属性的内存只占一份，因为都是从prototype上获取的

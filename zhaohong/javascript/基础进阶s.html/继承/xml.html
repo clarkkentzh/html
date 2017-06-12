@@ -13,6 +13,8 @@
       var xmls = "<rss version='2.0'><name>zhaohong</name><age>24</age><score>233</score></rss>";
 
       var doc = $.parseXML(xmls);
+      //parseXML返回的是document对象,需要转成jQuery对象使用
+
       console.log($(doc).find("name").eq(0).html());
       console.log($(doc).find("age").eq(0).html());
       console.log($(doc).find("score").eq(0).html());
@@ -23,7 +25,7 @@
       doc = parser.parseFromString(xmls2,"application/xml");
       console.log(doc);
 
-      
+
           /*
           1. xml的解析方式？？？
           2. xml VS json ？？？

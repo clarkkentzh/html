@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <title>this</title>
+  </head>
+  <body>
+    <script type="text/javascript">
+      var value = 0;
+      var obj = {
+        value:100,
+        handler:function(){
+          console.log(this.value);
+        }
+      };
+      obj.handler();//100,这个是指调用对象obj里面的handler方法,this指obj
+
+      var fun = obj.handler;
+      fun();//0,这个是把obj对象里面的handler方法赋值给了fun,this指window
+
+    </script>
+  </body>
+</html>

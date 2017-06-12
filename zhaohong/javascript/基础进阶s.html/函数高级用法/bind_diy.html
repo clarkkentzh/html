@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <title>自定义bind函数</title>
+  </head>
+  <body>
+    <script type="text/javascript">
+    /*
+    功能：实现和内置bind类似的功能
+    @fn: 要绑定的函数
+    @context: 指定的this
+    */
+
+    //整体类似闭包
+
+
+      function bind(fn,context){
+        //这里只有两个形参，但是传入的实参数可能大于两个，所以下面就是用伪数组arguments将多余的实参取出来。先变成数组，再将这个数组的从2位置开始是多余的实参取出来
+         var preArg = Array.prototype.slice.call(arguments,2);
+         //用来将一个类数组对象/集合转换成一个数组,第一个参数是对象，第二个参数是剪切起始位置
+
+
+         return function(){
+           var newArg = Array.prototype.slice.call(arguments,0);//闭包的arguments
+           //同上，将闭包参数都取出来，利用arguments
+
+           var arg =  preArg.concat(newArg);//一个数组
+           return fn.apply(context, arg);
+         }
+      }
+      var obj = {
+        value:100
+      };
+
+     function fun(){
+       console.log(this.value);
+       console.log(arguments);
+     }
+
+     var ret = bind(fun,obj,1,2,3);
+     ret(4,5,6);             //这两行是闭包创建
+
+
+    </script>
+  </body>
+</html>
