@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <title>跑步的小人</title>
+    <style>
+    * {
+      margin:0px;
+      padding:0px;
+    }
+    </style>
+  </head>
+  <body>
+    <canvas id="canvas" width="500" height="500"></canvas>
+    <button id="font">font</button>
+    <button id="left">left</button>
+    <button id="right">right</button>
+    <button id="back">back</button>
+
+    <script type="text/javascript">
+
+      var can = document.querySelector("#canvas");
+      var font = document.querySelector("#font");
+      var left = document.querySelector("#left");
+      var right = document.querySelector("#right");
+      var back = document.querySelector("#back");
+
+      can.style.border = "1px solid red";
+      var ctx = can.getContext("2d");
+
+      var img = new Image();
+      img.src = "./images/1.png";
+
+      img.onload = function(){
+        var timer;
+        ctx.drawImage(img,0,0,40,65,230,220,40,65);
+        font.onclick = function(){
+          clearInterval(timer);
+          var i = 0;
+          timer = setInterval(function(){
+            ctx.clearRect(230,220,40,65);
+            ctx.drawImage(img,i*40,0,40,65,230,220,40,65);
+            i++;
+            if(i >= 4){
+              i = 0;
+            }
+          },100);
+        }
+
+        left.onclick = function(){
+          clearInterval(timer);
+          var i = 0;
+          timer = setInterval(function(){
+            ctx.clearRect(230,220,40,65);
+            ctx.drawImage(img,i*40,65,40,65,230,220,40,65);
+            i++;
+            if(i >= 4){
+              i = 0;
+            }
+          },100);
+        }
+
+        right.onclick = function(){
+          clearInterval(timer);
+          var i = 0;
+          timer = setInterval(function(){
+            ctx.clearRect(230,220,40,65);
+            ctx.drawImage(img,i*40,130,40,65,230,220,40,65);
+            i++;
+            if(i >= 4){
+              i = 0;
+            }
+          },100);
+        }
+
+        back.onclick = function(){
+          clearInterval(timer);
+          var i = 0;
+          timer = setInterval(function(){
+            ctx.clearRect(230,220,40,65);
+            ctx.drawImage(img,i*40,195,40,65,230,220,40,65);
+            i++;
+            if(i >= 4){
+              i = 0;
+            }
+          },100);
+        }
+      }
+
+    </script>
+  </body>
+</html>

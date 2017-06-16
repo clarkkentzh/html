@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <title>包含私有成员的单例对象</title>
+  </head>
+  <body>
+    <script type="text/javascript">
+    //立即函数，立即调用一次
+      var singleton = (function(){
+
+        //私有成员
+        var a = 10;
+
+        //私有方法,可以选择在私有变量名字前加_表示是私有
+        function _addA(){
+          a += 1;
+        }
+        //私有方法
+        function _subA(){
+          a -= 1;
+        }
+        //私有方法
+        function _getA(){
+          return a;
+        }
+
+      //返回方法
+        return {
+          addAs:function(){
+            _addA();
+          },
+          subAs:function(){
+            _subA();
+          },
+          getAs:function(){
+            return _getA();
+          }
+        };
+      })();
+
+      //直接用对象本身调用自己的返回方法,是闭包的原理
+      singleton.addAs();
+      singleton.addAs();
+      singleton.addAs();
+      console.log(singleton.getAs());//13
+    </script>
+  </body>
+</html>

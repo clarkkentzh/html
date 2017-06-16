@@ -13,7 +13,7 @@
 
       function isEven(num){
         if(isEven.result === undefined){
-          isEven.result = {};
+          isEven.result = {};   //这个对象创建在函数的属性上
         }
         for(var key in isEven.result){
           if(key == num){
@@ -22,12 +22,18 @@
         }
         // console.log("*******************");
         var ret = true;
-        ret = (num % 2 === 0 ? true:false);
+        // ret = (num % 2 === 0 ? true:false);
+        for (var i = 2; i < num; i++){
+          if (num % i == 0){
+            ret = false;
+            break;
+          }
+        }
         return isEven.result[num] = ret;
       }
 
       var start = Date.now();
-      for (var i = 0; i < 100000; i++) {
+      for (var i = 0; i < 10000; i++) {
         console.log(isEven(i));
       }
       var end = Date.now();
@@ -36,7 +42,7 @@
       //程序执行事件减少了１秒多
       // console.log("two--------------------------");
       start = Date.now();
-      for (var i = 0; i < 100000; i++) {
+      for (var i = 0; i < 10000; i++) {
         console.log(isEven(i));
       }
        end = Date.now();

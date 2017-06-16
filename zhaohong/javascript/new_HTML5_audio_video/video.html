@@ -1,0 +1,147 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <title>video视频</title>
+    <style>
+    * {
+      margin:0px;
+      padding:0px;
+    }
+    #run {
+      width:300px;
+      height:10px;
+      display:inline-block;
+      border:1px solid red;
+    }
+
+    </style>
+  </head>
+  <body>
+
+    <video id="video" controls poster="./imgs/angela.jpg">
+      <source src="./imgs/Taylor Swift - Red.mp4">
+    </video>
+    <br><br>
+    <div id="run"></div>
+    <span></span>
+    <span></span>
+    <br><br>
+    <button id="start">播放</button>
+    <button id="stop">暂停</button>
+    <button id="mute">静音</button>
+    <button id="move">前进5s</button>
+    <button id="back">后退5s</button>
+    <button id="add">音量+</button>
+    <button id="sub">音量-</button>
+    <button id="runadd">速度+</button>
+    <button id="runsub">速度-</button>
+
+    <br><br>
+
+    <script type="text/javascript">
+      var video = document.querySelector("video");
+      var start = document.querySelector("#start");
+      var stop = document.querySelector("#stop");
+      var mute = document.querySelector("#mute");
+      var move = document.querySelector("#move");
+      var back = document.querySelector("#back");
+      var add = document.querySelector("#add");
+      var sub = document.querySelector("#sub");
+      var runadd = document.querySelector("#runadd");
+      var runsub = document.querySelector("#runsub");
+      var run = document.querySelector("#run");
+      var blue = document.createElement("div");
+      var span = document.querySelectorAll("span");
+      var duration,currenttime;
+
+    function flag(arg){
+        return arg > 9 ? arg  : "0" +　arg;
+    }
+ //播放
+
+      start.addEventListener("click",function(){
+        video.play();
+        span[0].innerHTML = "00:00/";
+        var mins2 = parseInt(duration/60);
+        var seconds2 = parseInt(duration%60);
+        span[1].innerHTML = "0" + mins2 + ":" + flag(seconds2);
+      },false);
+
+      video.addEventListener("progress",function(){
+        duration = this.duration;  //视频总时长,单位为s
+        video.addEventListener("timeupdate",function(){
+          currenttime = this.currentTime;  //视频播放当前的时长
+
+          blue.style.background = "blue";
+          blue.style.height = "10px";
+          blue.style.width = currenttime/duration*300 + "px";
+          run.appendChild(blue);
+          var times;
+          var timer = setInterval(function(){
+
+
+          times = parseInt(currenttime);
+
+          var mins1 = parseInt(times/60);
+          var seconds1 = parseInt(times%60);
+
+            span[0].innerHTML = "0" + mins1 + ":" + flag(seconds1) + "/";
+          if(times == parseInt(duration)){
+            clearInterval(timer);
+          }
+          },1000);
+        },false);
+      },false);
+
+
+
+
+
+   //暂停
+      stop.addEventListener("click",function(){
+        video.pause();
+      },false);
+
+　　//静音
+      mute.addEventListener("click",function(){
+        video.muted = !video.muted;
+        this.innerHTML = video.muted == true ? "取消静音" : "静音";
+      },false);
+
+   //前进5s
+      move.addEventListener("click",function(){
+        video.currentTime += 5;
+      },false);
+
+   //后退5s
+      back.addEventListener("click",function(){
+        video.currentTime -= 5;
+      },false);
+
+   //音量加
+      add.addEventListener("click",function(){
+        video.volume += 0.1;
+      },false);
+
+   //音量减
+      sub.addEventListener("click",function(){
+        video.volume -= 0.1;
+      },false);
+
+      runadd.addEventListener("click",function(){
+        video.playbackRate += 0.1;
+      },false);
+
+
+      runsub.addEventListener("click",function(){
+        video.playbackRate -= 0.1;
+      },false);
+
+
+    </script>
+
+
+
+  </body>
+</html>

@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <title>单例模式</title>
+  </head>
+  <body>
+    <script type="text/javascript">
+   //单例对象就是在全局上只有一个，没法用其他方法创建
+
+   
+   //这是最简单的单例对象,单例对象是唯一的
+      var obj = {
+        name:"zhaohong",
+        age:24,
+        score:100,
+        adult:true,
+        eat:function(){}
+      }
+
+
+
+      function Singleton(name,age){
+        this.name = name;
+        this.age = age;
+        var adult = true; //私有成员，大致指的就是局部变量
+
+
+        //创建一个方法，使用闭包访问私有成员
+        this.getAdult = function(){
+          return adult;
+        }
+      }
+
+      var one = new Singleton("zhaohong",24);
+      console.log(one.getAdult());//闭包引用特定的方法访问私有成员
+
+
+    </script>
+  </body>
+</html>

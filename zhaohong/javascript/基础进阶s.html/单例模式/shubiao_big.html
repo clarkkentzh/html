@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <title>鼠标，图片放大</title>
+    <style>
+    * {
+      margin:0px;
+      padding:0px;
+    }
+    #small {
+      width:350px;
+      height:350px;
+      border:1px solid red;
+      position: absolute;
+      left:100px;
+      top:100px;
+      cursor:crosshair;
+      background: url(./image/small.jpg);
+    }
+    #big {
+      width:460px;
+      height:460px;
+      border:1px solid red;
+      position:absolute;
+      left:500px;
+      top:100px;
+      /*display: none;*/
+      background: url(./image/big.jpg) no-repeat;
+    }
+    #s {
+      width:200px;
+      height:200px;
+      background: orange;
+      opacity:0.5;
+      position:absolute;
+      /*display: none;*/
+    }
+    </style>
+  </head>
+  <body>
+    <div id="small">
+      <div id="s"></div>
+    </div>
+    <div id="big"></div>
+    <script src="./jquery-3.0.0.min.js" charset="utf-8"></script>
+    <script type="text/javascript">
+      $("#small").hover(function(){
+        $("#s").css("display","block");
+        $("#big").css("display","block");
+      },function(){
+        $("#s").css("display","none");
+        $("#big").css("display","none");
+      });
+      $("#small").on("mousemove",function(event){
+        $("#s").css("left",event.pageX-200);
+        $("#s").css("top",event.pageY-200);
+        $("#big").css("background-position",-(event.pageX - 200)*2 + "px " + -(event.pageY - 200)*2 + "px");
+        if(event.pageX <= 200){
+          $("#s").css("left",0);
+        $("#big").css("background-position","0px " + -(event.pageY - 200)*2 + "px");
+        }
+        if(event.pageX >= 350){
+          $("#s").css("left",150);
+        $("#big").css("background-position","-300px " + -(event.pageY - 200)*2 + "px");
+        }
+        if(event.pageY <= 200){
+          $("#s").css("top",0);
+        $("#big").css("background-position",-(event.pageX - 200)*2 + "px " + "0px");
+        }
+        if(event.pageY >= 350){
+          $("#s").css("top",150);
+        $("#big").css("background-position",-(event.pageX - 200)*2 + "px " +"-300px");
+        }
+        if((event.pageY >= 350)&& (event.pageX >= 350)){
+        $("#big").css("background-position", "-300px " + "-300px");
+        }
+        if((event.pageY >= 350)&& (event.pageX <= 200 )){
+        $("#big").css("background-position", "0px " + "-300px");
+        }
+        if((event.pageY <= 200)&& (event.pageX >= 350)){
+        $("#big").css("background-position", "-300px " + "0px");
+        }
+        if((event.pageY <= 200)&& (event.pageX <= 200)){
+        $("#big").css("background-position", "0px " + "0px");
+        }
+      });
+
+    </script>
+  </body>
+</html>

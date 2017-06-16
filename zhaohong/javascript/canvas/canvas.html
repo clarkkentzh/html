@@ -1,0 +1,95 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <title>canvas的基本应用</title>
+    <style>
+    * {
+      margin:0px;
+      padding:0px;
+    }
+    .f {
+      border:1px solid red;
+    }
+    </style>
+  </head>
+  <body>
+    <canvas class="f" id="canvas" width="500" height="500"></canvas>
+
+    <script type="text/javascript">
+    //1.获得canvas元素
+      var canvas = document.getElementById("canvas");
+   //2.获得画布上下文
+      var context = canvas.getContext('2d');
+    //3.开始绘制
+      context.beginPath();
+      context.strokeStyle = "red";  //设置描边的颜色
+      context.lineWidth = 3;    //设置线条宽度不能加单位,默认px
+   //4.挪动位置
+      context.moveTo(50,50);
+   //5.直线　
+      context.lineTo(100,50);
+      context.lineTo(50,100);
+      context.lineTo(50,50);
+   //6.描边，否则没有颜色
+      context.stroke();   //必须写在直线后面
+   //７．绘制结束
+      context.closePath();
+
+
+
+  //正方形
+      context.beginPath();
+      context.fillStyle = "blue";//必须写在fill前面
+      context.moveTo(150,0);
+      context.lineTo(200,0);
+      context.lineTo(200,50);
+      context.lineTo(150,50);
+      context.lineTo(150,0);
+      context.stroke();
+    //对绘制的路径进行内部填充
+      context.fill();
+    //改变填充颜色
+
+
+
+  //绘制矩形　
+      context.beginPath();
+      context.rect(250,0,50,50);//前两个参数是矩形左上角的坐标，后两个参数为width和height
+      context.stroke();
+      // context.fillStyle = "yellow";
+      context.fill();//填充或者描边都会是默认是上次设置的颜色
+
+      context.fillRect(50,150,50,50);//直接绘制一个已经填充了的矩形
+      context.strokeRect(150,150,50,50);//直接绘制一个描边了的矩形
+  //擦除一块矩形区域
+      // context.clearRect(0,0,200,200);
+
+  //重新设置canvas的宽或者高也可以擦除整个画布
+      // canvas.width = 500;
+
+   //圆形
+      context.beginPath();
+      context.arc(300,300,50,0,360*Math.PI/180,false);
+      context.stroke();
+
+    //扇形
+      context.beginPath();
+      context.moveTo(50,300);//设置一个开始才能把扇形的半径连接在一起
+      context.arc(50,300,50,0,90*Math.PI/180,false);
+      context.fillStyle = 'orange';
+      context.fill();
+
+
+
+
+
+
+
+
+
+
+
+    </script>
+  </body>
+</html>

@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <title>扇形图</title>
+    <style>
+    * {
+      margin:0px;
+      padding:0px;
+    }
+    </style>
+  </head>
+  <body>
+    <canvas id="canvas" class="f" width="500" height="500"></canvas>
+
+    <script type="text/javascript">
+
+      var canvas = document.getElementById("canvas");
+
+      var context = canvas.getContext("2d");
+
+  //绿色扇形
+      context.beginPath();
+      context.moveTo(250,250);
+      context.arc(250,250,200,30*Math.PI/180,60*Math.PI/180,false);
+      context.fillStyle = "green";
+      context.font = "30px '宋体'";
+      context.fillText("10%",420,420);　　　//这是绘制填充的文本
+      // context.strokeText("10%",420,400);//这是绘制描边的文本
+      context.fill();
+
+   //橙色扇形
+      context.beginPath();
+      context.moveTo(250,250);
+      context.arc(250,250,200,60*Math.PI/180,150*Math.PI/180,false);
+      context.fillStyle = "orange";
+      context.fill();
+
+      context.beginPath();
+      context.moveTo(250,250);
+      context.arc(250,250,200,150*Math.PI/180,175*Math.PI/180,false);
+      context.fillStyle = "red";
+      context.fill();
+
+
+      context.beginPath();
+      context.moveTo(250,250);
+      context.arc(250,250,200,175*Math.PI/180,230*Math.PI/180,false);
+      context.fillStyle = "blue";
+      context.fill();
+
+
+      context.beginPath();
+      context.moveTo(250,250);
+      context.arc(250,250,200,230*Math.PI/180,290*Math.PI/180,false);
+      context.fillStyle = "purple";
+      context.fill();
+
+
+      context.beginPath();
+      context.moveTo(250,250);
+      context.arc(250,250,200,290*Math.PI/180,20*Math.PI/180,false);
+      context.fillStyle = "pink";
+      context.fill();
+
+
+      context.beginPath();
+      context.moveTo(250,250);
+      context.arc(250,250,200,20*Math.PI/180,30*Math.PI/180,false);
+      context.fillStyle = "yellow";
+      context.fill();
+
+    </script>
+  </body>
+</html>

@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <title>线性渐变</title>
+  </head>
+  <body>
+    <canvas id="canvas" width="500" height="500"></canvas>
+
+
+    <script type="text/javascript">
+      var can = document.getElementById("canvas");
+
+      var ctx = can.getContext("2d");
+
+
+      ctx.beginPath();
+
+     //参数是渐变区域，从0,0到200，0位置
+      var grd = ctx.createLinearGradient(0,0,200,0);
+      //这个渐变的区域指定的是画布的渐变区域,渐变坐标必须和绘制的图形在同一个区域内，否则就不是渐变了,就是指在画布的0到200像素之间才会发生渐变。
+
+      grd.addColorStop(0,"blue");
+      grd.addColorStop(0.5,"yellow");
+      grd.addColorStop(1,"red");
+      ctx.fillStyle = grd;
+
+      ctx.fillRect(0,0,200,200);
+      ctx.fillRect(0,240,300,300);//超过区域部分不会渐变,颜色默认继承最近的
+      ctx.fillRect(400,400,50,50);
+
+
+    </script>
+  </body>
+</html>

@@ -1,0 +1,117 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <title>轮播图</title>
+    <style media="screen">
+      * {
+        margin:0px;
+        padding:0px;
+      }
+      #f {
+        width:1226px;
+        height:460px;
+        position: relative;
+        left:50px;
+        top:100px;
+        overflow: hidden;
+      }
+      #s {
+        width:6130px;
+        height:460px;
+        font-size: 0;
+        position: absolute;
+        left:0px;
+        top:0px;
+      }
+      #left {
+        width:50px;
+        height:50px;
+        background: blue;
+        position: absolute;
+        top:50%;
+        left:50px;
+        margin-top: -25px;
+      }
+      #right {
+        width:50px;
+        height:50px;
+        background: blue;
+        position: absolute;
+        top:50%;
+        right:50px;
+        margin-top: -25px;
+      }
+
+    </style>
+  </head>
+  <body>
+    <div id="f">
+      <div id="s">
+        <img src="./image/0.jpg" alt="">
+        <img src="./image/1.jpg" alt="">
+        <img src="./image/2.jpg" alt="">
+        <img src="./image/3.jpg" alt="">
+        <img src="./image/4.jpg" alt="">
+      </div>
+      <div id="left">左</div>
+      <div id="right">右</div>
+    </div>
+    <script src="./lunbo_move.js" charset="utf-8"></script>
+    <script type="text/javascript">
+
+      var f = document.getElementById("f");
+      var s = document.getElementById("s");
+      var left = document.getElementById("left");
+      var right = document.getElementById("right");
+
+      var aa = 0;
+      left.onclick = function(){
+        aa++;
+        moveLeft(s,-aa * f.offsetWidth,10,10);
+      }
+      right.onclick = function(){
+        aa--;
+        moveLeft(s,-aa * f.offsetWidth,10,10);
+      }
+
+      // function moveLeft(elem,target,speed,interval){
+      //   clearInterval(elem.timer);
+      //   //速度的正负是由起始的位置和目标决定的
+      //   speed = target > elem.offsetLeft ? -speed:speed;
+      //
+      //   elem.timer = setInterval(function(){
+      //     elem.style.left = elem.offsetLeft + speed + "px";
+      //
+      //     if(Math.abs(elem.offsetLeft) >= target){
+      //       // elem.style.left = -target + "px";
+      //       clearInterval(elem.timer);
+      //     }
+      //   },interval);
+      // }
+      //
+      //
+      // function moveLeft1(elem,target,speed,interval){
+      //   clearInterval(elem.timer);
+      //   //速度的正负是由起始的位置和目标决定的
+      //   speed = target > elem.offsetLeft ? speed:-speed;
+      //
+      //   elem.timer = setInterval(function(){
+      //     elem.style.left = elem.offsetLeft + speed + "px";
+      //
+      //     if(elem.offsetLeft >= target){
+      //       // elem.style.left = -target + "px";
+      //       clearInterval(elem.timer);
+      //     }
+      //   },interval);
+      // }
+      //
+
+
+
+
+
+    </script>
+  </body>
+
+</html>

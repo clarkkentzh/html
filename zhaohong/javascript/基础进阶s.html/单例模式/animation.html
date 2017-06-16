@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <title>动画效果</title>
+    <style>
+    * {
+      margin:0px;
+      padding:0px;
+    }
+    #f {
+      width:50px;
+      height:50px;
+      position:absolute;
+      left:0px;
+      top:100px;
+      background:blue;
+    }
+
+    </style>
+  </head>
+  <body>
+
+    <button id="btn">出发</button>
+    <button id="btn2">返回</button>
+    <div id="f"></div>
+
+    <script src="./moveLeft.js" charset="utf-8"></script>
+    <script type="text/javascript">
+      btn = document.getElementById("btn");
+      btn2 = document.getElementById("btn2");
+      f = document.getElementById("f");
+
+
+    //单独函数
+  /*    btn.onclick = function(){
+        //先清除可能会干扰的定时器,否则重复点击会导致定时器叠加
+        clearInterval(f.timer);
+
+        f.timer = setInterval(function(){
+          f.style.left =f.offsetLeft + 10 + "px";
+          if(f.offsetLeft >= 1000){
+            clearInterval(f.timer);
+          }
+        },30);
+      }
+
+      btn2.onclick = function(){
+        //先清除可能会干扰的定时器,否则重复点击会导致定时器叠加
+        clearInterval(f.timer);
+
+        f.timer = setInterval(function(){
+          f.style.left =f.offsetLeft - 10 + "px";
+          if(f.offsetLeft <= 0){
+            clearInterval(f.timer);
+          }
+        },30);
+      }
+   */
+
+   //封装函数，通过js文件引用
+   /*
+   功能：进行水平运算偏移
+   @f, 要偏移的DOM对象
+   @target, 最终目的位置
+   @speed, number,每次的偏移量
+   @interval, 间隔时间
+   */
+     btn.onclick = function(){
+       moveLeft(f,1000,10,30);
+     }
+     btn2.onclick = function(){
+       moveLeft(f,0,10,30);
+     }
+
+  //引用moveLeft.js文件
+    </script>
+  </body>
+</html>

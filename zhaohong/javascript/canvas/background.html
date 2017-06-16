@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <title>绘制背景</title>
+  </head>
+  <body>
+    <canvas id="canvas" width="500" height="500"></canvas>
+
+    <script type="text/javascript">
+      var can = document.querySelector("#canvas");
+
+      var ctx = can.getContext("2d");
+
+      var img = new Image();//构造了一个对象，但是不会在页面上显示
+      img.src = "./images/zhaosi.jpg";　　//对象引用了外部图片，方便画布调用
+
+      img.onload = function(){
+        var pat = ctx.createPattern(img,"repeat");
+        ctx.fillStyle = pat;
+        ctx.fillRect(0,0,200,200);
+        // ctx.fill();
+
+      //toDataURL()只能在服务端应用，否则会因为引用了外部图片而失败
+      // console.log(can.toDataURL());
+      }
+
+    </script>
+  </body>
+</html>

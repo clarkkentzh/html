@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <title>画布旋转</title>
+  </head>
+  <body>
+    <canvas id="canvas" width="500" height="500"></canvas>
+
+    <script type="text/javascript">
+      var can = document.querySelector("#canvas");
+
+      var ctx = can.getContext("2d");
+
+      ctx.beginPath();
+      ctx.strokeStyle = "red";
+      ctx.rotate(30*Math.PI/180);
+      ctx.strokeRect(200,100,100,100);
+
+      ctx.rotate(330*Math.PI/180);//恢复原先的角度，但是之前的图像不会改变
+      ctx.strokeRect(200,300,100,100);
+
+    </script>
+  </body>
+</html>

@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <title></title>
+    <style media="screen">
+    * {
+      margin: 0;
+      padding: 0;
+    }
+      #f {
+        width: 300px;
+        height: 300px;
+        background: blue;
+      }
+    </style>
+  </head>
+  <body>
+
+    <video id="video" controls poster="./imgs/angela.jpg">
+      <source src="./imgs/Taylor Swift - Red.mp4" >
+    </video>
+
+    <div id="f">
+      我要全屏
+    </div>
+
+      <button id="btn">点击全屏</button>
+      <script type="text/javascript">
+
+      var btn = document.querySelector('#btn');
+      var video = document.querySelector('#video');
+      var f = document.querySelector('#f');
+
+
+// 　　请求全屏三种兼容性判断
+      function fullscreen(elem){
+        if (elem.requestFullscreen){
+          elem.requestFullscreen();
+        } else if(elem.mozRequestFullScreen){
+          elem.mozRequestFullScreen();
+        } else if (elem.webkitRequestFullscreen){
+          elem.webkitRequestFullscreen();
+        }
+        // elem.style.width = "100%";
+        // elem.style.height= "100%";
+      }
+//而火狐GecKo会为元素自动添加 CSS 使其伸展以便铺满屏幕： “width: 100%; height: 100%”
+//谷歌浏览器WebKit的全屏是让全屏的元素以原始尺寸居中到屏幕中央，其余部分变为黑色。为了在 WebKit 下也达到与 Gecko 同样的全屏效果，需要手动为元素增加 CSS 规则“width: 100%; height: 100%;”：
+      btn.onclick = function () {
+        fullscreen(f);
+      };
+
+      document.ondblclick = function () {
+        if (document.cancelFullScreen) {
+          document.cancelFullScreen();
+        } else if (document.mozCancelFullScreen) {
+          document.mozCancelFullScreen();
+        } else if (document.webkitCancelFullScreen) {
+          document.webkitCancelFullScreen();
+        }
+      };
+
+
+      </script>
+
+
+    </body>
+</html>

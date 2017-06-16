@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <title>走势图</title>
+    <style>
+    * {
+      margin:0px;
+      padding:0px;
+    }
+
+    </style>
+  </head>
+  <body>
+
+    <canvas id="canvas" width="600" height="600"></canvas>
+    <script type="text/javascript">
+      var canvas = document.getElementById("canvas");
+
+      var context = canvas.getContext('2d');
+   //横线
+      for(var i = 0;i < 30;i++){
+        context.beginPath();
+        context.moveTo(0,i*20);
+        context.lineTo(600,i*20);
+        context.stroke();
+      }
+  //竖线
+      for(var i = 0;i < 30;i++){
+        context.beginPath();
+        context.moveTo(i*20,0);
+        context.lineTo(i*20,600);
+        context.stroke();
+      }
+
+    //竖箭头
+      context.beginPath();
+      context.moveTo(60,560);
+      context.lineTo(60,60);
+      context.lineTo(70,70);
+      context.lineWidth = 4;
+      context.strokeStyle = "red";
+      context.stroke();
+      context.beginPath();
+      context.moveTo(60,60);
+      context.lineTo(50,70);
+      context.stroke();
+    //行箭头
+      context.beginPath();
+      context.moveTo(60,560);
+      context.lineTo(540,560);
+      context.lineTo(530,550);
+      context.strokeStyle = "blue";
+      context.lineWidth = 4;
+      context.stroke();
+      context.beginPath();
+      context.moveTo(540,560);
+      context.lineTo(530,570);
+      context.stroke();
+
+    //折线
+      context.beginPath();
+      context.moveTo(60,560);
+      context.lineTo(80,480);
+      context.lineTo(130,400);
+      context.lineTo(250,540);
+      context.lineTo(350,150);
+      context.lineTo(400,370);
+      context.lineTo(540,50);
+      context.strokeStyle = "orange";
+      context.stroke();
+
+
+
+
+    </script>
+  </body>
+</html>

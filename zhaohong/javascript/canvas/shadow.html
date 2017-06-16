@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <title>阴影</title>
+  </head>
+  <body>
+
+    <canvas id="canvas" width="500" height="500"></canvas>
+
+
+    <script type="text/javascript">
+      var can = document.getElementById("canvas");
+
+      var ctx = can.getContext("2d");
+
+      ctx.beginPath();
+      ctx.fillStyle = "blue";
+      ctx.shadowColor = "red";
+      ctx.shadowBlur = 10;   //阴影的模糊程度,大于1的整数,越大越模糊
+      ctx.shadowOffsetX = 10;  //阴影的水平偏移量
+      ctx.shadowOffsetY = 10;  //阴影的垂直偏移量
+      ctx.fillRect(100,100,100,100);
+
+    //会继承上面的阴影
+      ctx.beginPath();
+      ctx.shadowColor = "transparent"; //给颜色添加transparent属性后就会取消继承的阴影
+      ctx.arc(400,400,50,0,2*Math.PI,false);
+      ctx.fill();
+
+    </script>
+  </body>
+</html>
