@@ -1,0 +1,102 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <title>拖拽</title>
+    <style>
+     * {
+       margin: 0;
+       padding: 0;
+     }
+
+     .f {
+       width: 100px;
+       height: 100px;
+       background: yellow;
+       margin-bottom: 20px;
+       /*position: absolute;
+       top:0px;
+       left:0px;*/
+     }
+     .box {
+       height: 500px;
+       border: 1px solid red;
+       position:relative;
+     }
+
+    </style>
+  </head>
+  <body>
+
+    <!-- draggable 准备拖动  -->
+    <div draggable="true" class="f" id="f"></div>
+    <div class="box" id="box"></div>
+
+    <script type="text/javascript">
+      var f = document.querySelector('#f');
+      var box = document.querySelector('#box');
+
+  // //拖动开始
+  //     f.addEventListener('dragstart', function(e) {
+  //       console.log("f start drag ...");
+  //     });
+  // //拖动中
+  //     f.addEventListener('drag', function(e) {
+  //       console.log("f drag ...");
+  //     });
+  // //拖动结束
+  //     f.addEventListener('dragend', function(e) {
+  //       console.log("f drag end ...");
+  //     });
+  //
+  //     f.addEventListener('dragexit', function(e) {
+  //       console.log("f drag exit...");
+  //     });
+  //
+  // //拖动进入该区域
+  //     box.addEventListener('dragenter', function(e) {
+  //       console.log("box  drag enter ...");
+  //       this.style.borderColor = "blue";
+  //     });
+  // //拖动离开该区域
+  //     box.addEventListener('dragleave', function(e) {
+  //       console.log("box  drag leave...");
+  //       this.style.borderColor = "red";
+  //     });
+      var left;
+      var tops;
+      box.addEventListener('dragenter', function(e) {
+        f.style.position = "absolute";
+
+      });
+      f.addEventListener("drag",function(e){
+        tops = e.pageY-(f.offsetHeight/2);
+        left = e.pageX-(f.offsetWidth/2);
+        // console.log(e.pageY);
+        // console.log(f.offsetHeight);
+        // console.log(e.pageY-(f.offsetHeight/2));
+        // console.log(left);
+        // console.log(tops);
+      })
+
+      box.addEventListener('dragover', function(e) {
+
+        //必须在dragover事件中取消要拖拽的目标的默认行为
+        e.preventDefault();
+      });
+
+      box.addEventListener('drop', function(e) {
+        //节点之所以被拖动到一个指定位置，是因为要使用节点操作
+        this.appendChild(f);
+        f.style.left = left + "px";
+        f.style.top = tops + "px";
+      });
+
+      /*
+      实现f在box中任意拖动 ???? drag,dragover, drop
+      */
+
+    </script>
+
+  </body>
+</html>

@@ -66,6 +66,7 @@
 
         video.addEventListener("timeupdate",function(){
           currenttime = this.currentTime;  //视频播放当前的时长
+          duration = video.duration;  //视频总时长,单位为s,必须写在函数里面
 
           blue.style.background = "blue";
           blue.style.height = "10px";
@@ -77,14 +78,17 @@
           var mins1 = parseInt(times/60);
           var seconds1 = parseInt(times%60);
 
+          span[0].innerHTML = "00:00/";
           span[0].innerHTML = "0" + mins1 + ":" + flag(seconds1) + "/";
 
-
+          var mins2 = parseInt(duration/60);
+          var seconds2 = parseInt(duration%60);
+          span[1].innerHTML = "0" + mins2 + ":" + flag(seconds2);
         },false);
     //播放
 
       start.addEventListener("click",function(){
-        duration = video.duration;  //视频总时长,单位为s,必须写在函数里面
+
 
         if(video.paused){
           video.play();
@@ -95,12 +99,8 @@
           video.pause();
           start.innerHTML = "播放";
         }
-
-        span[0].innerHTML = "00:00/";
-        var mins2 = parseInt(duration/60);
-        var seconds2 = parseInt(duration%60);
-        span[1].innerHTML = "0" + mins2 + ":" + flag(seconds2);
       },false);
+
 
     //暂停
       // stop.addEventListener("click",function(){

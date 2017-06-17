@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <title>data自定义属性</title>
+  </head>
+  <body>
+    <div id="f" data-one="hello" data-two="world" data-value-one="value1"></div>
+    <script src="./jquery-3.0.0.min.js" charset="utf-8"></script>
+    <script type="text/javascript">
+      var f = document.querySelector("#f");
+      console.log(f.getAttribute("data-one"));
+
+      console.log(f.dataset);  //一个伪类
+      f.dataset.one = "HELLO";  //通过伪类对带有data-的属性进行操作
+      f.dataset.two = "WORLD";
+      console.log(f.dataset.valueOne);//也可以获取属性值，属性名除去data剩下的用驼峰法
+
+  //添加自定义属性
+      f.dataset.zhaoHong = "god";
+
+
+
+  //jQuery中直接操作类似原生的dataset的自定义属性
+      console.log($("#f").data("valueOne"));
+      console.log($("#f").data().valueOne);　　//这两行都是获取属性值的jQuery方法
+
+
+ //jQuery中通过data添加的属性，只能使用data访问，不会出现在自定义的标签属性上
+      console.log($("#f").data({"index": 100}).data());
+      
+    </script>
+  </body>
+</html>

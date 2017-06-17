@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <title>自定义函数</title>
+  </head>
+  <body>
+    <div id="f" class="one"></div>
+    <script type="text/javascript">
+
+      var f = document.querySelector("#f");
+
+      function add(elem){
+        var args = Array.prototype.slice.call(arguments,1);
+        for(var i = 0,len = args.length;i < len;i++){
+          elem.className += " " + args[i];
+        }
+        return elem;
+      }
+
+      function remove(elem){
+        var args = Array.prototype.slice.call(arguments,1);
+        for(var i = 0,len = args.length;i < len;i++){
+          elem.className = elem.className.replace(args[i],"");
+        }
+        return elem;
+      }
+
+
+      function toggle(elem){
+        var args = Array.prototype.slice.call(arguments,1);
+        for(var i = 0,len = args.length;i < len;i++){
+          if((elem.className).search(args[i]) == -1){
+            elem.className = elem.className + " " + args[i];
+          }else {
+            elem.className = elem.className.replace(args[i],"");
+          }
+        }
+        return elem;
+
+      }
+
+      add(f,"two","three");
+      remove(f,"one");
+      toggle(f,"nine");
+      toggle(f,"nine");
+
+
+    </script>
+  </body>
+</html>

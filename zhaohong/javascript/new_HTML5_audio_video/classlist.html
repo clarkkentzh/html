@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <title>classList</title>
+  </head>
+  <body>
+    <div id="f" class="one two three"></div>
+
+    <script type="text/javascript">
+
+      var f = document.querySelector("#f");
+
+      f.classList.add("four");  //添加一个类
+      f.classList.add("five","six");//添加多个类，用逗号分割的格式
+      f.classList.remove("six");  //删除一个类
+      f.classList.remove("four","five");　//删除多个类
+      f.classList.toggle("seven");  //toggle有这个类就删除，没有就添加
+      f.classList.toggle("seven");
+
+      console.log(f.classList.contains("three"));//true
+    //contains查看一个指定的 class 是否存在于元素的 class 列表中
+      console.log(f.classList.contains("eight"));//false
+    </script>
+  </body>
+</html>
