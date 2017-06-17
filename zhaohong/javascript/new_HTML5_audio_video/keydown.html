@@ -60,15 +60,12 @@
 
       $(document).keypress(function(event){
         console.log(event.which);
-        if(nullor() == null){
-          console.log(nullor());
-          if(event.which == 13){
-            fullScreen(f);
-          }
-        }
-        else {
-          if(event.which == 13){
+        if(event.which == 13){
+          if(document.fullscreenElement || document.mozFullScreenElement || document.webkitFullscreenElement){
             cancelFullScreen(f);
+          }
+          else {
+            fullScreen(f);
           }
         }
       });

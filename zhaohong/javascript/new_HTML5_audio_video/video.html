@@ -28,48 +28,42 @@
     <span></span>
     <br><br>
     <button id="start">播放</button>
-    <button id="stop">暂停</button>
+    <!-- <button id="stop">暂停</button> -->
     <button id="mute">静音</button>
     <button id="move">前进5s</button>
     <button id="back">后退5s</button>
-    <button id="add">音量+</button>
-    <button id="sub">音量-</button>
+    <!-- <button id="add">音量+</button>
+    <button id="sub">音量-</button> -->
     <button id="runadd">速度+</button>
     <button id="runsub">速度-</button>
+    <button id="btn">全屏</button>
+    <input type="range" id="range" value="0.5" min="0" max="1" step="0.1">
 
     <br><br>
 
     <script type="text/javascript">
       var video = document.querySelector("video");
       var start = document.querySelector("#start");
-      var stop = document.querySelector("#stop");
+      // var stop = document.querySelector("#stop");
       var mute = document.querySelector("#mute");
       var move = document.querySelector("#move");
       var back = document.querySelector("#back");
-      var add = document.querySelector("#add");
-      var sub = document.querySelector("#sub");
+      // var add = document.querySelector("#add");
+      // var sub = document.querySelector("#sub");
+      var range = document.querySelector("#range");
       var runadd = document.querySelector("#runadd");
       var runsub = document.querySelector("#runsub");
       var run = document.querySelector("#run");
       var blue = document.createElement("div");
       var span = document.querySelectorAll("span");
+      var btn = document.querySelector("#btn");
       var duration,currenttime;
 
     function flag(arg){
         return arg > 9 ? arg  : "0" +　arg;
     }
- //播放
 
-      start.addEventListener("click",function(){
-        video.play();
-        span[0].innerHTML = "00:00/";
-        var mins2 = parseInt(duration/60);
-        var seconds2 = parseInt(duration%60);
-        span[1].innerHTML = "0" + mins2 + ":" + flag(seconds2);
-      },false);
 
-      video.addEventListener("progress",function(){
-        duration = this.duration;  //视频总时长,单位为s
         video.addEventListener("timeupdate",function(){
           currenttime = this.currentTime;  //视频播放当前的时长
 
@@ -77,32 +71,41 @@
           blue.style.height = "10px";
           blue.style.width = currenttime/duration*300 + "px";
           run.appendChild(blue);
-          var times;
-          var timer = setInterval(function(){
-
 
           times = parseInt(currenttime);
 
           var mins1 = parseInt(times/60);
           var seconds1 = parseInt(times%60);
 
-            span[0].innerHTML = "0" + mins1 + ":" + flag(seconds1) + "/";
-          if(times == parseInt(duration)){
-            clearInterval(timer);
-          }
-          },1000);
+          span[0].innerHTML = "0" + mins1 + ":" + flag(seconds1) + "/";
+
+
         },false);
+    //播放
+
+      start.addEventListener("click",function(){
+        duration = video.duration;  //视频总时长,单位为s,必须写在函数里面
+
+        if(video.paused){
+          video.play();
+          start.innerHTML = "暂停";
+          // start.disabled = true;    //true是不能点击，false可以点击
+        }
+        else {
+          video.pause();
+          start.innerHTML = "播放";
+        }
+
+        span[0].innerHTML = "00:00/";
+        var mins2 = parseInt(duration/60);
+        var seconds2 = parseInt(duration%60);
+        span[1].innerHTML = "0" + mins2 + ":" + flag(seconds2);
       },false);
 
-
-
-
-
-   //暂停
-      stop.addEventListener("click",function(){
-        video.pause();
-      },false);
-
+    //暂停
+      // stop.addEventListener("click",function(){
+      //   video.pause();
+      // },false);
 　　//静音
       mute.addEventListener("click",function(){
         video.muted = !video.muted;
@@ -119,15 +122,20 @@
         video.currentTime -= 5;
       },false);
 
-   //音量加
-      add.addEventListener("click",function(){
-        video.volume += 0.1;
+  //  //音量加
+  //     add.addEventListener("click",function(){
+  //       video.volume += 0.1;
+  //     },false);
+   //
+  //  //音量减
+  //     sub.addEventListener("click",function(){
+  //       video.volume -= 0.1;
+  //     },false);
+      range.addEventListener("change",function(){
+        video.volume = range.value;  //用拖拽的方式调节音量
       },false);
 
-   //音量减
-      sub.addEventListener("click",function(){
-        video.volume -= 0.1;
-      },false);
+
 
       runadd.addEventListener("click",function(){
         video.playbackRate += 0.1;
@@ -138,6 +146,30 @@
         video.playbackRate -= 0.1;
       },false);
 
+
+      function fullscreen(elem){
+        if (elem.requestFullscreen){
+          elem.requestFullscreen();
+        } else if(elem.mozRequestFullScreen){
+          elem.mozRequestFullScreen();
+        } else if (elem.webkitRequestFullscreen){
+          elem.webkitRequestFullscreen();
+        }
+        // elem.style.width = "100%";
+        // elem.style.height= "100%";
+      }
+      btn.onclick = function(){
+        fullscreen(video);
+      }
+      document.ondblclick = function () {
+        if (document.cancelFullScreen) {
+          document.cancelFullScreen();
+        } else if (document.mozCancelFullScreen) {
+          document.mozCancelFullScreen();
+        } else if (document.webkitCancelFullScreen) {
+          document.webkitCancelFullScreen();
+        }
+      };
 
     </script>
 
