@@ -17,7 +17,7 @@
       console.log(f.dataset.valueOne);//也可以获取属性值，属性名除去data剩下的用驼峰法
 
   //添加自定义属性
-      f.dataset.zhaoHong = "god";
+      f.dataset.zhaoHong = "god";//data-zhao-hong="god"
 
 
 
@@ -28,7 +28,7 @@
 
  //jQuery中通过data添加的属性，只能使用data访问，不会出现在自定义的标签属性上
       console.log($("#f").data({"index": 100}).data());
-      
+
     </script>
   </body>
 </html>

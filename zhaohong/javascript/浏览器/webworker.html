@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <title>webworker</title>
+  </head>
+  <body>
+
+    <button id="start">开始</button>
+    <button id="stop">停止</button>
+    <script type="text/javascript">
+      var start = document.querySelector("#start");
+      var stop = document.querySelector("#stop");
+      var worker;
+
+      start.onclick = function (){
+    //创建一个后台线程
+        worker = new Worker("./worker.js");
+
+    //接收worker发来的数据
+        worker.onmessage = function(event){
+          console.log("从worker接收到的数据：",event.data);
+        }
+
+    //主线程给worker发送数据
+        worker.postMessage(0);
+      };
+
+      stop.onclick = function(){
+        worker.terminate();    //停止
+      };
+    </script>
+  </body>
+</html>

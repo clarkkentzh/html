@@ -1,0 +1,16 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <title>第二个sessionStorage</title>
+  </head>
+  <body>
+
+    <script type="text/javascript">
+    //无法直接引用缓存的数据,只有和其他页面有相互跳转的关系，获取其他页面上的sessionStorage
+      console.log(sessionStorage.getItem("name"));
+      console.log(sessionStorage.getItem("age"));
+    </script>
+
+  </body>
+</html>

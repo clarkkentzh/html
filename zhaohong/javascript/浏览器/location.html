@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <title>location</title>
+  </head>
+  <body>
+    <script type="text/javascript">
+
+      console.log(location.hash);//单独打印是空白，修改以后才有输出
+      location.hash = "123344";
+      console.log(location.hash); //返回URL中＃号后的字符串，包括＃
+
+
+      console.log(location.host);//返回服务器名称和端口号
+      console.log(location.href);//返回当前加载页面的完整URL
+      console.log(location.toString());//同上
+      // location.href = "http://www.baidu.com";//这就直接跳到百度页面了
+
+      console.log(location.protocol);//返回的是URL用的哪种协议,通常是http:或https:
+
+
+      console.log(location.pathname);//返回URL中的目录和文件名
+
+      console.log(location.search);//空白；查询URL中的字符串，这个字符串以?开头
+      location.search = "?name=zhaohong&age=24";
+      console.log(location.search);//用location.search添加字符串以后就可以查询到
+
+  //用location加属性名直接赋值就可以修改属性，并且任意修改一种属性都会刷新页面
+    </script>
+  </body>
+</html>

@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <title>history 主要代码</title>
+  </head>
+  <body>
+
+    <a href="./test.html">点击跳到test.html</a>
+
+    <button id="go">前进</button>
+    <button id="back">后退</button>
+
+    <script type="text/javascript">
+    var go = document.querySelector('#go');
+    var back = document.querySelector('#back');
+
+    go.onclick = function () {
+      // history.forward();   //表示前进到有记忆的页面，之前访问过的
+      history.go(2);  　　　//同理
+    };
+
+    back.onclick = function () {
+      //history.back();     //返回到之前访问过的上级页面
+      history.go(-1);     //参数的正负号表示方向，数值表示跳几个页面
+    };
+
+    </script>
+
+  </body>
+</html>

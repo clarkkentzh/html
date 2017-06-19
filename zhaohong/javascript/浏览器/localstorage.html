@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <title>locationstorage</title>
+  </head>
+  <body>
+    <!--
+    localStorage的存储周期：一直存在，除非手动清除.
+    localStorage 跨页面数据共享时，需要页面之间存在访问关系,同sessionStorage
+    -->
+
+    <a href="./localstorage1.html">跳到localstorage1.html</a>
+
+    name:  <input type="text" placeholder="请输入用户名"><br>
+    passwd: <input type="password" placeholder="请输入密码"><br>
+    <button id="btn">登录</button>
+    <script type="text/javascript">
+
+      var user = document.querySelectorAll("input")[0];
+      var passwd = document.querySelectorAll("input")[1];
+      var btn = document.querySelector("#btn");
+
+      console.log(localStorage.getItem);
+
+  //只要有缓存,下面这10行代码就执行，输入框会有默认的历史缓存
+      if(localStorage.getItem("name")){
+        user.value = localStorage.getItem("name");
+      }else{
+        user.value = "";
+      }
+      if(localStorage.getItem("passwd")){
+        passwd.value = localStorage.getItem("passwd");
+      }else{
+        passwd.value = "";
+      }
+
+
+      btn.onclick = function(){
+        var namevalue = user.value;
+        var passwdvalue = passwd.value;
+
+        if((!namevalue) || (!passwdvalue)){
+          alert("用户名和密码不能为空!");
+          return;
+        }
+
+        localStorage.setItem("name",namevalue);
+        localStorage.setItem("passwd",passwdvalue);
+      }
+
+    </script>
+  </body>
+</html>

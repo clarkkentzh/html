@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <title>sessionStorage</title>
+  </head>
+  <body>
+    <!--
+
+     sessionStorage 存储周期：浏览器的运行时间,没有关联的页面之间无法共享数据
+    -->
+
+
+    <a href="./storage1.html">点击跳转</a>
+    <button id="btn">set</button>
+    <button id="remove">remove</button>
+    <script type="text/javascript">
+      var set = document.querySelector("#btn");
+      var remove = document.querySelector("#remove");
+
+      set.onclick = function(){
+        sessionStorage.setItem("name","zhaohong");  //键值对的形式添加数据
+        sessionStorage.setItem("age",24);
+      }
+      remove.onclick = function(){
+        // sessionStorage.removeItem("name");  //只需要一个键名就可以删除对应缓存
+        sessionStorage.clear();  //这个是一次删除全部缓存
+      }
+
+    </script>
+  </body>
+</html>

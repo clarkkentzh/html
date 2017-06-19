@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+  <title>错误信息</title>
+</head>
+<body>
+
+
+  <script type="text/javascript">
+
+    try {
+      // fun();//语法错误是无法解决的，只能自己解决
+      var a = 100,b = 0;
+      var c = a/b;
+      console.log(c);   //Infinity，无限大，除数可以为0，不算错误
+
+      var ret = 2 * Number.MAX_VALUE;//Infinity,超出数值范围也不算错误,也是无限大
+      console.log(ret);    //Number.MAX_VALUE指js里面最大计算数值范围1.75e+308
+
+      JSON.parse("helloworld");
+
+    }catch(error){
+  //instanceof用于测试某个对象是否由一个指定的构造函数产生
+      if(error instanceof ReferenceError){
+        console.log("***************");
+      }else {
+
+      console.log(error);
+      }
+    }
+
+    console.log("after error------");
+  </script>
+</body>
+</html>

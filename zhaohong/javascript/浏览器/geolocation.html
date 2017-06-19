@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+  <title>定位</title>
+</head>
+<body>
+
+  <script type="text/javascript">
+  //     navigator.geolocation.getCurrentPosition(success, error, options)
+  // 参数:
+  // success 成功得到位置信息时的回调函数，使用Position 对象作为唯一的参数。
+  // error 可选,获取位置信息失败时的回调函数，使用 PositionError 对象作为唯一的参数，这是一个可选项。
+  // options 可选,一个可选的PositionOptions 对象。
+
+  if(navigator.geolocation){
+    alert("浏览器支持");
+  }else {
+    alert("浏览器不支持");
+  }
+
+  var options = {
+    enableHighAccuracy:true,
+    timeout:5000,
+    maximumAge:0
+  }
+  function success(pos) {
+    var crd = pos.coords;   //位置的对象
+
+    console.log("Your current position is:");
+    console.log("纬度：",crd.latitude);
+    console.log("经度：",crd.longitude);
+    console.log("精度：",crd.accuracy + "  meters");
+  }
+  function error(err){
+    console.warn("Error(" + err.code + "):" + err.message);
+  }
+
+
+    navigator.geolocation.getCurrentPosition(success,error,options);
+
+  </script>
+</body>
+</html>

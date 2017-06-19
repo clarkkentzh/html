@@ -67,16 +67,10 @@
       var tops;
       box.addEventListener('dragenter', function(e) {
         f.style.position = "absolute";
-
       });
       f.addEventListener("drag",function(e){
         tops = e.pageY-(f.offsetHeight/2);
         left = e.pageX-(f.offsetWidth/2);
-        // console.log(e.pageY);
-        // console.log(f.offsetHeight);
-        // console.log(e.pageY-(f.offsetHeight/2));
-        // console.log(left);
-        // console.log(tops);
       })
 
       box.addEventListener('dragover', function(e) {

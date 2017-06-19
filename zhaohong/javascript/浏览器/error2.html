@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <title>手动抛出错误</title>
+  </head>
+  <body>
+
+    <script type="text/javascript">
+
+      try {
+        var a = 100,b = 0;
+        var c = a / b;
+
+        if(c === Infinity) {
+    //throw是手动抛出一个自定义的错误信息
+          // throw "result is Infinity";
+          throw new Error("result is Infinity","error2.html",18);
+          //通过Error的构造器可以创建一个错误对象。当运行时错误产生时，Error的实例对象会被抛出。Error对象可用于用户自定义的异常的基础对象.参数一：错误信息；参数二：错误构造代码所在的文件名；参数三：调用构造代码所在文件的行号
+        }
+      }
+      catch(e){
+        console.log(e);
+      }finally {
+
+    //finally写不写都行，因为都会执行
+        console.log("********");
+      }
+
+
+    /*
+    嵌套错误处理：
+    如果内层没有编写catch语句块，那么错误触发时会向外传递，交给最近一个catch处理。
+    如果内层编写catch语句块，内层自己处理错误
+    */
+    </script>
+  </body>
+</html>
