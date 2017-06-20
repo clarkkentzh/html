@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <title>利用window.postMessage</title>
+  </head>
+  <body>
+
+    <h1>window.open打开新页面</h1>
+    <button id="btn">点击打开</button>
+
+
+    <script type="text/javascript">
+
+/*
+跨域，跨窗口通信
+window.open
+xxx.postMessage
+xxx.onmessage
+*/
+
+
+ //接收第二个页面发送的数据
+      window.onmessage = function(e){
+        console.log(e.data);
+      };
+
+
+
+      window.name = "father";
+      var btn = document.querySelector("#btn");
+      var timer = null;
+
+
+      btn.onclick = function(){
+    //关闭定时器，避免多个定时器同时运行
+        clearInterval(timer);
+   //下面四行代码就可以打开第二个页面了
+        var newWindow = window.open("./test.html","son");
+        newWindow.onload = function(){
+          newWindow.document.querySelector("h1").style.color = "red";
+        };
+
+  //下面代码是用来传数据
+        var num = 0;
+        timer = setInterval(function(){
+    //用postMessage给打开的页面传送数据
+    //第二个参数是向一个指定域名的页面发送数据
+          newWindow.postMessage(num++,"*");
+        },1000);
+      };
+
+    </script>
+  </body>
+</html>

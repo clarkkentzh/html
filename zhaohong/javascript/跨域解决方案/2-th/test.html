@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <title>test</title>
+  </head>
+  <body>
+    <h1 id="h">我是iframe</h1>
+  </body>
+
+  <script type="text/javascript">
+    var h = document.querySelector("#h");
+
+    var originUrl = window.parent.location.href;
+    var num = 0;
+    window.onhashchange = function(){
+      h.innerHTML = window.location.hash;
+      window.parent.location.href = originUrl + "#" + num++;
+    }
+  </script>
+</html>

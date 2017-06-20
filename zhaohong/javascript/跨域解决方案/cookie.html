@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <title>cookie</title>
+  </head>
+  <body>
+
+    user:  <input type="text"><br><br>
+    passwd: <input type="password"><br><br>
+    <button id="btn">提交</button>
+    <script type="text/javascript">
+
+      var users = document.querySelectorAll("input")[0];
+      var passwd = document.querySelectorAll("input")[1];
+      var btn = document.querySelector("#btn");
+
+
+  //下面六行代码检测cookie中是否有缓存，有就将数据放入输入框成为默认值,属于cookie的读
+      if((/name=/.test(document.cookie)) && (/passwd=/.test(document.cookie))){
+        var result = document.cookie.match(/name=([^=]+);[\s\S]*passwd=([^=]+);?/);
+        users.value = result[1];
+        passwd.value = result[2];
+      }
+
+      btn.onclick = function () {
+
+        var uservalue = users.value;
+        var passwdvalue = passwd.value;
+
+
+        if((!uservalue) || (!passwdvalue)){
+          alert("用户名和密码不能为空");
+          return;
+        }
+
+    //必须在服务器运行
+   //属于cookie的写
+        document.cookie = "name=" + uservalue;
+        document.cookie = "passwd=" + passwdvalue;
+      };
+    </script>
+  </body>
+</html>

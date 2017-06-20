@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <title>test</title>
+  </head>
+  <body>
+    <h1>woshiiframe</h1>
+
+    <script type="text/javascript">
+      var data = {
+        name:"嵌套页面"
+      }
+
+
+      //这里打印的是外部页面,window.parent是拿到外部页面的window
+      console.log(JSON.parse(window.parent.name));
+
+　　//window.name传递的是字符串，可以用json方法
+      window.name = JSON.stringify(data);
+    </script>
+  </body>
+</html>

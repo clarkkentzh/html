@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <title>test</title>
+  </head>
+  <body>
+    <h1>我是第二个页面</h1>
+    <script type="text/javascript">
+      console.log(window.name); 　//输出该页面的名字 
+      console.log(window.opener);  //输出该页面的打开者
+
+  //onmessage是接收数据
+      window.onmessage = function(e){
+        console.log(e.source);  //是发送方的window,源
+        // console.log(e.data); //发送过来的数据
+        console.log(e.origin); //发送方的域名  , http://127.0.0.1
+
+    //给发送方发送数据
+        e.source.postMessage("I am son",e.origin);
+      };
+    </script>
+  </body>
+</html>
