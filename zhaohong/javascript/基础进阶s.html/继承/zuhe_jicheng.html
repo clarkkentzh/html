@@ -17,13 +17,16 @@
       return this.age;
     }
 
-    function Student(name,age,score) {
+    function Son(name,age,score) {
       Father.call(this,name,age);
       this.score = score;
     }
 
     Son.prototype = new Father();//原生链继承Father的属性
+
+      //指定Son的构造器，因为被之前的继承给覆盖了。
     Son.prototype.constructor = Son;
+    
     Son.prototype.getScore = function () {
       return this.score;
     };

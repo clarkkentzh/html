@@ -18,7 +18,7 @@
       Son.prototype = new Father();
       var one = new Son();
       console.log(one);
-      console.log(one.colors);
+      console.log(one.colors);//red,green,blue的数组
       // one.colors.push("black");//修改了原型上的属性,会影响其他对象属性
       one.colors = ["red","green","blue","black"];//这个实际上是添加了自己的colors属性,不会影响其他对象属性
       console.log(one.colors);

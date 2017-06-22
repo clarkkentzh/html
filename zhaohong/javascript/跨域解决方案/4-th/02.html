@@ -18,7 +18,10 @@ var request = new XMLHttpRequest();
 request.open("get", "http://127.0.0.1:8000/test");
 
 request.onload = function(){
-  console.log(request.responseText);
+  console.log("***" + request.responseText);
+	console.log(request.responseXML);//null
+	console.log(request.status);  //200，响应http的状态
+	console.log(request.statusText);//http状态的说明
 };
 
 request.send();

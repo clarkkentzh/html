@@ -19,6 +19,7 @@
 
 
     //join方法   连接数组元素
+        console.log(a);//[1,2,3,undefined x1,4,5]
         console.log(a.join()); //"1,2,3,,4,5"
         console.log(a.join('')); //"12345"
         var ret = a.join("+"); //"1+2+3++4+5";
@@ -52,7 +53,7 @@
 
     //slice浅复制
         var d = [1, 2, 3, 4, 5, 6, 7, [8, 9, 10]];
-        var e = d.slice(3, 5); //[4,5]
+        var e = d.slice(3, 5); //[4,5],参数指的是索引值
         e[0] = 40;
         console.log(e); //[40,5]
         console.log(d); //修改e,但是d没有受影响
@@ -73,7 +74,7 @@
 
     //splice修改数组本身
         var fish = ["angel", "clown", "mandarin", "surgeon", [1, 2, 3]];
-        ret = fish.splice(2); //删除
+        ret = fish.splice(2); //删除,2位置以后的都删除了
         console.log(ret);
         console.log(fish); //["angel", "clown"]
 

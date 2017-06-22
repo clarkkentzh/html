@@ -9,22 +9,22 @@
         margin: 0;
         padding: 0;
     }
-    
+
     .cmd {
         text-align: center;
     }
-    
+
     .stu {
         width: 400px;
         margin: 50px auto;
         border-collapse: collapse;
         text-align: center;
     }
-    
+
     .stu tr {
         height: 50px;
     }
-    
+
     .stu tr,
     .stu th,
     .stu td {
@@ -98,8 +98,6 @@
 
         //创建xhr对象
         var xhr = createXHR();
-
-
         //状态切换时，要执行的代码
         xhr.onreadystatechange = function() {
             if (xhr.readyState == 4) {
@@ -115,13 +113,10 @@
         //使用open创建一个异步请求
         xhr.open("get", url, true);
 
-
         //使用send方法 发送一个http请求
         //send方法不管有没有数据，都必须执行
         xhr.send(null);
-
     };
-
 
     //发送post
     btn2.onclick = function() {

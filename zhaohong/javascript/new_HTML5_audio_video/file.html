@@ -30,18 +30,18 @@
         reader.onload = function(){
           // reader.result就是读取的结果
           console.log(reader.result);
-        }
+        };
 
         //以文本方式读取
-        reader.readAsText(file1);
+        // reader.readAsText(file1);
 
         //读取图片
         // reader.readAsDataURL(file1);
 
         //按照二进制去读取
-        // reader.readAsBinaryString(file1);
+        reader.readAsBinaryString(file1);
 
-      }
+      };
     </script>
   </body>
 </html>

@@ -13,7 +13,7 @@
       color: blue;       /*优先级１*/
     }
     div p {
-      color: yellow !important;    /*优先级２*/
+      /*color: yellow !important;    /*优先级２*/*/
     }
     .aa {
       color: orange;   /*优先级10*/
@@ -21,17 +21,17 @@
     p.aa {
       color: green;　　/*优先级11*/
     }
-    div p.aa{
-      color:purple;   /*优先级12*/
-    }
     #bb {
       color: pink;
+    }
+    div p.aa{
+      color:purple;   /*优先级12*/
     }
     </style>
   </head>
   <body>
     <div>
-    <p class="aa">这是在测试优先级</p>
+    <p class="aa" id="bb"><span>这是在测试优先级</span></p>
   </div>
   </body>
 </html>

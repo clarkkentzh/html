@@ -29,11 +29,11 @@
 
 
   console.log("********************************");
-  console.log(d.toDateString());
-  console.log(d.toLocaleDateString());
-  console.log(d.toTimeString());
-  console.log(d.toLocaleTimeString());
-  console.log(d.toUTCString());
+  console.log(d.toDateString());//以特定于实现的格式显示星期几、月、日和年;
+  console.log(d.toLocaleDateString());//以特定于地区的格式显示星期几、月、日和年;
+  console.log(d.toTimeString());//以特定于实现的格式显示时、分、秒和时区;
+  console.log(d.toLocaleTimeString());//以特定于实现的格式显示时、分、秒;
+  console.log(d.toUTCString());//以特定于实现的格式完整的 UTC 日期
 
   setInterval(function(){
     d = new Date();
