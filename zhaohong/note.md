@@ -50,3 +50,29 @@
 
 十、请描述一下 cookies，sessionStorage 和 localStorage 的区别？
     cookie在浏览器和服务器间来回传递。 sessionStorage和localStorage不会; sessionStorage和localStorage的存储空间更大； sessionStorage和localStorage有更多丰富易用的接口； sessionStorage和localStorage各自独立的存储空间；
+
+十一、nodejs的优缺点。
+    优点：
+    可以解决高并发，它是单线程，当访问量很多时，将访问者分配到不同的内存中，不同的内存区做不同的事，以快速解决这个线程。采用事件驱动、异步编程，为网络服务而设计。其实Javascript的匿名函数和闭包特性非常适合事件驱动、异步编程。不同的事件分配给不同的线程，避免了排队的拥挤，当一个线程完成后将结果返回给主线程，但是因为是单线程，所以每次接收到的结果只有一个，这个结果处理完成后才能接收下一个结果，这样拥挤情况有所缓解，但是事件多到一定程度还是会需要较长时间。
+    Node.js非阻塞模式的IO处理给Node.js带来在相对低系统资源耗用下的高性能与出众的负载能力，非常适合用作依赖其它IO资源的中间层服务。
+    Node.js轻量高效，可以认为是数据密集型分布式部署环境下的实时应用系统的完美解决方案。Node非常适合如下情况：在响应客户端之前，您预计可能有很高的流量，但所需的服务器端逻辑和处理不一定很多。
+    缺点：
+    只支持单核CPU，不能充分利用CPU。
+    可靠性低，一旦代码某个环节崩溃，整个系统都崩溃。原因是单线程，单进程。解决方法：
+    (1):用反向代理Nginx,负载均衡，开启多个进程，每个进程绑定不同的端口。
+    (2):把多个进程绑在一个端口上,用cluster模块创建子进程。
+
+十二、npm和nvm的区别及使用。
+    npm全称node package manager,用来安装管理node的依赖包。
+    npm -v                           查看npm的版本
+    npm install express              本地安装express包。
+    npm install express -g           全局安装
+    npm init                         编写json文件
+    npm init --yes                   默认json文件
+    npm install express --save　　　  往json文件中保存项目运行依赖模块
+    npm install express --save-dev   往json文件中保存项目开发依赖模块
+
+    nvm是node version manager,是node的版本管理器，方便我们对node版本的切换。
+    nvm use v6.11.0                  切换成6.11.0版本的node
+    nvm ls                           查看当前node版本
+    nvm ls-remote                    查看官网有多少个node版本
