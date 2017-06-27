@@ -63,6 +63,7 @@
     (2):把多个进程绑在一个端口上,用cluster模块创建子进程。
 
 十二、npm和nvm的区别及使用。
+
     npm全称node package manager,用来安装管理node的依赖包。
     npm -v                           查看npm的版本
     npm install express              本地安装express包。
