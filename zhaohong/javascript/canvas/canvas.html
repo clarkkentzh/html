@@ -77,8 +77,9 @@
       context.beginPath();
       context.moveTo(50,300);//设置一个开始才能把扇形的半径连接在一起
       context.arc(50,300,50,0,90*Math.PI/180,false);
-      context.fillStyle = 'orange';
-      context.fill();
+      context.lineTo(50,300)
+      context.strokeStyle = 'orange';
+      context.stroke();
 
 
 

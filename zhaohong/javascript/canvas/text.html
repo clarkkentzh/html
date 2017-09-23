@@ -16,13 +16,13 @@
 
     var ctx = canvas.getContext("2d");
 
+    ctx.strokeStyle = "blue"
     ctx.moveTo(100,0);
     ctx.lineTo(100,500);
 
     ctx.moveTo(0,100);
     ctx.lineTo(500,100);
     ctx.stroke();
-
  //设置文本属性必须写在输入文本的前面
 
     ctx.font = "40px '微软雅黑'";
@@ -34,6 +34,7 @@
     ctx.textBaseline = "middle";
     ctx.fillText("like moneyafk中国人", 100,100);//填充文本
     ctx.strokeText("like money", 100,300);      //描边文本
+    console.log(ctx.measureText("like money").width)
 
     </script>
 

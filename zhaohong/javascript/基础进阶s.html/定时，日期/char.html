@@ -15,20 +15,25 @@
 
 
    var str1 = 'The morning is upon us.';
-   var str2 = str1.slice(4, -2);//从第四个字符开始到倒数第二个字符
+   var str2 = str1.slice(4, -2);//从第四个字符开始到倒数第二个字符,切片
    console.log(str2); // morning is upon u
    console.log(str1); //不影响原字符串
 
 
    var s = "hello world google";
    var a = s.split(" ");//根据字符串里面的空格进行分割字符形成数组
-   console.log(a);
+   console.log(a);    //["hello","world","google"]
    var s1 = "hello world google";
    var a1 = s1.split(" ",2);//数组里只有前两个元素
-   console.log(a1);
+   console.log(a1);  //["hello","world"]
 
-
-
+   var zhao = "clarkkent";
+   var hong = "KAIAI"
+   console.log(zhao.substr(0,5));//clark   从０开始5长度的字符串
+   console.log(zhao.substring(0,5));//clark  从0到位置5之前，不包括5的字符串
+   console.log(zhao.substring(5,0));//和上面个相同,参数自动调换位置
+   console.log(zhao.toUpperCase())  //CLARKKENT   变大写
+   console.log(hong.toLowerCase()); //kaiai       变小写
    </script>
   </body>
 </html>

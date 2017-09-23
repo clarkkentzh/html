@@ -43,6 +43,7 @@
     function fun1(arg1,arg2){
       var str = new RegExp("(" + arg2.join("|") + ")","g");
       arg1 = arg1.replace(str,function(m,p1){
+        console.log(m,p1);
         return "<span>" + p1 + "</span>";
       });
       return arg1;

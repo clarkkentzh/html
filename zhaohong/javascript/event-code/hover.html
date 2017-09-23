@@ -92,7 +92,8 @@
 
 
 
-    $(".f").contextmenu(function() {
+    $(".f").contextmenu(function(e) {
+      console.log(e.pageX,e.pageY);
       alert("鼠标右键单击。。。");
     });
   </script>

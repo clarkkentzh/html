@@ -5,20 +5,25 @@
 	<title>border-image</title>
 	<style type="text/css">
 		.f {
+	/* *******必须先设置边框之后才有用*/
 			width: 200px;
 			height: 100px;
-			background: red;
-
-
+			/*background: red;*/
+			border:10px solid red;
+			/*border-image:url("./image/border.png") 27px 27 round;*/
 			border-image-source: url("./image/border.png");
 			border-image-width: 27px;
 			border-image-slice: 27;
 			border-image-repeat: round;
+			/*repeat平铺，超过边界截断*/
+			/*round平铺，自动调大小*/
+			/*指定用拉伸方式来填充边框背景图*/
+			/*图片会根据边框的尺寸动态调整图片的之间的间距直至正好可以铺满整个边框。*/
 		}
 	</style>
 </head>
 <body>
-	
+
 
 	<div class="f"></div>
 </body>

@@ -7,8 +7,8 @@ function moveLeft(elem,target,speed,interval){
     elem.style.left = elem.offsetLeft + speed + "px";
 
     if(Math.abs(elem.offsetLeft - target) <= Math.abs(speed)){
-    elem.style.left = target + "px";
-    clearInterval(elem.timer);
+      elem.style.left = target + "px";
+      clearInterval(elem.timer);
     }
   },interval);
 }

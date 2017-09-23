@@ -7,14 +7,18 @@
   <body>
     <script type="text/javascript">
       var obj = {"name":"zhaohong","age":24};
-
+      console.log(obj);
       //JSON的序列化,就是将json对象转成字符串
       var str = JSON.stringify(obj);
       console.log(str);
 
-      //JSON的解析，就是将json字符串转换成一个javascript值,在解析过程中，还可以选择性的修改某些属性的原始解析值
-      var ret = JSON.parse(str);
-      console.log(ret);
+      //JSON的解析，就是将json字符串转换成json格式,在解析过程中，还可以选择性的修改某些属性的原始解析值
+      JSON.parse(str,function(key,value){
+        if (key != ""){
+          console.log(key,value);
+        }
+        // console.log(ret);
+      });
 
 
     </script>

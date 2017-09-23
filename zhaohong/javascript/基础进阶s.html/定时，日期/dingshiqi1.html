@@ -1,28 +1,30 @@
 <!DOCTYPE html>
-<html>
-  <head>
-    <meta charset="utf-8">
-    <title>定时器</title>
-  </head>
-  <body>
-    <div id="f">计数开始＊＊＊＊＊</div>
-  <script>
-    // "use strict";//严格模式
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>Document</title>
+</head>
+<body>
+  <div id="f">计数开始＊＊＊＊＊</div>
+<script>
+  // "use strict";//严格模式
 
-    var f = document.getElementById("f");
+  var f = document.getElementById("f");
 
-    var id,num = 0;
-    function outPut(){
-      num++;
-      if (num == 10){
-        return;
-      }
-      f.innerHTML = num;
-      id = setTimeout(arguments.callee,1000);//arguments.callee指函数本身，也可以写函数名outPut,写arguments.callee是防止没有名称的匿名函数
-      //setTimeout函数会在指定的时间过后运行函数，并且只运行一次，所以可以每次重新调用
-      console.log("函数运行完毕")
+  var id,num = 0;
+  function outPut(){
+    num++;
+    if (num == 10){
+      return;
     }
-    outPut();
-  </script>
-  </body>
+    f.innerHTML = num;
+    id = setTimeout(arguments.callee,1000);//arguments.callee指函数本身，也可以写函数名outPut,写arguments.callee是防止没有名称的匿名函数
+    //setTimeout函数会在指定的时间过后运行函数，并且只运行一次，所以可以每次重新调用
+    console.log("函数运行完毕")
+  }
+  outPut();
+</script>
+</body>
 </html>

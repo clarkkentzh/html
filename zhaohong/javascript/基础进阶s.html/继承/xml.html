@@ -15,6 +15,7 @@
       var doc = $.parseXML(xmls);
       //parseXML返回的是document对象,需要转成jQuery对象使用
 
+      console.log($(doc).find("rss").eq(0).html());
       console.log($(doc).find("name").eq(0).html());
       console.log($(doc).find("age").eq(0).html());
       console.log($(doc).find("score").eq(0).html());

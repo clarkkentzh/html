@@ -32,8 +32,8 @@
 　　　//"\"是转义字符
       console.log(/\d/.test("asdflsad"));//false,测试数字字符
       console.log(/\D/.test("asdflsjfds"));//true，非数字字符
-      console.log(/\w/.test("sdlsdl232"));//true,测试除字母和数字字符
-      console.log(/\W/.test("\\sd23`"));//true,非字母和数字字符
+      console.log(/\w/.test("sdlsdl232"));//true,测试字母和数字字符
+      console.log(/\W/.test("\\sd23`"));//true,非字母和数字字符,有个\`
       console.log(/\s/.test("  \n"));//true,测试空白字符
       console.log(/\S/.test("\n  "));//false,非空白字符
 
@@ -45,16 +45,16 @@
 
    //^会匹配行或者字符串的起始位置,  $ 会匹配行或字符串的结尾位置
    console.log("*********^和$**************");
-      console.log(/^hello$/.test("helloheeyhello"));//false,必须整个字符串是hello
+      console.log(/^hello$/.test("hellohellohello"));//false,必须整个字符串是hello
       console.log(/^hello/.test("hello sdjhjsldk dkjhj21834768"));//true
       console.log(/hello$/i.test("sdjhjsldk dkjhj21834768 hellO"));//true
 
 
    console.log("*********'*'和＋和?**************");
       console.log(/a*bcd/.test("abcd"));//true,*前面的字符重复零次或更多次  (>=0)
-      console.log(/a*bcd/.test("aaaaabcd"));//true
-      console.log(/b+yyy/.test("yyy"));//false,＋前面的字符重复一次或更多次  (>=1)
-      console.log(/c?hhh/.test("hhh"));//true,?前面的字符重复一次或0次 (0||1)
+      console.log(/a*bcd/.test("bcd"));//true
+      console.log(/b+yyy/.test("bsdyyy"));//false,＋前面的字符重复一次或更多次  (>=1)
+      console.log(/^c?hhh$/.test("chhh"));//true,?前面的字符重复一次或0次 (0||1)
       console.log(/hello+/.test("helloworld"));//true
 
   //当　* 和　+ 后边添加？时可以进行最短匹配。
@@ -64,7 +64,7 @@
       // www.abcd.com wwww.a*bcd.com
    console.log("************()在这里只是将字符串包成一个整体**************")
       console.log(/(hello)*abcdef/.test("hellohelloabcdef"));//true,hello是一个整体
-      console.log(/(hello)?abcdef/.test("hellohelloabcdef"));//true
+      console.log(/^(hello)?abcdef$/.test("hellohelloabcdef"));//false
     //|或的意思，l任意一个字符串匹配都可以
       console.log(/hello|world/.test("hello"));//true
       console.log(/hello|world/.test("world"));//true

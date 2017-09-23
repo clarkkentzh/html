@@ -17,7 +17,7 @@
 
 
     //()叫捕获，捕获的作用可以直接提取符合条件的某一分部
-      ret = "helloworld123worldhello".match(/(hello)(world)(123)/);
+      ret = "helloworld123worldhello".match(/(hello)(world)/);
       console.log(ret);//数组先是匹配的整体字符串,然后是捕获的单个字符串
 
   // * + ? 组合使用，进行最短匹配
@@ -29,7 +29,7 @@
       ret = "helloworld123worldhello".match(/(hello)*?/);
       console.log(ret);
 
-  // search测试匹配的字符串位置，就一个hello,失败返回-1
+  // search测试匹配的字符串位置，只匹配一个hello,失败返回-1
       ret = "helloworld123worldhello".search(/hello/);
       console.log(ret);//0
 

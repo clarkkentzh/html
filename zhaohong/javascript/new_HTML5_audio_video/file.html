@@ -17,6 +17,7 @@
 
       btn.onclick = function(){
         // f.files得到选中的所有文件
+        console.log(f.files);
         for(var i = 0,len = f.files.length;i < len;i++){
           console.log("文件名：" + f.files[i].name + "文件大小：" + f.files[i].size);  //打印文件名和文件大小
         }

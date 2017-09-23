@@ -26,12 +26,12 @@
 
       //指定Son的构造器，因为被之前的继承给覆盖了。
     Son.prototype.constructor = Son;
-    
+
     Son.prototype.getScore = function () {
       return this.score;
     };
 
-    var one = new Son('lisi', 18,80);
+    var one = new Son('lisi',18,80);
     console.log(one);
     console.log(one.getName());
     console.log(one.getAge());

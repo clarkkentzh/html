@@ -6,7 +6,8 @@
   </head>
   <body>
 
-    <script src="./jquery-3.0.0.js" charset="utf-8"></script>
+    <script src="https://cdn.bootcss.com/jquery/3.0.0/jquery.min.js"></script>
+
     <script type="text/javascript">
 
     //jsonp被指定的调用函数
@@ -14,9 +15,9 @@
       console.log("回调函数handler被调用",data);
     }
 
-    //发送的请求  http://127.0.0.1:8000?callback=handler
+    //发送的请求  http://127.0.0.1:3000?callback=handler
     $.ajax({
-      url:"http://127.0.0.1:8000/",
+      url:"http://127.0.0.1:3000/",
       method: "get",
       dataType: "jsonp",
       jsonp: "callback",

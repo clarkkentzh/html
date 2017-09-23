@@ -10,6 +10,6 @@ http.createServer(function(req, res){
 	res.write(queryObj.callback + "(" + obj + ")");
 	res.end();
 
-}).listen(8000);
+}).listen(3000);
 
-console.log("监听 127.0.0.1:8000 ...");
+console.log("监听 127.0.0.1:3000 ...");

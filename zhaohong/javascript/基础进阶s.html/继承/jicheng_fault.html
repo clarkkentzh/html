@@ -27,6 +27,9 @@
       var two = new Son();
       console.log(two);
       console.log(two.colors);
+      console.log(one.constructor); //Father    one的构造函数
+      Son.prototype.constructor = Son;
+      console.log(one.constructor);
     </script>
   </body>
 </html>

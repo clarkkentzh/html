@@ -56,6 +56,7 @@
     //然后将子页面每隔一秒就把hash加１，子页面的程序稍后会把hash给截取然后赋给子页面的h1标签
     //这就是改变子页面的hash，通过hash传递数据
           frame.contentWindow.location.href = originUrl + "#" + num++;
+          console.log(frame.contentWindow.location.href);
         },1000);
 
         window.onhashchange = function(){

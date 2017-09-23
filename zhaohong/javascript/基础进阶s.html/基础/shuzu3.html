@@ -27,7 +27,7 @@
         console.log(a);     //不影响数组本身
     //eval()执行js代码,进行运算时，字符串必须符合运算规则
         // console.log(eval(ret));//缺少一个元素，所以不符合运算规则，出错
-
+        console.log("sssssssssss",eval("1+2+3+4+5+6+7"))
 
     //reverse,影响数组本身  颠倒数组元素顺序
         var b = [1, 2, 3, 4, 5, 6];
@@ -43,7 +43,7 @@
         console.log(c.sort());//按照数值编码排序，大小可能不对
 
         c.sort(function(m, n) {
-            return m - n;
+            return n - m; //大到小，　m-n小到大
         });
         console.log(c);
   //concat数组拼接
@@ -51,9 +51,9 @@
 
     //slice浅复制
         var d = [1, 2, 3, 4, 5, 6, 7, [8, 9, 10]];
-        var e = d.slice(5); //[4,5],参数指的是索引值
-        e[0] = 40;
-        console.log(e); //[40,5]
+        var e = d.slice(5); //参数指的是开始的索引值
+        e[0] = 40;   //6变成了40
+        console.log(e); //[40,7,[88,9,10]]
         console.log(d); //修改e,但是d没有受影响
 
         var f = d.slice(-2); //切最后2个元素

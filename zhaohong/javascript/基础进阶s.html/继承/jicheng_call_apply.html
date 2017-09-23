@@ -25,9 +25,9 @@
 
       var one = new Son("zhaohong",24,100);
       console.log(one);
-      console.log(one.name);
-      console.log(one.age);
-      console.log(one.score);
+      console.log(one.name);  //zhaohong
+      console.log(one.age);  //24
+      console.log(one.score);  //100
 
 
       //修改一个对象的属性不会影响其他对象的属性
@@ -35,6 +35,7 @@
       one.colors.push("yellow");
       var two = new Son("zh",50,100);
       console.log(two);
+      console.log(two.colors); //["red","green","blue"]
 
 
 
@@ -62,11 +63,11 @@
         console.log(arg1,arg2);
         console.log(this.values);
       }
-      fun1.apply(null,[1,2]);
+      fun1.apply(objs,[1,2]);
 
   //call和apply的不同之处在于传递参数的方式不同,call是一系列的参数，apply是参数数组
 
-  
+
     </script>
   </body>
 </html>

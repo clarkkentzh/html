@@ -13,6 +13,6 @@ http.createServer(function(request, response){
       response.writeHead(200, {"Content-type": "text/plain"});
       response.end(data);
     }
-}).listen(8000);
+}).listen(3000);
 
-console.log("监听 127.0.0.1:8000 ....");
+console.log("监听 127.0.0.1:3000 ....");

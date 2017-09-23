@@ -15,11 +15,14 @@
     name:  <input type="text" placeholder="请输入用户名"><br>
     passwd: <input type="password" placeholder="请输入密码"><br>
     <button id="btn">登录</button>
+
+    <button id="remove">删除数据</button>
     <script type="text/javascript">
 
       var user = document.querySelectorAll("input")[0];
       var passwd = document.querySelectorAll("input")[1];
       var btn = document.querySelector("#btn");
+      var re = document.querySelector("#remove")
 
       console.log(localStorage.getItem);
 
@@ -48,7 +51,10 @@
         localStorage.setItem("name",namevalue);
         localStorage.setItem("passwd",passwdvalue);
       }
-
+      re.onclick = function(){
+        localStorage.removeItem("name")
+        localStorage.removeItem("passwd")
+      }
     </script>
   </body>
 </html>

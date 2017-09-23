@@ -12,10 +12,11 @@
 
       function Zhaohong(){
       }
+
       Zhaohong.prototype.name = "zhaohong";
       Zhaohong.prototype.age = "24";
       Zhaohong.prototype.setName = function (newName) {
-      this.name = newName;
+          this.name = newName;
       };       //把共同的属性都统一用prototype设置
 
       var one = new Zhaohong();
@@ -30,6 +31,7 @@
       console.log(two.name);//liwu
       one.name = "zhaohong";
       console.log(one.name);//zhaohong
+      console.log(two.name); //liwu
       //后面的属性可以覆盖原型属性,不同对象不会影响
 
 

@@ -52,7 +52,7 @@
 
  //删除节点
   var s = document.getElementById("s");
-  // f.removeChild(s);//删除了id为s 的节点
+  // f.removeChild(s);//删除了f内id为s 的节点
   var dels = s.parentNode.removeChild(s);//等同于f.removeChild(s)
   console.log(dels);//dels获取到了删除的节点
 
@@ -63,7 +63,7 @@
   var newNodes = list.cloneNode(false);  //false时浅复制,只克隆节点本身
   console.log(newNodes);
 
-  
+
 
   </script>
 </body>

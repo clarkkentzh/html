@@ -12,15 +12,17 @@
       var can = document.querySelector("canvas");
 
       var ctx = can.getContext("2d");
+      can.style.border = "1px solid red"
 
       ctx.beginPath();
       ctx.fillStyle = "red";
       ctx.fillRect(50,50,50,50);
-      ctx.fill();
+
 
       ctx.globalAlpha = 0.5;   //设置透明度，之前的图像不会影响
       ctx.fillStyle = "blue";
       ctx.fillRect(150,50,50,50);
+
 
       ctx.globalAlpha = 1;   //设置为1相当于取消透明度
       ctx.fillStyle = "purple";
